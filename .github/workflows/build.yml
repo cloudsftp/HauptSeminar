@@ -1,6 +1,10 @@
 name: Build
 
-on: push
+on:
+  push:
+    branches:
+      - latest
+      - develop
 
 env:
   DOCUMENT_NAME: ElementaryRepresentationTheory_HauptSeminar_Weik
