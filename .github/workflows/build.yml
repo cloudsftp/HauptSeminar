@@ -3,8 +3,9 @@ name: Build
 on:
   push:
     branches:
-      - latest
       - develop
+    tags:
+      - v*
 
 env:
   DOCUMENT_NAME: ElementaryRepresentationTheory_HauptSeminar_Weik
