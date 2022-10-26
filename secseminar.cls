@@ -39,7 +39,7 @@
 %%% Taken from uni-stuttgart-cs-cover.sty
 %%% with modifications
 
-\def\MCS@type{seminar}
+\def\MCS@type{Hauptseminarausarbeitung}
 \def\MCS@institute{sec}
 \def\MCS@number{}
 \def\MCS@title{\@title}
