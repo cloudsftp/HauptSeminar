@@ -1,6 +1,6 @@
 \subsection{Group Theory}
 
-A group is a set $G$ with an operation $\cdot: G \times G \to G$ that satisfies the following axioms.
+A \textbf{group} is a set $G$ with an operation $\cdot: G \times G \to G$ that satisfies the following axioms.
 \begin{align}
     \forall a, b, c \in G: \qquad & a \cdot (b \cdot c) = (a \cdot b) \cdot c & \text{associativity} \\
     \exists e \in G \forall g \in G: \qquad & e \cdot g = g \cdot e = g & \text{neutral element} \\
@@ -10,3 +10,7 @@ If a group also satisfies commutativity, it is called an abelian group.
 \begin{align}
     \forall a, b \in G: \qquad & a \cdot b = b \cdot a & \text{commutativity}
 \end{align}
+
+A \textbf{topological group} is a group where both the operation $\cdot: G \times G \to G: (x, y) \mapsto xy$ and the inverse map $^{-1}: G \to G: x \mapsto x^{-1}$ are continuous.
+This is the case, iff the map $m: G \times G \to G: (x, y) \mapsto xy^{-1}$ is continuous.
+$m$ is continuous, iff for all $x, y \in G$ and any neighbourhood $W$ of $xy^{-1}$ there are neighbourhoods $U$ of $x$ and $V$ of $y$, such that $U \cdot V^{-1} \subseteq W$.
