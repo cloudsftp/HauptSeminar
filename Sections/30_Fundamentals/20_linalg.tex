@@ -10,3 +10,13 @@ Its elements are written as follows.
         i \\ 0
     \end{pmatrix} \in \C^2
 \end{align}
+
+A \textbf{linear map} $M$ between vector spaces $V$ and $W$ is a map $M: V \to W$ that satisfies the following two conditions.
+Note that $V$ and $W$ are assumed to be vector spaces over $\C$.
+\begin{align}
+    \forall u, v \in V: \qquad & M(u + v) = M(u) + M(v) & \text{additivity} \\
+    \forall c \in \C, v \in V: \qquad & M(c \cdot v) = c \cdot M(v) & \text{homogeneity}
+\end{align}
+Such a map $M$ can be expressed via a \textbf{matrix}.
+Let $V \in \C^m$ and $W \in \C^n$, then $M \in \C^{n \times m}$.
+This is a core concept in representation theory since the elements of groups will be represented by matrices.
