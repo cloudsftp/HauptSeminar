@@ -1,22 +1,24 @@
 \subsection{Linear Algebra}
 
 A \textbf{vector space} over a field $F$ is a set $V$ with two operations, addition $+: V \times V \to V$ and scalar multiplication $\cdot: F \times V \to V$, that satisfy some axioms.
+\todo{don't omit}
 Since vector spaces are a common concept in computer science, I will omit the axioms here.
-This work focuses on vector spaces over the complex numbers $\C$.
-A $n$-dimensional complex vector space is denoted $\C^n$.
-Its elements are written as follows.
-\begin{align}
-    \begin{pmatrix}
-        i \\ 0
-    \end{pmatrix} \in \C^2
-\end{align}
 
-A \textbf{linear map} $M$ between vector spaces $V$ and $W$ is a map $M: V \to W$ that satisfies the following two conditions.
-Note that $V$ and $W$ are assumed to be vector spaces over $\C$.
+A \textbf{linear map} $m$ between vector spaces $V$ and $W$ is a map $m: V \to W$ that satisfies the following two conditions.
 \begin{align}
-    \forall u, v \in V: \qquad & M(u + v) = M(u) + M(v) & \text{additivity} \\
-    \forall c \in \C, v \in V: \qquad & M(c \cdot v) = c \cdot M(v) & \text{homogeneity}
+    \forall u, v \in V: \qquad & m(u + v) = m(u) + m(v) & \text{additivity} \\
+    \forall c \in \C, v \in V: \qquad & m(c \cdot v) = c \cdot m(v) & \text{homogeneity}
 \end{align}
+In our case both vector spaces $V$ and $W$ always have the same, so $V = W$.
+The set of all linear maps between $V$ and itself is denoted as $\GL(V)$.
+\\
+
+In most cases, the representations of groups are over finite-dimensional vector spaces.
+If they are finite-dimensional, they will be vector spaces over the field of complex numbers $\C$ in this work.
+A $n$-dimensional complex vector space is denoted as $\C^n$.
+Its elements are written as vectors.
+
+\todo[inline]{Matrices}
+???
 Such a map $M$ can be expressed via a \textbf{matrix}.
-Let $V \in \C^m$ and $W \in \C^n$, then $M \in \C^{n \times m}$.
 This is a core concept in representation theory since the elements of groups will be represented by matrices.
