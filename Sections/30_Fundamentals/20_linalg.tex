@@ -1,8 +1,16 @@
 \subsection{Linear Algebra}
 
-A \textbf{vector space} over a field $F$ is a set $V$ with two operations, addition $+: V \times V \to V$ and scalar multiplication $\cdot: F \times V \to V$, that satisfy some axioms.
-\todo{don't omit}
-Since vector spaces are a common concept in computer science, I will omit the axioms here.
+A \textbf{vector space} over a field $F$ is a set $V$ with two operations, addition $+: V \times V \to V$ and scalar multiplication $\cdot: F \times V \to V$, that satisfy the following axioms.
+\begin{align}
+    \forall u, v, w \in V: \qquad & u + (v + w) = (u + v) + w & \text{associativity of vector addition} \\
+    \forall u, v \in V: \qquad & u + v = v + u & \text{commutativity of vector addition} \\
+    \exists 0_V \in V\ \forall v \in V: \qquad & v + 0_V = v & \text{identity element of vector addition} \\
+    \forall v \in V\ \exists -v \in V: \qquad & -v + v = 0_V & \text{inverse element of vector addition} \\
+    \forall v \in V\ a, b \in F: \qquad & a \cdot (b \cdot v) = (a \cdot b) \cdot v & \text{compatibility of multiplications} \\
+    \forall v \in V: \qquad & 1 \cdot v = v & \text{identity element of scalar multiplication} \\
+    \forall u, v \in V\ a \in F: \qquad & a \cdot (u + v) = a \cdot u + a \cdot v & \text{distributivity of scalar multiplication} \\
+    \forall v \in V\ a, b \in F: \qquad & (a + b) \cdot v = a \cdot v + b \cdot v &  \text{distributivity of scalar multiplication}
+\end{align}
 
 A \textbf{linear map} $m$ between vector spaces $V$ and $W$ is a map $m: V \to W$ that satisfies the following two conditions.
 \begin{align}
