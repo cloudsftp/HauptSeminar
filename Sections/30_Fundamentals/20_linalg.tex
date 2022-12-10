@@ -62,3 +62,12 @@ The \textbf{trace} of a square matrix $\tr: \C^{n \times n} \to \C$ is defined a
 \begin{align}
     \tr(A) = \sum_i a_{i, i}
 \end{align}
+
+A \textbf{change of basis} from one basis $\{v_i\}_i$ to another one $\{w_j\}_j$ in a vector space $C^n$ can be represented by an invertible matrix.
+We find this matrix by writing each vector of the new basis $w_j$ as a linear combination of the vectors in the old basis $v_i$.
+\begin{align}
+    w_j = \sum_i a_{i, j} v_i
+\end{align}
+This gives us the elements of $A = (a_{i, j})_{i, j}$.
+A vector $x \in \C^n$ is transformed from the old to the new basis via a matrix multiplication $x' = A^{-1} \cdot x$.
+A linear map between $\C^n$ and itself represented as a matrix $M \in \C^{n \times n}$ is transformed via two matrix multiplications $M' = A^{-1} \cdot M \cdot A$.
