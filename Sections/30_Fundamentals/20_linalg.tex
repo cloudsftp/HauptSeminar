@@ -33,6 +33,7 @@ In our finite-dimensional cases, both vector spaces are $\C^n$ and we define the
 So we can represent the linear maps as vectors in the finite-dimensional cases in this paper.
 Matrix multiplication $\cdot: \C^{a \times b} \times \C^{b \times c} \to \C^{a \times c}$ is equivalent to the composition of the linear maps, they represent.
 $\C^n$, matrices, and matrix multiplication are common concepts in computer science so I will omit the details here.
+\todo[inline]{add matrix multiplication}
 
 On $\C^n$, the \textbf{scalar product} (also called dot product) $\langle \cdot, \cdot \rangle: \C^n \times \C^n \to \C$ is defined as
 \begin{align}
@@ -71,3 +72,8 @@ We find this matrix by writing each vector of the new basis $w_j$ as a linear co
 This gives us the elements of $A = (a_{i, j})_{i, j}$.
 A vector $x \in \C^n$ is transformed from the old to the new basis via a matrix multiplication $x' = A^{-1} \cdot x$.
 A linear map between $\C^n$ and itself represented as a matrix $M \in \C^{n \times n}$ is transformed via two matrix multiplications $M' = A^{-1} \cdot M \cdot A$.
+
+A \textbf{dual vector space} $V^*$ of a vector space $V$ over a field $F$ is the set of all linear maps $m: V \to F$.
+In the case of $\C^n = \C^{n \times 1}$ we can think of it as row vectors $(\C^n)^* = \C^{1 \times n}$.
+Multiplying a row vector with a column vector will result in a number, this follows from the definition of matrix multiplication above.
+Since every element in the row vector corresponds to the weight of one element in the column vector, before summing everything up, every linear map $m: \C^n \to \C$ can be represented by exactly one row vector.
