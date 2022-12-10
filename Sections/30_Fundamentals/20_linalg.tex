@@ -48,3 +48,12 @@ The \textbf{direct sum} of two matrices $\oplus: \C^{a \times b} \times \C^{c \t
     \end{pmatrix}
 \end{align}
 where each zero stands for a matrix that only has zeros.
+
+The \textbf{tensor product} of two matrices $\otimes: \C^{a \times b} \times \C^{c \times d} \to \C^{(a \cdot c) \times (b \cdot d)}$ is defined as
+\begin{align}
+    A \otimes B = \begin{pmatrix}
+        A_{0, 0} \cdot B & A_{0, 1} \cdot B & \ldots & A_{0, b-1} \cdot B \\
+        \vdots & \vdots & \ddots & \vdots \\
+        A_{a-1, 0} \cdot B & A_{a-1, 1} \cdot B & \ldots & A_{a-1, b-1} \cdot B
+    \end{pmatrix}
+\end{align}
