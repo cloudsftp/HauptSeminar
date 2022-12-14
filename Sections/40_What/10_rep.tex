@@ -1,0 +1,20 @@
+\subsection{Representations}
+
+The \textbf{representation} $\rho$ of a group $G$ is defined as a group homomorphism $\rho: G \to \GL(V)$.
+This means that $\rho$ preserves the structure of $G$.
+So the diagram in \Cref{fig:main.what.rep-cd} commutes.
+\begin{figure}[h]
+    \centering
+    \begin{tikzcd}
+        G \times G
+            \arrow[r, "\rho \times \rho"]
+            \arrow[d, "\cdot"]
+        & \GL(V) \times \GL(V)
+            \arrow[d, "\cdot"]
+        \\
+        G   \arrow[r, "\rho"]
+        & \GL(V)
+    \end{tikzcd}
+    \caption{Commuting diagram for representations}
+    \label{fig:main.what.rep-cd}
+\end{figure}
