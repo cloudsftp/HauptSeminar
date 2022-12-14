@@ -1,7 +1,5 @@
 \subsection{Group Theory}
 
-\subsubsection{Groups}
-
 A \textbf{group} $(G, \cdot)$ is a set $G$ with an operation $\cdot: G \times G \to G$ that satisfies the following axioms.
 \begin{align}
     \forall a, b, c \in G: \qquad & a \cdot (b \cdot c) = (a \cdot b) \cdot c & \text{associativity} \\
@@ -15,15 +13,11 @@ If a group also satisfies commutativity, it is called an abelian group.
 
 \todo[inline]{Examples for groups?}
 
-\subsubsection{Topological Groups}
-
 A \textbf{topological group} $(G, \cdot)$ is a group where both the operation $\cdot: G \times G \to G: (x, y) \mapsto xy$ and the inverse map $^{-1}: G \to G: x \mapsto x^{-1}$ are continuous.
 This is the case, iff the map $m: G \times G \to G: (x, y) \mapsto xy^{-1}$ is continuous.
 $m$ is continuous, iff for all $x, y \in G$ and any neighbourhood $W$ of $xy^{-1}$ there are neighbourhoods $U$ of $x$ and $V$ of $y$, such that $U \cdot V^{-1} \subseteq W$.
 
 \todo[inline]{Examples for topological groups?}
-
-\subsubsection{Group Homomorphisms}
 
 A \textbf{group homomorphism} is a map $\phi: G \to H$ between two groups $(G, \cdot)$ and $(H, *)$, such that
 \begin{align}
@@ -47,3 +41,11 @@ Understanding them will help in later sections.
     \caption{Commuting diagram for group homomorphisms}
     \label{fig:fundamentals.groups.hom-cd}
 \end{figure}
+
+A \textbf{field} $(F, +, -, 0, 1)$ is a set $F$ with two operations, addition $+: F \times F \to F$ and multiplication $\cdot: F \times F \to F$, such that $(F, +, 0)$ is an abelian group, $(F \setminus \{0\}, \cdot, 1)$ is a group, and the following axioms holds.
+\begin{align}
+    \forall a, b, c \in F: \qquad & a \cdot (b + c) = a \cdot b + a \cdot c & \text{left distributive property} \\
+    \forall a, b, c \in F: \qquad & (a + b) \cdot c = a \cdot c + b \cdot c & \text{right distributive property}
+\end{align}
+For this work, the only necessary field is the field of the complex numbers $(\C, +, \cdot, 0, 1)$.
+When referring to this field in the following, only $\C$ is written.
