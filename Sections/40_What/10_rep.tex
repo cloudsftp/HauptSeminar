@@ -12,6 +12,20 @@ A representation that preserves \textit{all} structure of the group $G$ it repre
 Such a representation $\rho$ has to be injective, meaning that $\rho(a) = \rho(b) \implies a = b$ for any $a, b \in G$.
 Since $\rho$ is injective, we can define an inverse map on its image $\rho^{-1}: \Ima(\rho) \to G: \rho^{-1}(\rho(g)) = g$.
 For this inverse map, the diagram in \Cref{fig:main.what.faith-rep-cd} also commutes.
+\todo[inline]{better formatting of following}
+The easiest way to construct such a faithful representation $\rho$ of any finite group $G$ is to identify each element $g \in G$ with a basis vector of $\C^n$ and then construct the matrices $\rho(a) \in \C^{n \times n}$ for each element $a \in G$ following how the group acts on itself.
+This is called the \textbf{regular representation}.
+This is very abstract for a straightforward idea, so the following is the construction of the regular representation of $\Z/2\Z$.
+We identify $0$ with $\begin{pmatrix}
+    1 & 0
+\end{pmatrix}^T$ and $1$ with $\begin{pmatrix}
+    0 & 1
+\end{pmatrix}^T$.
+The action of $0$ on the group $\Z/2\Z$ maps $0 \mapsto 0, 1 \mapsto 1$, so its representation $\reg(0) = I$ is the identity matrix.
+The action of $1$ on the group $\Z/2\Z$ maps $0 \mapsto 1, 1 \mapsto 0$, so its representation $\reg(1) = \begin{pmatrix}
+    0 & 1 \\
+    1 & 0
+\end{pmatrix}$.
 
 \begin{figure}[h]
     \begin{subfigure}{.5 \textwidth}
