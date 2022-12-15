@@ -46,17 +46,33 @@ A representation that preserves \textit{all} structure of the group $G$ it repre
 Such a representation $\rho$ has to be injective, meaning that $\rho(a) = \rho(b) \implies a = b$ for any $a, b \in G$.
 Since $\rho$ is injective, we can define an inverse map on its image $\rho^{-1}: \Ima(\rho) \to G: \rho^{-1}(\rho(g)) = g$.
 For this inverse map, the diagram in \Cref{fig:main.what.faith-rep-cd} also commutes.
-\todo[inline]{better formatting of following}
-The easiest way to construct such a faithful representation $\rho$ of any finite group $G$ is to identify each element $g \in G$ with a basis vector of $\C^n$ and then construct the matrices $\rho(a) \in \C^{n \times n}$ for each element $a \in G$ following how the group acts on itself.
-This is called the \textbf{regular representation}.
-This is very abstract for a straightforward idea, so the following is the construction of the regular representation of $\Z/2\Z$.
-We identify $0$ with $\begin{pmatrix}
-    1 & 0
-\end{pmatrix}^T$ and $1$ with $\begin{pmatrix}
-    0 & 1
-\end{pmatrix}^T$.
-The action of $0$ on the group $\Z/2\Z$ maps $0 \mapsto 0, 1 \mapsto 1$, so its representation $\reg(0) = I$ is the identity matrix.
-The action of $1$ on the group $\Z/2\Z$ maps $0 \mapsto 1, 1 \mapsto 0$, so its representation $\reg(1) = \begin{pmatrix}
-    0 & 1 \\
-    1 & 0
-\end{pmatrix}$.
+There is an easy way to construct such a representation for any finite group $G$, the resulting representation is called the \textbf{regular representation} with notation $\reg$.
+The idea is to let the group act on itself.
+First, we need to identify each element $g \in G$ with a basis vector of $\C^n$.
+It is immediately clear, that we need $n \geq |G|$ dimensions of our vector space.
+Next, we construct the matrices $\reg(a)$ for every action $a \in G$ to reflect, how the elements are mapped to each other by the action $a$.
+The following is an example, of how this can be done for the group $\Z/2\Z$.
+First, we construct a mapping $\pi: (\Z/2\Z) \to \C^2$:
+\begin{align*}
+    \pi: \qquad & 0 \mapsto \begin{pmatrix}
+        1 & 0
+    \end{pmatrix}^T \\
+    & 1 \mapsto \begin{pmatrix}
+        0 & 1
+    \end{pmatrix}^T
+\end{align*}
+Next, we construct the matrices $\reg(a)$:
+\begin{align*}
+    0: \qquad & 0 + 0 = 0,\ 0 + 1 = 1 \\
+    \implies & \reg(0) = \begin{pmatrix}
+        1 & 0 \\
+        0 & 1
+    \end{pmatrix} \\
+    1: \qquad & 1 + 0 = 1,\ 1 + 1 = 0 \\
+    \implies & \reg(1) = \begin{pmatrix}
+        0 & 1 \\
+        1 & 0
+    \end{pmatrix}
+\end{align*}
+Since the action $0$ maps each element of $\Z/2\Z$ to itself, its representation is the identity matrix.
+The action $1$ maps each element of $\Z/2\Z$ to the only other element in $\Z/2\Z$, therefore its representation is the matrix that swaps both coordinates of $\C^2$.
