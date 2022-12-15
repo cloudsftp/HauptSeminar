@@ -1,0 +1,115 @@
+\subsection{Representations}
+
+The \textbf{representation} $\rho$ of a group $G$ is defined as a group homomorphism $\rho: G \to \GL(V)$.
+This means that $\rho$ preserves the structure of $G$.
+So the diagram in \Cref{fig:main.what.rep-cd} commutes.
+As you can infer from the diagram, the representation $\rho$ does not have to preserve \textit{all} structure of $G$.
+The simplest representation therefore only has to preserve the structure, that every $g \in G$ is an element of $G$.
+This is ridiculously trivial and you can see that it is a valid representation for any group $G$.
+It is called the \textbf{trivial representation} and is defined as $\triv: G \to \GL(V): g \mapsto \id_V$~\cite{Hein2013}.
+
+\begin{figure}[h]
+    \begin{subfigure}{.5 \textwidth}
+        \centering
+        \begin{tikzcd}
+            G \times G
+                \arrow[r, "\rho \times \rho"]
+                \arrow[d, "\cdot"]
+            & \GL(V) \times \GL(V)
+                \arrow[d, "\cdot"]
+            \\
+            G   \arrow[r, "\rho"]
+            & \GL(V)
+        \end{tikzcd}
+        \caption{General case}
+        \label{fig:main.what.rep-cd}
+    \end{subfigure}
+    \begin{subfigure}{.5 \textwidth}
+        \centering
+        \begin{tikzcd}
+            \Ima(\rho) \times \Ima(\rho)
+                \arrow[r, "\rho^{-1} \times \rho^{-1}"]
+                \arrow[d, "\cdot"]
+            & G \times G
+                \arrow[d, "\cdot"]
+            \\
+            \Ima(\rho) \arrow[r, "\rho^{-1}"]
+            & G
+        \end{tikzcd}
+        \caption{Faithful representations}
+        \label{fig:main.what.faith-rep-cd}
+    \end{subfigure}
+    \caption{Commuting diagrams for representations}
+\end{figure}
+
+A representation that preserves \textit{all} structure of the group $G$ it represents, is called \textbf{faithful}.
+Such a representation $\rho$ has to be injective, meaning that $\rho(a) = \rho(b) \implies a = b$ for any $a, b \in G$~\cite{Hein2013}.
+Since $\rho$ is injective, we can define an inverse map on its image $\rho^{-1}: \Ima(\rho) \to G: \rho^{-1}(\rho(g)) = g$.
+For this inverse map, the diagram in \Cref{fig:main.what.faith-rep-cd} also commutes.
+There is an easy way to construct such a representation for any finite group $G$, the resulting representation is called the \textbf{regular representation} with notation $\reg$.
+The idea is to let the group act on itself~\cite{Fulton2013}.
+First, we need to identify each element $g \in G$ with a basis vector of $\C^n$.
+It is immediately clear, that we need $n \geq |G|$ dimensions of our vector space.
+Next, we construct the matrices $\reg(a)$ for every action $a \in G$ to reflect, how the elements are mapped to each other by the action $a$.
+The following is an example, of how this can be done for the group $\Z/2\Z$.
+First, we construct a mapping $\pi: (\Z/2\Z) \to \C^2$:
+\begin{align*}
+    \pi: \qquad & 0 \mapsto \begin{pmatrix}
+        1 & 0
+    \end{pmatrix}^T \\
+    & 1 \mapsto \begin{pmatrix}
+        0 & 1
+    \end{pmatrix}^T
+\end{align*}
+Next, we construct the matrices $\reg(a)$:
+\begin{align*}
+    0: \qquad & 0 + 0 = 0,\ 0 + 1 = 1 \\
+    \implies & \reg(0) = \begin{pmatrix}
+        1 & 0 \\
+        0 & 1
+    \end{pmatrix} \\
+    1: \qquad & 1 + 0 = 1,\ 1 + 1 = 0 \\
+    \implies & \reg(1) = \begin{pmatrix}
+        0 & 1 \\
+        1 & 0
+    \end{pmatrix}
+\end{align*}
+Since the action $0$ maps each element of $\Z/2\Z$ to itself, its representation is the identity matrix.
+The action $1$ maps each element of $\Z/2\Z$ to the only other element in $\Z/2\Z$, therefore its representation is the matrix that swaps both coordinates of $\C^2$.
+
+For each regular representation, there is a change of basis that causes all matrices of the representation to become block matrices.
+This property is called \textbf{semisimplicity} \todo{refer to later chapter} and was proven by Maschke~\cite{Maschke1899}.
+It is not true for vector spaces over the field of rational numbers but is for complex numbers.
+That is the reason, why finite vector spaces in this work are always $\C^n$.
+This is the reason, why chose $\C$ as the field for defining finite vector spaces and matrix properties.
+As an example for our previously constructed representation of $\Z/2\Z$, the base change matrix, that achieves this is
+\begin{align*}
+    & A = \begin{pmatrix}
+        1 & 1 \\
+        1 & -1
+    \end{pmatrix} \\
+    0: \qquad & A^{-1} \cdot \reg(0) \cdot A = A^{-1} \cdot I \cdot A = A^{-1} \cdot A = I \\
+    1: \qquad & A^{-1} \cdot \reg(0) \cdot A = \frac{1}{2} \cdot \begin{pmatrix}
+        1 & 1 \\
+        1 & -1
+    \end{pmatrix} \cdot \begin{pmatrix}
+        0 & 1 \\
+        1 & 0
+    \end{pmatrix} \cdot \begin{pmatrix}
+        1 & 1 \\
+        1 & -1
+    \end{pmatrix} \\
+    & = \frac{1}{2} \cdot \begin{pmatrix}
+        1 & 1 \\
+        1 & -1
+    \end{pmatrix} \cdot \begin{pmatrix}
+        1 & -1 \\
+        1 & 1
+    \end{pmatrix} = \frac{1}{2} \cdot \begin{pmatrix}
+        2 & 0 \\
+        0 & -2
+    \end{pmatrix} = \begin{pmatrix}
+        1 & 0 \\
+        0 & -1
+    \end{pmatrix}
+\end{align*}
