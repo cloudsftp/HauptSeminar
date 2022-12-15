@@ -76,3 +76,38 @@ Next, we construct the matrices $\reg(a)$:
 \end{align*}
 Since the action $0$ maps each element of $\Z/2\Z$ to itself, its representation is the identity matrix.
 The action $1$ maps each element of $\Z/2\Z$ to the only other element in $\Z/2\Z$, therefore its representation is the matrix that swaps both coordinates of $\C^2$.
+
+For each regular representation, there is a change of basis that causes all matrices of the representation to become block matrices.
+This property is called \textbf{semisimplicity} \todo{refer to later chapter} and is true if the vector space is over the field of the complex numbers.
+This is the reason, why chose $\C$ as the field for defining finite vector spaces and matrix properties.
+As an example for our previously constructed representation of $\Z/2\Z$, the base change matrix, that achieves this is
+\begin{align*}
+    & A = \begin{pmatrix}
+        1 & 1 \\
+        1 & -1
+    \end{pmatrix} \\
+    0: \qquad & A^{-1} \cdot \reg(0) \cdot A = A^{-1} \cdot I \cdot A = A^{-1} \cdot A = I \\
+    1: \qquad & A^{-1} \cdot \reg(0) \cdot A = \frac{1}{2} \cdot \begin{pmatrix}
+        1 & 1 \\
+        1 & -1
+    \end{pmatrix} \cdot \begin{pmatrix}
+        0 & 1 \\
+        1 & 0
+    \end{pmatrix} \cdot \begin{pmatrix}
+        1 & 1 \\
+        1 & -1
+    \end{pmatrix} \\
+    & = \frac{1}{2} \cdot \begin{pmatrix}
+        1 & 1 \\
+        1 & -1
+    \end{pmatrix} \cdot \begin{pmatrix}
+        1 & -1 \\
+        1 & 1
+    \end{pmatrix} = \frac{1}{2} \cdot \begin{pmatrix}
+        2 & 0 \\
+        0 & -2
+    \end{pmatrix} = \begin{pmatrix}
+        1 & 0 \\
+        0 & -1
+    \end{pmatrix}
+\end{align*}
