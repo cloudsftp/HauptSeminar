@@ -1,0 +1,26 @@
+\subsection{Equivalence of Representations}
+
+In the previous section, we saw how the regular representation can be transformed to consist of block matrices.
+This was achieved through a change of basis.
+Informally we can say, that they are equivalent because, through the change of basis, no structure is lost.
+This poses the question, of whether there is a general definition when two representations are equivalent.
+
+Two representations $\rho: G \to \GL(V)$ and $\rho': G \to \GL(V')$ are \textbf{equivalent}, iff there exists a bijective linear map $f: V \to V'$ such that the diagram in \Cref{fig:main.what.equ-cd} commutes for all actions $a \in G$~\cite{Hein2013}.
+This is exactly what a base change does, so in our example from above, f$f$ would be the map represented by the base change matix $A$.
+\begin{figure}[h]
+    \centering
+    \begin{tikzcd}
+        V
+            \arrow[r, "\rho(a)"]
+            \arrow[d, "f"]
+        & V
+            \arrow[d, "f"]
+        \\
+        V'  \arrow[r, "\rho'(a)"]
+        & V'
+    \end{tikzcd}
+    \caption{Commuting diagram for intertwiners}
+    \label{fig:main.what.equ-cd}
+\end{figure}
+
+If such a map $f$ exists it is called an \textbf{intertwiner} (or equivarent map), even if the map is \textit{not} bijective.
