@@ -6,7 +6,7 @@ So the diagram in \Cref{fig:main.what.rep-cd} commutes.
 As you can infer from the diagram, the representation $\rho$ does not have to preserve \textit{all} structure of $G$.
 The simplest representation therefore only has to preserve the structure, that every $g \in G$ is an element of $G$.
 This is ridiculously trivial and you can see that it is a valid representation for any group $G$.
-It is called the \textbf{trivial representation} and is defined as $\triv: G \to \GL(V): g \mapsto \id_V$~\cite{Hein2013}.
+It is called the \textbf{trivial representation} and is defined as $\triv: G \to \GL(V): g \mapsto \id_V$~\cite{hein2013}.
 
 \begin{figure}[h]
     \begin{subfigure}{.5 \textwidth}
@@ -43,11 +43,11 @@ It is called the \textbf{trivial representation} and is defined as $\triv: G \to
 \end{figure}
 
 A representation that preserves \textit{all} structure of the group $G$ it represents, is called \textbf{faithful}.
-Such a representation $\rho$ has to be injective, meaning that $\rho(a) = \rho(b) \implies a = b$ for any $a, b \in G$~\cite{Hein2013}.
+Such a representation $\rho$ has to be injective, meaning that $\rho(a) = \rho(b) \implies a = b$ for any $a, b \in G$~\cite{hein2013}.
 Since $\rho$ is injective, we can define an inverse map on its image $\rho^{-1}: \Ima(\rho) \to G: \rho^{-1}(\rho(g)) = g$.
 For this inverse map, the diagram in \Cref{fig:main.what.faith-rep-cd} also commutes.
 There is an easy way to construct such a representation for any finite group $G$, the resulting representation is called the \textbf{regular representation} with notation $\reg$.
-The idea is to let the group act on itself~\cite{Fulton2013}.
+The idea is to let the group act on itself~\cite{fulton2013}.
 First, we need to identify each element $g \in G$ with a basis vector of $\C^n$.
 It is immediately clear, that we need $n \geq |G|$ dimensions of our vector space.
 Next, we construct the matrices $\reg(a)$ for every action $a \in G$ to reflect, how the elements are mapped to each other by the action $a$.
@@ -78,7 +78,7 @@ Since the action $0$ maps each element of $\Z/2\Z$ to itself, its representation
 The action $1$ maps each element of $\Z/2\Z$ to the only other element in $\Z/2\Z$, therefore its representation is the matrix that swaps both coordinates of $\C^2$.
 
 For each regular representation, there is a change of basis that causes all matrices of the representation to become block matrices.
-This property is called \textbf{semisimplicity} \todo{refer to later chapter} and was proven by Maschke~\cite{Maschke1899}.
+This property is called \textbf{semisimplicity} \todo{refer to later chapter} and was proven by Maschke~\cite{maschke1899}.
 It is not true for vector spaces over the field of rational numbers but is for complex numbers.
 That is the reason, why finite vector spaces in this work are always $\C^n$.
 This is the reason, why chose $\C$ as the field for defining finite vector spaces and matrix properties.

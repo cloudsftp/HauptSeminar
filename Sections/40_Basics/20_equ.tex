@@ -5,22 +5,26 @@ This was achieved through a change of basis.
 Informally we can say, that they are equivalent because, through the change of basis, no structure is lost.
 This poses the question, of whether there is a general definition when two representations are equivalent.
 
-Two representations $\rho: G \to \GL(V)$ and $\rho': G \to \GL(V')$ are \textbf{equivalent}, iff there exists a bijective linear map $f: V \to V'$ such that the diagram in \Cref{fig:main.what.equ-cd} commutes for all actions $a \in G$~\cite{Hein2013}.
-This is exactly what a base change does, so in our example from above, f$f$ would be the map represented by the base change matix $A$.
+First, we define the concept of \textbf{intertwiners}, also called \textbf{equivariant maps} between representations.
+These are just homomorphisms between representations, meaning they preserve the structure of the representations.
+A map $f: V \to V'$ is an intertwiner of two representations $\rho: G \to V$ and $\rho': G \to V'$ of a group $G$, iff the diagram in \Cref{fig:main.what.equ-cd} commutes\cite{fuchs2003}.
+
 \begin{figure}[h]
     \centering
     \begin{tikzcd}
         V
-            \arrow[r, "\rho(a)"]
-            \arrow[d, "f"]
-        & V
-            \arrow[d, "f"]
+            \arrow[r, "f"]
+            \arrow[d, "\rho(a)"]
+        & V'
+            \arrow[d, "\rho'(a)"]
         \\
-        V'  \arrow[r, "\rho'(a)"]
+        V   \arrow[r, "f"]
         & V'
     \end{tikzcd}
     \caption{Commuting diagram for intertwiners}
     \label{fig:main.what.equ-cd}
 \end{figure}
 
-If such a map $f$ exists it is called an \textbf{intertwiner} (or equivarent map), even if the map is \textit{not} bijective.
+The two representations $\rho$ and $\rho'$ are \textbf{equivalent}, iff there is an intertwiner $f$ that is invertible.
+If the intertwiner is invertible, it is an isomorphism and the representations are isomorphic to each other~\cite{hein2013,fuchs2003}.
+This is exactly what a base change is, so in our example from above, $f$ would be the map represented by the base change matrix $A$.
