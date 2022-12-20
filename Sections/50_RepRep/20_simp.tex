@@ -1,2 +1,10 @@
 \subsection{Simple Representations}
 
+To define simple representations, we first need to understand what irreducible representations are.
+A representations $\rho: G \to \GL(V)$ is \textbf{irreducible}, if there is no vector subspace $U \subset V$ exists with
+\begin{align*}
+    \forall a \in G: \qquad & \rho(a) \cdot U \subset U
+\end{align*}
+except for the trivial vector subspaces $V$ and $\{0\}$.
+Such a vector subspace $U$ would be called \textbf{invariant}.
+And if it existed, $\rho': G \to \GL(U)$ would be a \textbf{subrepresentation} of $\rho$.
