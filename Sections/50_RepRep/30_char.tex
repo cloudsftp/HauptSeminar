@@ -34,7 +34,7 @@ In the top left corner, the name of the group is written~\cite{fulton2013}.
         $S_3$   & 1 & (12)  & (123) \\ \hline
         triv    & 1 & 1     & 1     \\
         sgn     & 1 & -1    & 1     \\
-        stand   & 2 & 0     & 1
+        stand   & 2 & 0     & -1
     \end{tabular}
 
     \caption{Character table for the group $S_3$}
@@ -51,7 +51,10 @@ The trivial representation just maps all elements to 1.
 
 For the sign representation, we need to know, what the conjugacy classes are and what the notation means.
 \todo{picture of a triangle with numbers in corners}
-We think of each element as an action on the triangle, the notation will tell us, which corner is mapped to which corner.
+We think of each element as an action on the triangle, the notation will tell us, which corner is mapped where.
 The corner with the first number will be mapped to the corner with the second number.
 If there is a third number, the corner with the second number will be mapped to the corner with the third number.
 And finally, the corner with the last number will be mapped to the corner with the first number.
+So the group element (12) will just swap corners 1 and 2 and the group element (123) will rotate the triangle clockwise.
+Every element in the conjugacy group of (12) will invert the order of numbers from clockwise to counterclockwise and vice versa, hence the sign representation maps its elements to -1.
+The identity and rotations will leave the order intact and therefore the sign representation maps 1 and every element in the conjugacy group of (123) to 1.
