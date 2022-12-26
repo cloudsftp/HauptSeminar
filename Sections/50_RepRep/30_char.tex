@@ -16,3 +16,42 @@ But since the trace of a matrix stays the same after a base change, it is also t
 This tells us that the character $\chi_V$ is constant on the conjugacy classes of $G$.
 So we only have to write down one number per conjugacy class of $G$.
 This saves a lot of space and contains all the information needed to recover the representation~\cite{fulton2013}.
+
+\textbf{Character tables} are just a way to write down characters of representations of groups.
+All representations in one table are representations of the same group.
+Typically, all \textit{simple} representations of the group are listed in the table.
+Each row corresponds to one representation.
+Each column corresponds to one conjugacy class of the group.
+They are written on top of every column and above that, the number of group elements of that conjugacy class is written.
+The number of conjugacy classes and the number of simple representations is always the same, so the portion of the table showing the characters is always square.
+In the top left corner, the name of the group is written~\cite{fulton2013}.
+
+\begin{table}
+    \centering
+
+    \begin{tabular}{r | c  c  c}
+                & 1 & 3     & 2     \\
+        $S_3$   & 1 & (12)  & (123) \\ \hline
+        triv    & 1 & 1     & 1     \\
+        sgn     & 1 & -1    & 1     \\
+        stand   & 2 & 0     & 1
+    \end{tabular}
+
+    \caption{Character table for the group $S_3$}
+    \label{tab:reprep.char.table}
+\end{table}
+
+\Cref{tab:reprep.char.table} is an example of a character table.
+It shows all simple representations of the group $S_3$.
+$S_3$ is the group of symmetries of a triangle.
+$1$ is the identity element, each representation will map it to the corresponding identity matrix of its vector space.
+This means that the character in that column will tell us the dimension of the vector space, the representation maps to, since $\chi_V(1) = \Tr(I_V) = \dim(V)$.
+The trivial representation, triv, and the sign representation, sgn, both have dimension one, so their character shows the matrices, which the group elements are mapped onto.
+The trivial representation just maps all elements to 1.
+
+For the sign representation, we need to know, what the conjugacy classes are and what the notation means.
+\todo{picture of a triangle with numbers in corners}
+We think of each element as an action on the triangle, the notation will tell us, which corner is mapped to which corner.
+The corner with the first number will be mapped to the corner with the second number.
+If there is a third number, the corner with the second number will be mapped to the corner with the third number.
+And finally, the corner with the last number will be mapped to the corner with the first number.
