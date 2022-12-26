@@ -1,0 +1,36 @@
+\subsection{(Semi-)simple Representations and Shur's Lemma}
+\label{sec:reprep.simp}
+
+To define simple representations, we first need to understand what irreducible representations are.
+A representation $\rho: G \to \GL(V)$ is \textbf{irreducible} (also called \textbf{simple}), if there is no non-trivial vector subspace $U \subset V$ exists with $\rho(a) \cdot U \subset U$ for all actions $a \in G$.
+Trivial vector subspaces of $V$ are $V$ itself and the space consisting only of the additive neutral $\{0_V\}$~\cite{hein2013}.
+
+Such a vector subspace $U$ would be called \textbf{$G$-invariant}.
+And if it existed, $\rho': G \to \GL(U)$ with $\rho'(a) = \rho(a)$ would be a \textbf{subrepresentation} of $\rho$.
+Both $U$ and $V$ are also called \textbf{$G$-modules}.
+The formal definition of a $G$-module is a vector space $V$ over a field $F$ with an operation $\cdot: G \times V \to V$ with the following properties.
+\begin{subequations}
+    \begin{align}
+        \forall a, b \in G,\ x \in V: \qquad & (a \cdot b) \cdot x = a \cdot (b \cdot x) \\
+        \forall x \in V: \qquad & e \cdot x = x \\
+        \forall a \in G,\ \beta \in F,\ x \in V: \qquad & a \cdot (\beta \cdot x) = \beta \cdot (a \cdot x) \\
+        \forall a \in G,\ x, y \in V: \qquad & a \cdot (x + y) = a \cdot x + a \cdot y
+    \end{align}
+\end{subequations}
+where $e$ is the identity element of the group $G$.
+Every $G$-module $V$ induces a representation $\rho: G \to \GL(V)$ where $\rho(a) \cdot x = a \cdot x$.
+$\rho(a)$ is linear for any action $a \in G$ thanks to the properties of the operation $\cdot: G \times V \to V$ defined above.
+If a representations $\rho: G \to \GL(V)$ is irreducible, the $G$-module $V$ is also irreducible~\cite{hein2013}.
+
+\textbf{Shur's Lemma} makes statements about irreducible representations.
+If there are two irreducible representations $\rho: G \to V$ and $\rho': G \to \GL(V')$ of a group $G$ and $f: V \to \GL(V')$ is an intertwiner (see \Cref{sec:basics.equ} for the definition) of these representations, then the following statements are true.
+\begin{enumerate}
+    \item Either $f$ is an isomorphism (and the representations are equivalent), or $f = 0_{V'}$
+    \item If $V = V'$, then $\exists \lambda \in \C:\ f = \lambda \cdot I$
+\end{enumerate}
+From this Lemma, we can conclude that for any representation $\rho: G \to \GL(V)$ of a finite group $G$ there is a \textit{unique} decomposition
+\begin{align}
+    \rho & = \rho_1^{\oplus a_1} \oplus \rho_2^{\oplus a_2} \oplus \ldots \oplus \rho_k^{\oplus a_k} 
+\end{align}
+where $\rho_i$ are distinct irreducible representations of $G$~\cite{fulton2013}.
+This property of representations of finite groups was hinted at earlier in \Cref{sec:basics.rep.faith} and is called \textbf{semisimplicity}.
