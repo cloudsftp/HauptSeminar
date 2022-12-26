@@ -1,3 +1,122 @@
 \subsection{Character Tables}
 
+Character tables are the way, to write down representations, which was promised at the beginning of the section.
+But first, we have to define what \textbf{characters} are.
+Suppose $\rho: G \to \GL(V)$ is a representation of a finite group $G$.
+The character of $\rho$ is defined as a map $\chi_V: G \to \C$ with
+\begin{align}
+    \forall a \in G: \qquad & \chi_V(a) = \Tr(\rho(a))
+\end{align}
+A representation can be recovered completely from its character.
+So now we know, we only have to write down one number per element $g \in G$.
+But since the trace of a matrix stays the same after a base change, it is also true that
+\begin{align}
+    \forall g, h \in G: \qquad & \chi_V(h \cdot g \cdot h^{-1}) = \chi_V(g)
+\end{align}
+This tells us that the character $\chi_V$ is constant on the conjugacy classes of $G$.
+So we only have to write down one number per conjugacy class of $G$.
+This saves a lot of space and contains all the information needed to recover the representation~\cite{fulton2013}.
 
+\textbf{Character tables} are just a way to write down characters of representations of groups.
+All representations in one table are representations of the same group.
+Typically, all \textit{simple} representations of the group are listed in the table.
+Each row corresponds to one representation.
+Each column corresponds to one conjugacy class of the group.
+The classes are written on top of every column and above that, the number of group elements of that conjugacy class is written.
+The number of conjugacy classes and the number of simple representations is always the same, so the portion of the table showing the characters is always square.
+In the top left corner, the name of the group is written~\cite{fulton2013}.
+
+\begin{table}
+    \centering
+
+    \begin{tabular}{r | c  c  c}
+                & 1 & 3     & 2     \\
+        $S_3$   & 1 & (12)  & (123) \\ \hline
+        triv    & 1 & 1     & 1     \\
+        sgn     & 1 & -1    & 1     \\
+        stand   & 2 & 0     & -1
+    \end{tabular}
+
+    \caption{Character table for the group $S_3$}
+    \label{tab:reprep.char.table}
+\end{table}
+
+\Cref{tab:reprep.char.table} is an example of a character table.
+It shows all simple representations of the group $S_3$.
+$S_3$ is the group of symmetries of a triangle.
+$1$ is the identity element, each representation will map it to the corresponding identity matrix of its vector space.
+This means that the character in that column will tell us the dimension of the vector space, the representation maps to, since $\chi_V(1) = \Tr(I_V) = \dim(V)$.
+The trivial representation, triv, and the sign representation, sgn, both have dimension one, so their character shows the matrices, which the group elements are mapped onto.
+The trivial representation just maps all elements to 1.
+
+\begin{figure}[!h]
+    \centering
+    
+    \begin{tikzpicture}
+    \draw   (0, 0) node [anchor=north east] {1}
+        --  (60:2) node [anchor=south] {2}
+        --  (2, 0) node [anchor=north west] {3}
+        --  cycle;
+    \end{tikzpicture}
+
+    \caption{Triangle for visualizing $S_3$}
+    \label{fig:reprep.char.triangle}
+\end{figure}
+
+For the sign representation, we need to know, what the conjugacy classes are and what the notation means.
+We think of each element as an action on a triangle as shown in \Cref{fig:reprep.char.triangle}.
+The notation will tell us, which corner is mapped where.
+The corner with the first number will be mapped to the corner with the second number.
+If there is a third number, the corner with the second number will be mapped to the corner with the third number.
+And finally, the corner with the last number will be mapped to the corner with the first number.
+So the group element (12) will just swap corners 1 and 2 and the group element (123) will rotate the triangle clockwise.
+Every element in the conjugacy group of (12) will invert the order of numbers from clockwise to counterclockwise and vice versa, hence the sign representation maps its elements to -1.
+The identity and rotations will leave the order intact and therefore the sign representation maps 1 and every element in the conjugacy group of (123) to 1.
+
+Assume, that every corner of the triangle in \Cref{fig:reprep.char.triangle} is associated with a value $x_i$ where $x_1 + x_2 + x_3 = 0$.
+This subspace of $\C^3$ can be thought of a 2-dimensional vector space with the basis $\{e_1 - e_2, e_2 - e_3\}$ with
+\begin{align*}
+    x' = \begin{pmatrix}
+        x_1 - x_2 \\
+        x_2 - x_3
+    \end{pmatrix}
+\end{align*}
+The elements of $S_3$ map the values of $x_i$ between the corners as described above.
+So the standard representation maps 1 to I because all $x_i$s stay the same and therefore also $x'_1 = x_1 - x_2$ and $x_2' = x_2 - x_3$.
+I will write $\stand((12))$ as $s^{(12)}$ in the following for readability.
+The action (12) swaps the values of $x_1$ and $x_2$.
+So $s^{(12)}_{00} = -1$ and $s^{(12)}_{01} = 0$, since $x'_1$ is just negated.
+For $x'_2$ it is a little more complicated, the elements of the matrix must satisfy the equality
+\begin{align*}
+    x_1 - x_3 & = s^{(12)}_{10} \cdot (x_1 - x_2) + s^{(12)}_{11} \cdot (x_2 - x_3) \\
+    & = x_1 \cdot s^{(12)}_{10} + x_2 \cdot (s^{(12)}_{11} - s^{(12)}_{10}) + x_3 \cdot s^{(12)}_{11} \\
+\end{align*}
+So $s^{(12)}_{10} = s^{(12)}_{11} = 1$ and the resulting matrix is
+\begin{align*}
+    s^{(12)} & = \begin{pmatrix}
+        -1 & 0 \\
+        1 & 1
+    \end{pmatrix}
+\end{align*}
+Its trace is 0.
+We don't need to compute the matrices for the other two elements in the same conjugacy class, since the character is constant on the conjugacy classes as mentioned above.
+Now we computed the values of the character of the standard representation of $S_3$ for the conjugacy classes of 1 and (12).
+The value for the conjugacy class (123) is missing.
+I will write $\stand((123))$ as $s^{(123)}$ in the following for readability.
+For to get the correct value in $x'_1$, the elements of the matrix must satisfy the following equality
+\begin{align*}
+    x_2 - x_3 & = s^{(123)}_{00} \cdot (x_1 - x_2) + s^{(123)}_{01} \cdot (x_2 - x_3)
+\end{align*}
+So $s^{(123)}_{00} = 0$ and $s^{(123)}_{01} = 1$.
+For $x'_2$ it is more complicated and the remaining elements of the matrix have to satisfy the equality
+\begin{align*}
+    x_3 - x_1 & = s^{(123)}_{10} \cdot (x_1 - x_2) + s^{(123)}_{11} \cdot (x_2 - x_3) \\
+    & = x_1 \cdot s^{(123)}_{10} + x_2 \cdot (s^{(123)}_{11} - s^{(123)}_{10}) + x_3 \cdot s^{(123)}_{11}
+\end{align*}
+So $s^{(123)}_{10} = s^{(123)}_{11} = -1$ and  the resulting matrix with trace -1 is
+\begin{align*}
+    s^{(123)} & = \begin{pmatrix}
+        0 & 1 \\
+        -1 & -1
+    \end{pmatrix}
+\end{align*}
