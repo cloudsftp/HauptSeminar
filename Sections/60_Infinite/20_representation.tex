@@ -1,2 +1,32 @@
 \subsection{Infinite Representation}
 
+An example of an infinite-dimensional representation of a group would be the infinite-dimensional representation of the group $\text{SL}_2(\mathbb{R})$.
+It is the group of all $2 \times 2$ real matrices with a determinant of one.
+From this definition, you can immediately see, that there exists at least one finite-dimensional representation of this group.
+
+To describe this infinite-dimensional representation, we first need to find generators of the group $\text{SL}_2(\mathbb{R})$.
+In this case, there are three and we will call them $E$, $F$, and $H$.
+They need to satisfy the following equations:
+\begin{subequations}
+    \begin{align}
+        [H, E] & = 2E \\
+        [H, F] & = -2F \\
+        [E, F] & = H
+    \end{align}
+\end{subequations}
+where $[A, B] = A \cdot B - B \cdot A$ is the so called commutator of $A$ and $B$.
+The matrices satisfying these equations are
+\begin{align}
+    H = -i \cdot \begin{pmatrix}
+        0 & 1 \\
+        -1 & 0
+    \end{pmatrix}, \qquad
+    E = \frac{1}{2} \cdot \begin{pmatrix}
+        1 & i \\
+        -i & 1
+    \end{pmatrix}, \text{ and} \qquad
+    F = \frac{1}{2} \cdot \begin{pmatrix}
+        1 & -i \\
+        -i & 1
+    \end{pmatrix} 
+\end{align}
