@@ -9,8 +9,8 @@ on:
       - v*
 
 env:
-  DOCUMENT_NAME: ElementaryRepresentationTheory_HauptSeminar_Weik
-  PRESENTATION_NAME: Presentation/ElementaryRepresentationTheory_HauptSeminar_Weik_Slides
+  DOCUMENT_NAME: ./ElementaryRepresentationTheory_HauptSeminar_Weik
+  PRESENTATION_NAME: ./Presentation/ElementaryRepresentationTheory_HauptSeminar_Weik_Slides
 
 jobs:
   build:
@@ -20,8 +20,6 @@ jobs:
       - name: Check Out Source Code
         uses: actions/checkout@v3
       
-      - run: pwd
-
       - name: Compile LaTeX
         uses: xu-cheng/latex-action@v2
         with:
