@@ -27,3 +27,5 @@
 *.fls
 *.pdf
 
+*.nav
+*.snm
