@@ -19,10 +19,13 @@ jobs:
     steps:
       - name: Check Out Source Code
         uses: actions/checkout@v3
+      
+      - runs: ls
 
       - name: Compile LaTeX
         uses: xu-cheng/latex-action@v2
         with:
+          work_in_root_file_dir: true
           root_file: |
             "${{ env.DOCUMENT_NAME }}.tex"
             "${{ env.PRESENTATION_NAME }}.tex"
