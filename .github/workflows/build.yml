@@ -20,7 +20,7 @@ jobs:
       - name: Check Out Source Code
         uses: actions/checkout@v3
       
-      - runs: ls
+      - run: ls
 
       - name: Compile LaTeX
         uses: xu-cheng/latex-action@v2
