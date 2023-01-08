@@ -9,8 +9,8 @@ on:
       - v*
 
 env:
-  DOCUMENT_NAME: ./ElementaryRepresentationTheory_HauptSeminar_Weik
-  PRESENTATION_NAME: ./Presentation/ElementaryRepresentationTheory_HauptSeminar_Weik_Slides
+  DOCUMENT_NAME: ElementaryRepresentationTheory_HauptSeminar_Weik
+  PRESENTATION_NAME: Presentation/ElementaryRepresentationTheory_HauptSeminar_Weik_Slides
 
 jobs:
   build:
@@ -25,7 +25,6 @@ jobs:
         with:
           work_in_root_file_dir: true
           root_file: |
-            "${{ env.DOCUMENT_NAME }}.tex"
             "${{ env.PRESENTATION_NAME }}.tex"
           
       - name: Release
