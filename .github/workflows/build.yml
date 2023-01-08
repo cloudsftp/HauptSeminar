@@ -33,6 +33,6 @@ jobs:
         uses: ncipollo/release-action@v1
         with:
           artifacts: |
-            "${{ env.DOCUMENT_NAME }}.pdf"
-            "${{ env.PRESENTATION_NAME }}.pdf"
+            ${{ env.DOCUMENT_NAME }}.pdf
+            ${{ env.PRESENTATION_NAME }}.pdf
           token: ${{ secrets.GITHUB_TOKEN }}
