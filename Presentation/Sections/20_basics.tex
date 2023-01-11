@@ -9,7 +9,7 @@
     \huge
     \visible<2->{
         \begin{align*}
-            \rho: \quad G \to \GL(\C^n)
+            \rho: \quad G \to \GL(V)
         \end{align*}
     }
     
@@ -121,4 +121,32 @@
             \end{pmatrix}
         }
     \end{align*}
+\end{frame}
+
+\begin{frame}{Equivalence of Representations}
+    \large
+    $f: V \to V'$ is an \textbf{intertwiner}, if
+    
+    \visible<2->{
+        \begin{figure}[h]
+            \centering
+            \begin{tikzcd}[ampersand replacement=\&]
+                V
+                    \arrow[r, "f"]
+                    \arrow[d, "\rho(a)"]
+                \& V'
+                    \arrow[d, "\rho'(a)"]
+                \\
+                V   \arrow[r, "f"]
+                \& V'
+            \end{tikzcd}
+        \end{figure}
+        
+        commutes
+    }
+    
+    \vspace*{1em}
+    \visible<3->{
+        If $f$ is invertible, $\rho$ and $\rho'$ are \textbf{equivalent}
+    }
 \end{frame}
