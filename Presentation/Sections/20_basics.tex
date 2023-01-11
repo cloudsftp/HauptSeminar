@@ -56,10 +56,69 @@
     \large
     Preserve \textbf{all} structure
     
+    \vspace*{1em}
     \visible<2->{$\rho$ has to be \textbf{injective}}
+
     \visible<3->{
         \begin{align*}
             \forall a, b \in G: \quad & \rho(a) = \rho(b) \implies a = b
         \end{align*}
     }
+\end{frame}
+
+\begin{frame}{The regular Representation}
+    \large
+    Easiest to construct \textbf{regular} Representation
+
+    \vspace*{1em}
+    \begin{itemize}
+        \visible<2->{
+            \item Choose $\C^{|G|} = \C^n$
+        }
+        \visible<3->{
+            \item Identify every $a \in G$ with one basis vector of $\C^n$
+        }
+        \visible<4->{
+            \item Construct the representation of every $a \in G$ according to its action on $G$
+        }
+    \end{itemize}
+
+    \vspace*{1em}
+    \visible<5->{
+        We let $G$ act on itself
+    }
+    
+\end{frame}
+
+\begin{frame}{Example of a regular Representation}
+    \large
+    $\Z/2\Z = \{0, 1\}$ is an \textbf{abelian} group
+
+    \begin{align*}
+        \visible<2->{
+            \pi: \quad & 0 \mapsto \begin{pmatrix}
+                1 \\ 0
+            \end{pmatrix}, \quad 1 \mapsto \begin{pmatrix}
+                0 \\ 1
+            \end{pmatrix} \\
+        }
+        \visible<3->{
+            0: \quad & 0 + 0 = 0,\ 0 + 1 = 1 \\
+        }
+        \visible<4->{
+            \implies & \reg(0) = \begin{pmatrix}
+                1 & 0 \\
+                0 & 1
+            \end{pmatrix} \\
+        }
+        \visible<5->{
+            1: \quad & 1 + 0 = 1,\ 1 + 1 = 0 \\
+        }
+        \visible<6->{
+            \implies & \reg(1) = \begin{pmatrix}
+                0 & 1 \\
+                1 & 0
+            \end{pmatrix}
+        }
+    \end{align*}
 \end{frame}
