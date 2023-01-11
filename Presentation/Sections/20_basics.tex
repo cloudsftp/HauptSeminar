@@ -1,0 +1,37 @@
+\sectionframe{Basics of Representation Theory}
+
+\section{Basics}
+
+\begin{frame}{Definition of a Representation}
+    \large
+    A \textbf{representation} of a group $G$ is a map
+
+    \huge
+    \visible<2->{
+        \begin{align*}
+            \rho: G \to \GL(\C^n)
+        \end{align*}
+    }
+    
+    \normalsize
+    \visible<3->{
+        that is a homomorphism (preserves structure)
+    }
+    
+    \visible<4->{
+        \begin{figure}
+            \centering
+            \begin{tikzcd}[ampersand replacement=\&]
+                G \times G
+                    \arrow[r, "\rho \times \rho"]
+                    \arrow[d, "\cdot"]
+                \& \GL(V) \times \GL(V)
+                    \arrow[d, "\cdot"]
+                \\
+                G   \arrow[r, "\rho"]
+                \& \GL(V)
+            \end{tikzcd}
+        \end{figure}
+    }
+
+\end{frame}
