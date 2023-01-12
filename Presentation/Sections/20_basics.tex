@@ -1,0 +1,169 @@
+\sectionframe{Basics of Representation Theory}
+
+\section{Basics}
+
+\begin{frame}{Definition of a Representation}
+    \large
+    A \textbf{representation} of a group $G$ is a map
+
+    \huge
+    \visible<2->{
+        \begin{align*}
+            \rho: \quad G \to \GL(V)
+        \end{align*}
+    }
+    
+    \normalsize
+    \visible<3->{
+        that is a homomorphism (\textbf{preserves structure})
+    }
+    
+    \visible<4->{
+        \begin{figure}
+            \centering
+            \begin{tikzcd}[ampersand replacement=\&]
+                G \times G
+                    \arrow[r, "\rho \times \rho"]
+                    \arrow[d, "\cdot"]
+                \& \GL(V) \times \GL(V)
+                    \arrow[d, "\cdot"]
+                \\
+                G   \arrow[r, "\rho"]
+                \& \GL(V)
+            \end{tikzcd}
+        \end{figure}
+    {\hspace*{\fill} \cite{hein2013}}
+    }
+
+\end{frame}
+
+\begin{frame}{The trivial Representation}
+    \large
+    Preserves \textbf{only existence}
+    
+    \huge
+    \begin{align*}
+        \visible<2->{
+            \triv: \quad & G \to \C^1
+        }
+        \visible<3->{
+            , \\
+            & a \mapsto I = 1
+        }
+    \end{align*}
+    
+    \normalsize
+    \visible<3->{
+        {\hspace*{\fill} \cite{hein2013}}
+    }
+\end{frame}
+
+\begin{frame}{Faithful Representations}
+    \large
+    Preserve \textbf{all} structure
+    
+    \vspace*{1em}
+    \visible<2->{$\rho$ has to be \textbf{injective}}
+
+    \visible<3->{
+        \begin{align*}
+            \forall a, b \in G: \quad & \rho(a) = \rho(b) \implies a = b
+        \end{align*}
+    }
+
+    \normalsize
+    \visible<3->{
+        {\hspace*{\fill} \cite{hein2013}}
+    }
+\end{frame}
+
+\begin{frame}{The regular Representation}
+    \large
+    Easiest to construct \textbf{faithful} Representation
+
+    \vspace*{1em}
+    \begin{enumerate}
+        \visible<2->{
+            \item Choose $\C^{|G|} = \C^n$
+        }
+        \visible<3->{
+            \item Identify every $a \in G$ with one basis vector of $\C^n$
+        }
+        \visible<4->{
+            \item Construct the representation of every $a \in G$ according to its action on $G$
+        }
+    \end{enumerate}
+
+    \vspace*{1em}
+    \visible<5->{
+        We let $G$ act on itself
+
+        \normalsize
+        {\hspace*{\fill} \cite{fulton2013}}
+    }
+    
+\end{frame}
+
+\begin{frame}{Example of a regular Representation}
+    \large
+    $\Z/2\Z = \{0, 1\}$ is an \textbf{abelian} group
+
+    \begin{align*}
+        \visible<2->{
+            \pi: \quad & 0 \mapsto \begin{pmatrix}
+                1 \\ 0
+            \end{pmatrix}, \quad 1 \mapsto \begin{pmatrix}
+                0 \\ 1
+            \end{pmatrix} \\
+        }
+        \visible<3->{
+            0: \quad & 0 + 0 = 0,\ 0 + 1 = 1 \\
+        }
+        \visible<4->{
+            \implies & \reg(0) = \begin{pmatrix}
+                1 & 0 \\
+                0 & 1
+            \end{pmatrix} \\
+        }
+        \visible<5->{
+            1: \quad & 1 + 0 = 1,\ 1 + 1 = 0 \\
+        }
+        \visible<6->{
+            \implies & \reg(1) = \begin{pmatrix}
+                0 & 1 \\
+                1 & 0
+            \end{pmatrix}
+        }
+    \end{align*}
+\end{frame}
+
+\begin{frame}{Equivalence of Representations}
+    \large
+    $f: V \to V'$ is an \textbf{intertwiner} of $\rho: G \to \GL(V)$ and $\rho': G \to \GL(V')$, if
+    
+    \visible<2->{
+        \begin{figure}[h]
+            \centering
+            \begin{tikzcd}[ampersand replacement=\&]
+                V
+                    \arrow[r, "f"]
+                    \arrow[d, "\rho(a)"]
+                \& V'
+                    \arrow[d, "\rho'(a)"]
+                \\
+                V   \arrow[r, "f"]
+                \& V'
+            \end{tikzcd}
+        \end{figure}
+        
+        commutes
+    }
+    
+    \vspace*{1em}
+    \visible<3->{
+        If $f$ is invertible, $\rho$ and $\rho'$ are \textbf{equivalent}
+        
+        \normalsize
+        {\hspace*{\fill} \cite{fuchs2003}}
+    }
+\end{frame}

@@ -3,17 +3,20 @@
 Character tables are the way, to write down representations, which was promised at the beginning of the section.
 But first, we have to define what \textbf{characters} are.
 Suppose $\rho: G \to \GL(V)$ is a representation of a finite group $G$.
-The character of $\rho$ is defined as a map $\chi_V: G \to \C$ with
-\begin{align}
-    \forall a \in G: \qquad & \chi_V(a) = \Tr(\rho(a))
-\end{align}
+The character of $\rho$ is defined as the map
+\begin{subequations}
+    \begin{align}
+        \chi_\rho: \qquad & G \to \C, \\
+        & a \mapsto \Tr(\rho(a))
+    \end{align}
+\end{subequations}
 A representation can be recovered completely from its character.
 So now we know, we only have to write down one number per element $g \in G$.
 But since the trace of a matrix stays the same after a base change, it is also true that
 \begin{align}
-    \forall g, h \in G: \qquad & \chi_V(h \cdot g \cdot h^{-1}) = \chi_V(g)
+    \forall g, h \in G: \qquad & \chi_\rho(h \cdot g \cdot h^{-1}) = \chi_\rho(g)
 \end{align}
-This tells us that the character $\chi_V$ is constant on the conjugacy classes of $G$.
+This tells us that the character $\chi_\rho$ is constant on the conjugacy classes of $G$.
 So we only have to write down one number per conjugacy class of $G$.
 This saves a lot of space and contains all the information needed to recover the representation~\cite{fulton2013}.
 

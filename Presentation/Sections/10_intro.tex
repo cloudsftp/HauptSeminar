@@ -1,0 +1,99 @@
+\sectionframe{Introduction}
+
+\section{Introduction}
+
+\begin{frame}{What is Representation Theory?}
+    \begin{itemize}
+        \visible<1->{\item Representing Groups as Linear Maps}
+        \visible<2->{\item First Proof of Burnside's Theorem was using Representations~\cite{burnside1904groups}}
+        \visible<3->{\item Applications in Quantum Mechanics and Chemistry}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{What is a Group?}
+    \huge
+    A set $G$ with an operation $\cdot: G \times G \to G$
+
+    \normalsize
+    \begin{align*}
+        \visible<2->{\forall a, b, c \in G: \qquad & a \cdot (b \cdot c) = (a \cdot b) \cdot c \\}
+        \visible<3->{\exists e \in G\ \forall a \in G: \qquad & a \cdot e = e \cdot a = a \\}
+        \visible<4->{\forall a \in G\ \exists a^{-1} \in G: \qquad & a^{-1} \cdot a = a \cdot a^{-1} = e}
+    \end{align*}
+    
+    \visible<5->{If also $\forall a, b \in G: a \cdot b = b \cdot a$, then $G$ is called abelian}
+\end{frame}
+
+\begin{frame}{What is a vector space?}
+    \huge
+    \visible<1->{
+        \begin{align*}
+            \C^n
+        \end{align*}
+    }
+    
+    \normalsize
+    \visible<2->{
+        Examples for $\C^2$:
+    }
+
+    \begin{align*}
+        \visible<3->{
+            \begin{pmatrix}
+                1 \\ 0
+            \end{pmatrix}
+        }
+        \visible<4->{, \qquad
+            \begin{pmatrix}
+                0 \\ 1 - i
+            \end{pmatrix}
+        }
+    \end{align*}
+    
+\end{frame}
+
+\begin{frame}{What are Linear Maps in Vector Spaces?}
+    \huge
+    \begin{align*}
+        m: \quad \C^n \to \C^n
+    \end{align*}
+    
+    \normalsize
+    \begin{align*}
+        \visible<2->{
+            \forall u, v \in \C^n: \qquad & m(u + v) = m(u) + m(v) \\
+        }
+        \visible<3->{
+            \forall c \in \C,\ v \in \C^n: \qquad & c \cdot m(v) = m(c \cdot v)
+        }
+    \end{align*}
+    
+    \visible<4->{
+        Examples for $\C^2$:
+    }
+    \begin{align*}
+        \visible<5->{
+            I = \begin{pmatrix}
+                1 & 0 \\
+                0 & 1
+            \end{pmatrix}, \qquad
+        }
+        \visible<6->{
+            \begin{pmatrix}
+                0 & i \\
+                -i & 1
+            \end{pmatrix}
+        }
+    \end{align*}
+\end{frame}
+
+\begin{frame}
+    Set of all invertible Linear Maps in $\C^n$:
+
+    \huge
+    \visible<2->{
+        \begin{align*}
+            \GL(\C^n)
+        \end{align*}
+    }
+\end{frame}
