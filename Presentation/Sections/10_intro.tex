@@ -13,9 +13,10 @@
 \end{frame}
 
 \begin{frame}{What is a Group?}
-    \large
+    \Large
     A set $G$ with an operation $\cdot: G \times G \to G$
 
+    \large
     \begin{align*}
         \visible<2->{\forall a, b, c \in G: \qquad & a \cdot (b \cdot c) = (a \cdot b) \cdot c \\}
         \visible<3->{\exists e \in G\ \forall a \in G: \qquad & a \cdot e = e \cdot a = a \\}
@@ -26,7 +27,7 @@
 \end{frame}
 
 \begin{frame}{Vector Spaces over the Complex Numbers}
-    \Huge
+    \huge
     \begin{align*}
         \C^n \large
         \visible<2->{
@@ -47,9 +48,12 @@
 \end{frame}
 
 \begin{frame}{What are Linear Maps on Complex Vector Spaces?}
+    \Large
+    \begin{align*}
+        f: \quad & \C^m \to \C^n
+    \end{align*}
     \large
     \begin{align*}
-        f: \quad & \C^m \to \C^n \\\\
         \visible<2->{
             \forall u, v \in \C^m: \quad & f(u + v) = f(u) + f(v) \\
         }
@@ -70,7 +74,7 @@
 \end{frame}
 
 \begin{frame}{Invertible Linear Maps on Complex Vector Spaces}
-    \Huge
+    \huge
     \begin{align*}
         \GL(\C^n)
     \end{align*}
@@ -78,7 +82,7 @@
     \visible<2->{
         \begin{align*}
             = \left\{
-                f \in \C^{n \times n} | \exists f^{-1} \in \C^{n \times n}: f^{-1} \cdot f = I
+                f \in \C^{n \times n} | \det(f) \neq 0
             \right\}
         \end{align*}
     }
