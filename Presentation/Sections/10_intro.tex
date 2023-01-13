@@ -13,10 +13,9 @@
 \end{frame}
 
 \begin{frame}{What is a Group?}
-    \huge
+    \large
     A set $G$ with an operation $\cdot: G \times G \to G$
 
-    \normalsize
     \begin{align*}
         \visible<2->{\forall a, b, c \in G: \qquad & a \cdot (b \cdot c) = (a \cdot b) \cdot c \\}
         \visible<3->{\exists e \in G\ \forall a \in G: \qquad & a \cdot e = e \cdot a = a \\}
@@ -26,43 +25,32 @@
     \visible<5->{If also $\forall a, b \in G: a \cdot b = b \cdot a$, then $G$ is called abelian}
 \end{frame}
 
-\begin{frame}{What is a Vector Space over the Complex Numbers?}
-    \huge
-    \visible<1->{
-        \begin{align*}
-            \C^n
-        \end{align*}
-    }
-    
-    \normalsize
-    \visible<2->{
-        \todo{needed?}
-        Examples for $\C^2$:
-    }
-
+\begin{frame}{Vector Spaces over the Complex Numbers}
+    \Huge
     \begin{align*}
-        \visible<3->{
-            \begin{pmatrix}
-                1 \\ 0
-            \end{pmatrix}
-        }
-        \visible<4->{, \qquad
-            \begin{pmatrix}
-                0 \\ 1 - i
-            \end{pmatrix}
-        }
+        \C^n \large
+            = \left\{
+                \begin{pmatrix}
+                    v_1 \\ v_2 \\ \vdots \\ v_n
+                \end{pmatrix} | v_i \in \C
+            \right\}
     \end{align*}
+
+    \vspace{1em}
+    \large
+    \visible<3->{
+        From now on we call them \textbf{Complex Vector Spaces}
+    }
     
 \end{frame}
 
-\begin{frame}{What are Linear Maps on Vector Spaces?}
-    \huge
+\begin{frame}{Linear Maps on Complex Vector Spaces}
+    \large
     \todo{first general, then concrete?}
     \begin{align*}
         m: \quad \C^n \to \C^n
     \end{align*}
     
-    \normalsize
     \begin{align*}
         \visible<2->{
             \forall u, v \in \C^n: \qquad & m(u + v) = m(u) + m(v) \\
@@ -72,6 +60,7 @@
         }
     \end{align*}
     
+    \normalsize
     \visible<4->{
         \todo{needed? say just matrices instead?}
         Examples for $\C^2$:
@@ -92,13 +81,9 @@
     \end{align*}
 \end{frame}
 
-\begin{frame}
-    Set of all invertible Linear Maps in $\C^n$:
-
-    \huge
-    \visible<2->{
-        \begin{align*}
-            \GL(\C^n)
-        \end{align*}
-    }
+\begin{frame}{Invertible Linear Maps on Complex Vector Spaces}
+    \Huge
+    \begin{align*}
+        \GL(\C^n)
+    \end{align*}
 \end{frame}
