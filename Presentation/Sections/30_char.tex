@@ -1,27 +1,36 @@
-\sectionframe{Representation of Representations}
+\sectionframe{Classification of Representations}
 
-\section{Representation of Representations}
+\section{Classification of Representations}
 
 \begin{frame}{Combining Representations}
-    \Large
-    \begin{align*}
-        \C^n \oplus \C^m & = \C^{n + m} \\
-        \visible<2->{
+    \large
+    Direct sum of Vector Spaces over the Complex Numbers:
+    \visible<2->{
+        \begin{align*}
+            \C^n \oplus \C^m & = \C^{n + m}
+        \end{align*}
+    }
+    \visible<3->{Direct sum of Complex Matrices:}
+    \visible<4->{
+        \begin{align*}
             A \oplus B & = \begin{pmatrix}
                 A & 0 \\
                 0 & B
-            \end{pmatrix} \\\\
-        }
-        \visible<3->{
-            (\rho \oplus \rho')(a) & = \rho(a) \oplus \rho'(a) & \forall a \in G
-        }
-    \end{align*}
+            \end{pmatrix}
+        \end{align*}
+    }
+    \visible<4->{Direct Sum of Representations:}
+    \visible<5->{
+        \begin{align*}
+            (\rho \oplus \rho')(a) & = \rho(a) \oplus \rho'(a)
+        \end{align*}
+    }
 
 \end{frame}
 
-\begin{frame}{Simple (irreducible) Representations}
+\begin{frame}{Irreducible Representations}
     \large
-    $\rho: G \to \GL(V)$ is \textbf{simple},
+    $\rho: G \to \GL(V)$ is \textbf{irreducible},
     
     \visible<2->{
         if there is no non-trivial subspace $U \subset V$ with
@@ -30,6 +39,9 @@
         \begin{align*}
             \rho(a) \cdot U & \subset U & \forall a \in G
         \end{align*}
+    }
+    \visible<4->{
+        Also called \textbf{simple}.
         
         \normalsize
         {\hspace*{\fill} \cite{hein2013}}
@@ -97,15 +109,22 @@
     
     \begin{itemize}
         \visible<4->{
-            \item $\rho$ completely recoverable from $\chi_\rho$
+            \item $\rho$ completely recoverable from $\chi_\rho$ (up to isomorphism)
         }
         \visible<5->{
             \item \textbf{constant} on the conjugacy classes of $G$
         }
     \end{itemize}
 
-    \normalsize
-    \visible<5->{
+    \visible<6->{
+        Conjugacy classes:
+    }
+    \visible<7->{
+        \begin{align*}
+            \Cl(a) & = \{g^{-1} \cdot a \cdot g | g \in G \}
+        \end{align*}
+
+        \normalsize
         {\hspace*{\fill} \cite{fulton2013}}
     }
     
@@ -131,6 +150,7 @@
     
     \large
     \visible<4->{
+        \todo{Different example, more detailed}
         Example for $\Z/2\Z$:
     }
     

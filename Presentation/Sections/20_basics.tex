@@ -37,14 +37,15 @@
 
 \end{frame}
 
-\begin{frame}{The trivial Representation}
+\begin{frame}{The Trivial Representation}
     \large
+    \todo{different formulation?}
     Preserves \textbf{only existence}
     
     \huge
     \begin{align*}
         \visible<2->{
-            \triv: \quad & G \to \C^1
+            \triv: \quad & G \to \GL(\C^1) = \C \setminus \{0\}
         }
         \visible<3->{
             , \\
@@ -60,6 +61,7 @@
 
 \begin{frame}{Faithful Representations}
     \large
+    \todo{different formulation?}
     Preserve \textbf{all} structure
     
     \vspace*{1em}
@@ -77,8 +79,11 @@
     }
 \end{frame}
 
+%% begin remove?
+
 \begin{frame}{The regular Representation}
     \large
+    \todo{skip regular representation?}
     Easiest to construct \textbf{faithful} Representation
 
     \vspace*{1em}
@@ -106,6 +111,7 @@
 
 \begin{frame}{Example of a regular Representation}
     \large
+    \todo{skip regular representation?}
     $\Z/2\Z = \{0, 1\}$ is an \textbf{abelian} group
 
     \begin{align*}
@@ -137,6 +143,9 @@
     \end{align*}
 \end{frame}
 
+
+%% end
+
 \begin{frame}{Equivalence of Representations}
     \large
     $f: V \to V'$ is an \textbf{intertwiner} of $\rho: G \to \GL(V)$ and $\rho': G \to \GL(V')$, if
@@ -156,12 +165,12 @@
             \end{tikzcd}
         \end{figure}
         
-        commutes
+        commutes.
     }
     
     \vspace*{1em}
     \visible<3->{
-        If $f$ is invertible, $\rho$ and $\rho'$ are \textbf{equivalent}
+        If $f$ is invertible, it is an \textbf{isomorphism} and $\rho$ and $\rho'$ are \textbf{equivalent}
         
         \normalsize
         {\hspace*{\fill} \cite{fuchs2003}}
