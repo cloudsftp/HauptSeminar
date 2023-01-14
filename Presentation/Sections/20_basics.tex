@@ -5,8 +5,7 @@
 \begin{frame}{Definition of a Representation}
     \large
     A \textbf{representation} of a group $G$ is a map
-
-    \huge
+    \Large
     \visible<2->{
         \begin{align*}
             \rho: \quad G \to \GL(V)
@@ -17,8 +16,9 @@
     \visible<3->{
         that is a homomorphism (\textbf{preserves structure})
     }
-    
+
     \visible<4->{
+        i.e. the following diagram commutes
         \begin{figure}
             \centering
             \begin{tikzcd}[ampersand replacement=\&]
@@ -37,14 +37,13 @@
 
 \end{frame}
 
-\begin{frame}{The trivial Representation}
+\begin{frame}{The Trivial Representation}
     \large
-    Preserves \textbf{only existence}
-    
-    \huge
+    Maps all elements to the identity map
+    \Large
     \begin{align*}
         \visible<2->{
-            \triv: \quad & G \to \C^1
+            \triv: \quad & G \to \GL(\C^1) = \C \setminus \{0\}
         }
         \visible<3->{
             , \\
@@ -60,11 +59,12 @@
 
 \begin{frame}{Faithful Representations}
     \large
-    Preserve \textbf{all} structure
-    
-    \vspace*{1em}
-    \visible<2->{$\rho$ has to be \textbf{injective}}
+    Every element has a different image
 
+    \visible<2->{
+        So $\rho$ is \textbf{injective}
+    }
+    \Large
     \visible<3->{
         \begin{align*}
             \forall a, b \in G: \quad & \rho(a) = \rho(b) \implies a = b
@@ -77,69 +77,77 @@
     }
 \end{frame}
 
-\begin{frame}{The regular Representation}
-    \large
-    Easiest to construct \textbf{faithful} Representation
+%% begin remove?
 
-    \vspace*{1em}
-    \begin{enumerate}
-        \visible<2->{
-            \item Choose $\C^{|G|} = \C^n$
-        }
-        \visible<3->{
-            \item Identify every $a \in G$ with one basis vector of $\C^n$
-        }
-        \visible<4->{
-            \item Construct the representation of every $a \in G$ according to its action on $G$
-        }
-    \end{enumerate}
+%\begin{frame}{The regular Representation}
+%    \large
+%    \todo{skip regular representation?}
+%    Easiest to construct \textbf{faithful} Representation
+%
+%    \vspace*{1em}
+%    \begin{enumerate}
+%        \visible<2->{
+%            \item Choose $\C^{|G|} = \C^n$
+%        }
+%        \visible<3->{
+%            \item Identify every $a \in G$ with one basis vector of $\C^n$
+%        }
+%        \visible<4->{
+%            \item Construct the representation of every $a \in G$ according to its action on $G$
+%        }
+%    \end{enumerate}
+%
+%    \vspace*{1em}
+%    \visible<5->{
+%        We let $G$ act on itself
+%
+%        \normalsize
+%        {\hspace*{\fill} \cite{fulton2013}}
+%    }
+%    
+%\end{frame}
+%
+%\begin{frame}{Example of a regular Representation}
+%    \large
+%    \todo{skip regular representation?}
+%    $\Z/2\Z = \{0, 1\}$ is an \textbf{abelian} group
+%
+%    \begin{align*}
+%        \visible<2->{
+%            \pi: \quad & 0 \mapsto \begin{pmatrix}
+%                1 \\ 0
+%            \end{pmatrix}, \quad 1 \mapsto \begin{pmatrix}
+%                0 \\ 1
+%            \end{pmatrix} \\
+%        }
+%        \visible<3->{
+%            0: \quad & 0 + 0 = 0,\ 0 + 1 = 1 \\
+%        }
+%        \visible<4->{
+%            \implies & \reg(0) = \begin{pmatrix}
+%                1 & 0 \\
+%                0 & 1
+%            \end{pmatrix} \\
+%        }
+%        \visible<5->{
+%            1: \quad & 1 + 0 = 1,\ 1 + 1 = 0 \\
+%        }
+%        \visible<6->{
+%            \implies & \reg(1) = \begin{pmatrix}
+%                0 & 1 \\
+%                1 & 0
+%            \end{pmatrix}
+%        }
+%    \end{align*}
+%\end{frame}
 
-    \vspace*{1em}
-    \visible<5->{
-        We let $G$ act on itself
-
-        \normalsize
-        {\hspace*{\fill} \cite{fulton2013}}
-    }
-    
-\end{frame}
-
-\begin{frame}{Example of a regular Representation}
-    \large
-    $\Z/2\Z = \{0, 1\}$ is an \textbf{abelian} group
-
-    \begin{align*}
-        \visible<2->{
-            \pi: \quad & 0 \mapsto \begin{pmatrix}
-                1 \\ 0
-            \end{pmatrix}, \quad 1 \mapsto \begin{pmatrix}
-                0 \\ 1
-            \end{pmatrix} \\
-        }
-        \visible<3->{
-            0: \quad & 0 + 0 = 0,\ 0 + 1 = 1 \\
-        }
-        \visible<4->{
-            \implies & \reg(0) = \begin{pmatrix}
-                1 & 0 \\
-                0 & 1
-            \end{pmatrix} \\
-        }
-        \visible<5->{
-            1: \quad & 1 + 0 = 1,\ 1 + 1 = 0 \\
-        }
-        \visible<6->{
-            \implies & \reg(1) = \begin{pmatrix}
-                0 & 1 \\
-                1 & 0
-            \end{pmatrix}
-        }
-    \end{align*}
-\end{frame}
+%% end
 
 \begin{frame}{Equivalence of Representations}
     \large
-    $f: V \to V'$ is an \textbf{intertwiner} of $\rho: G \to \GL(V)$ and $\rho': G \to \GL(V')$, if
+    $f: V \to V'$ is an \textbf{intertwiner} of $\rho: G \to \GL(V)$ and $\rho': G \to \GL(V')$,
+    
+    if the following diagram commutes
     
     \visible<2->{
         \begin{figure}[h]
@@ -155,13 +163,14 @@
                 \& V'
             \end{tikzcd}
         \end{figure}
-        
-        commutes
     }
     
     \vspace*{1em}
     \visible<3->{
-        If $f$ is invertible, $\rho$ and $\rho'$ are \textbf{equivalent}
+        If $f$ is invertible, it is an \textbf{isomorphism} and $\rho$ and $\rho'$ are \textbf{equivalent}
+        \begin{align*}
+            \rho \cong \rho'
+        \end{align*}
         
         \normalsize
         {\hspace*{\fill} \cite{fuchs2003}}
