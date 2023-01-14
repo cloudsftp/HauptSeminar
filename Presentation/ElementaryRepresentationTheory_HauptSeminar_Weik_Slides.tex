@@ -50,11 +50,16 @@
 \institute{Institute of Information Security (SEC)}
 \date{February, 2023}
 
+\usepackage{xkeyval}
+\usepackage{todonotes}
+\presetkeys{todonotes}{inline}{}
+
 \usetikzlibrary{cd}
 
 \newcommand{\C}{\mathbb{C}}
 \newcommand{\Z}{\mathbb{Z}}
 \DeclareMathOperator{\GL}{GL}
+\DeclareMathOperator{\Cl}{Cl}
 \DeclareMathOperator{\Tr}{Tr}
 \DeclareMathOperator{\id}{id}
 \DeclareMathOperator{\Ima}{Im}
@@ -68,6 +73,6 @@
 \begin{document}
     \include{Sections/00_content.tex}
     
-    \bibliographystyle{plainnat}
+    \bibliographystyle{apalike}
     \bibliography{../bibtex.bib}    
 \end{document}
