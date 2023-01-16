@@ -22,7 +22,10 @@
     \visible<5->{Direct Sum of Representations ($\rho: G \to \GL(\C^n), \rho': G \to \GL(\C^m)$):}
     \visible<6->{
         \begin{align*}
-            (\rho \oplus \rho')(a) & = \rho(a) \oplus \rho'(a)
+            (\rho \oplus \rho')(a) & = \rho(a) \oplus \rho'(a) = \begin{pmatrix}
+                \rho(a) & 0 \\
+                0 & \rho'(a)
+            \end{pmatrix}
         \end{align*}
     }
 
@@ -42,7 +45,7 @@
     }
 
     \normalsize
-    \visible<4->{
+    \visible<3->{
         {\hspace*{\fill} \cite{hein2013}}
     }
 
