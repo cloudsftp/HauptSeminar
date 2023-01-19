@@ -11,7 +11,7 @@
     \visible<2->{
         \begin{tabular}{c c c}
             (1)  & (123) & (132) \\\\
-            (23) & (13)  & (12)
+            (12) & (13)  & (23)
         \end{tabular}
     }
 \end{frame}
@@ -125,7 +125,29 @@
 \end{frame}
 
 \begin{frame}{The Standard Representation of $S_3$ is faithful}
-    
+    Every group element $a \in S_3$ has different image in $\stand$
+
+    \pause
+    \vspace{1em}
+    \centering
+    \begin{tabular}{c c c}
+        $(1) \mapsto I$ & \pause $(123) \mapsto \begin{pmatrix}
+            -1 & -1 \\
+            1 & 0
+        \end{pmatrix}$ & \pause $(132) \mapsto \begin{pmatrix}
+            0 & 1 \\
+            -1 & -1
+        \end{pmatrix}$ \\\\ \pause $(12) \mapsto \begin{pmatrix}
+            -1 & 0 \\
+            1 & 1
+        \end{pmatrix}$ & \pause $(13) \mapsto \begin{pmatrix}
+            0 & -1 \\
+            -1 & 0
+        \end{pmatrix}$ & \pause $(23) \mapsto \begin{pmatrix}
+            1 & 1 \\
+            0 & -1
+        \end{pmatrix}$
+    \end{tabular}
 \end{frame}
 
 \begin{frame}{The Standard Representation of $S_3$ is irreducible}
