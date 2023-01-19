@@ -45,7 +45,7 @@
     \Large
     \begin{align*}
         \visible<2->{
-            \triv: \quad & G \to \GL(\C^1) = \C \setminus \{0\}
+            \triv: \quad & S_3 \to \GL(\C^1) = \C \setminus \{0\}
         }
         \visible<3->{
             , \\
@@ -63,8 +63,36 @@
     }
 \end{frame}
 
-\begin{frame}{???}
-    \todo{How to find irreducible representations}
+\begin{frame}{The Sign Representation of $S_3$}
+    \large
+    %Represent with a single number, whether the action inverts the direction of ascending numbers in a triangle
+    
+    %\vspace{1em}
+    \visible<2->{Maps all \textbf{inversions} to $-1$, all other elements to 1}
+
+    \begin{align*}
+        \visible<3->{
+            \sgn: \quad & S_3 \to \GL(\C^1) = \C \setminus \{0\}
+        }
+        \visible<4->{
+            , \\
+            & a \mapsto \begin{cases}
+                -1 & \text{if } a \in \Cl((12)) \\
+                1 & \text{else}
+            \end{cases}
+        }
+    \end{align*}
+    
+    \visible<5->{
+        Its character is
+
+        \begin{align*}
+            \chi_{\sgn}(a) = a \mapsto \begin{cases}
+                -1 & \text{if } a \in \Cl((12)) \\
+                1 & \text{else}
+            \end{cases}
+        \end{align*}
+    }
 \end{frame}
 
 \begin{frame}{$S_n$ not good for most Protocols}
