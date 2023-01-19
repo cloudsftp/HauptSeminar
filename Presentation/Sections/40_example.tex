@@ -17,11 +17,12 @@
 \end{frame}
 
 \begin{frame}{The Group $S_3$}
+    \todo{remove slide?}
     Also thought of as
     
     \vspace{1em}
     \begin{itemize}
-        \visible<2->{\item Actions of permutation of the coordinates of a 3 simplex}
+        \visible<2->{\item Actions of permutation of the coordinates of a 2-simplex $\Delta^2$}
         \visible<3->{\item Symmetries of a triangle}
     \end{itemize}
     \todo{pictures?}
@@ -42,7 +43,6 @@
 \begin{frame}{The Trivial Representation of $S_3$}
     \large
     Maps all elements to the identity map
-    \Large
     \begin{align*}
         \visible<2->{
             \triv: \quad & S_3 \to \GL(\C^1) = \C \setminus \{0\}
@@ -53,10 +53,10 @@
         }
     \end{align*}
 
-    \large
-    \visible<4->{
-        Its character is constant
+    Obviously irreducible (no subspace of $\C$)
 
+    \visible<5->{
+        Its character is constant
         \begin{align*}
             \forall a \in S_3: \quad & \chi_{\triv}(a) = 1
         \end{align*}
@@ -69,7 +69,6 @@
     
     %\vspace{1em}
     \visible<2->{Maps all \textbf{inversions} to $-1$, all other elements to 1}
-
     \begin{align*}
         \visible<3->{
             \sgn: \quad & S_3 \to \GL(\C^1) = \C \setminus \{0\}
@@ -82,10 +81,11 @@
             \end{cases}
         }
     \end{align*}
+
+    Obviously irreducible (no subspace of $\C$)
     
     \visible<5->{
         Its character is
-
         \begin{align*}
             \chi_{\sgn}(a) = a \mapsto \begin{cases}
                 -1 & \text{if } a \in \Cl((12)) \\
@@ -95,7 +95,48 @@
     }
 \end{frame}
 
+\begin{frame}{The Standard Representation of $S_3$}
+    \large
+    Let $V' = \{\begin{pmatrix}
+        x_1 & x_2 & x_3
+    \end{pmatrix}^T \in \C^3 | x_1 + x_2 + x_3 = 0\}$
+    (set of all points on $\Delta^2$)
+    
+    \visible<2->{
+        This is a subspace of $\C^3$ that is equivalent to $V = \C^2$
+    }
+
+    \visible<3->{
+        If $\{e_1, e_2, e_3\}$ is a basis of $V'$,
+        $\{e_1 - e_2, e_2 - e_3\}$ is a basis of $V$
+    }
+    
+    \vspace{1em}
+    \visible<4->{
+        So the standard representation is 2-dimensional
+        \begin{align*}
+            \stand: \quad & S_3 \to \GL(\C^2)
+        \end{align*}
+    }
+    
+    \visible<5->{
+        For each element $a \in S_3$, the representation $\stand(a)$ is its action on $V$
+    }
+\end{frame}
+
+\begin{frame}{The Standard Representation of $S_3$ is faithful}
+    
+\end{frame}
+
+\begin{frame}{The Standard Representation of $S_3$ is irreducible}
+    
+\end{frame}
+
+\begin{frame}{The Character of the Standard Representation of $S_3$}
+    
+\end{frame}
+
 \begin{frame}{$S_n$ not good for most Protocols}
-    \todo{general case of example}
+    \todo{general case of standard rep}
     \todo{has $n!$ elements but faithful rep of dim $n - 1$}
 \end{frame}
