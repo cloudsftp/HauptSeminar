@@ -117,6 +117,7 @@
 \end{frame}
 
 \begin{frame}{The Standard Representation of $S_3$ is faithful}
+    \large
     Every group element $a \in S_3$ has different image in $\stand$
 
     \pause
@@ -143,7 +144,51 @@
 \end{frame}
 
 \begin{frame}{The Standard Representation of $S_3$ is irreducible}
+    Proof by contradiction:
+
+    \vspace{1em}
+    There is an \textbf{invariant} subspace $W = \C \cdot v$ for some $v \in \C^2$
+
+    \pause
+    \vspace{1em}
+    Eigenvectors of $\stand((12))$ (candidates for $v$)
+    \begin{align*}
+        \begin{pmatrix}
+            -1 & 0 \\
+            1 & 1
+        \end{pmatrix} \cdot \begin{pmatrix}
+            0 \\ 1
+        \end{pmatrix} = \begin{pmatrix}
+            0 \\ 1
+        \end{pmatrix}, \qquad \begin{pmatrix}
+            -1 & 0 \\
+            1 & 1
+        \end{pmatrix} \cdot \begin{pmatrix}
+            -2 \\ 1
+        \end{pmatrix} = \begin{pmatrix}
+            2 \\ -1
+        \end{pmatrix}
+    \end{align*}
     
+    \pause
+    Both are not an Eigenvectors of $\stand((132))$
+    \begin{align*}
+        \begin{pmatrix}
+            0 & 1 \\
+            -1 & -1
+        \end{pmatrix} \cdot \begin{pmatrix}
+            0 \\ 1
+        \end{pmatrix} = \begin{pmatrix}
+            1 \\ -1
+        \end{pmatrix}, \qquad \begin{pmatrix}
+            0 & 1 \\
+            -1 & -1
+        \end{pmatrix} \cdot \begin{pmatrix}
+            -2 \\ 1
+        \end{pmatrix} = \begin{pmatrix}
+            1 \\ 1
+        \end{pmatrix}
+    \end{align*}
 \end{frame}
 
 \begin{frame}{The Character of the Standard Representation of $S_3$}
