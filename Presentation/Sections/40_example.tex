@@ -54,7 +54,7 @@
     \end{align*}
 
     \pause
-    Obviously irreducible (no subspace of $\C$)
+    Irreducible, since 1-dimensional
 
     \pause
     Its character is constant
@@ -79,7 +79,7 @@
     \end{align*}
 
     \pause
-    Obviously irreducible (no subspace of $\C$)
+    Irreducible, since 1-dimensional
     
     \pause
     Its character is
@@ -144,13 +144,12 @@
 \end{frame}
 
 \begin{frame}{The Standard Representation of $S_3$ is irreducible}
+    \large
     Proof by contradiction:
 
-    \vspace{1em}
-    There is an \textbf{invariant} subspace $W = \C \cdot v$ for some $v \in \C^2$
+    There is an $\stand$-\textbf{invariant} subspace $W = \C \cdot v$ for some $v \in \C^2$
 
     \pause
-    \vspace{1em}
     Eigenvectors of $\stand((12))$ (candidates for $v$)
     \begin{align*}
         \begin{pmatrix}
@@ -160,7 +159,7 @@
             0 \\ 1
         \end{pmatrix} = \begin{pmatrix}
             0 \\ 1
-        \end{pmatrix}, \qquad \begin{pmatrix}
+        \end{pmatrix}, \quad \begin{pmatrix}
             -1 & 0 \\
             1 & 1
         \end{pmatrix} \cdot \begin{pmatrix}
@@ -180,7 +179,7 @@
             0 \\ 1
         \end{pmatrix} = \begin{pmatrix}
             1 \\ -1
-        \end{pmatrix}, \qquad \begin{pmatrix}
+        \end{pmatrix}, \quad \begin{pmatrix}
             0 & 1 \\
             -1 & -1
         \end{pmatrix} \cdot \begin{pmatrix}
@@ -192,7 +191,26 @@
 \end{frame}
 
 \begin{frame}{The Character of the Standard Representation of $S_3$}
-    
+   \begin{align*}
+    \forall a \in \Cl((1)): \quad & \chi_{\stand}(a) = \Tr\left(
+        \begin{pmatrix}
+            1 & 0 \\
+            0 & 1
+        \end{pmatrix}
+    \right) = 2 \pause \\\\
+    \forall a \in \Cl((12)): \quad & \chi_{\stand}(a) = \Tr\left(
+        \begin{pmatrix}
+            -1 & 0 \\
+            1 & 1
+        \end{pmatrix}
+    \right) = 0 \pause \\\\
+    \forall a \in \Cl((123)): \quad & \chi_{\stand}(a) = \Tr\left(
+        \begin{pmatrix}
+            -1 & -1 \\
+            1 & 0
+        \end{pmatrix}
+    \right) = -1
+   \end{align*} 
 \end{frame}
 
 \begin{frame}{$S_n$ not good for most Protocols}
