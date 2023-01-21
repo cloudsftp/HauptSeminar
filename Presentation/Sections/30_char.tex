@@ -95,6 +95,10 @@
 
 \begin{frame}
     \todo{num irr rep = num conjugacy classes?}
+    Conjugacy classes:
+    \begin{align*}
+        \Cl(a) & = \{g^{-1} \cdot a \cdot g | g \in G \}
+    \end{align*}
 \end{frame}
 
 \begin{frame}{Characters}
@@ -112,14 +116,12 @@
     \begin{itemize}
         \item $\rho$ completely recoverable from $\chi_\rho$ (up to isomorphism) \pause
         \item \textbf{constant} on the conjugacy classes of $G$
-                \todo{why}
     \end{itemize}
-
-    \vspace{1em}
-    \pause
-    Conjugacy classes:
     \begin{align*}
-        \Cl(a) & = \{g^{-1} \cdot a \cdot g | g \in G \}
+        \chi_\rho(g^{-1} \cdot a \cdot g)
+        & = \Tr(\rho(g^{-1}) \cdot \rho(a) \cdot \rho(g)) \\
+        & = \Tr(\rho(g)^{-1} \cdot \rho(g) \cdot \rho(a)) \\
+        & = \Tr(\rho(a)) = \chi_\rho(a)
     \end{align*}
 
     \normalsize
