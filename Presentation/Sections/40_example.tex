@@ -148,29 +148,43 @@
     Proof by contradiction:
 
     There is an $\stand$-\textbf{invariant} subspace $W = \C \cdot v$ for some $v \in \C^2$
-
-    \pause
-    Eigenvectors of $\stand((12))$ (candidates for $v$)
-    \begin{align*}
-        \begin{pmatrix}
-            -1 & 0 \\
-            1 & 1
-        \end{pmatrix} \cdot \begin{pmatrix}
-            0 \\ 1
-        \end{pmatrix} = \begin{pmatrix}
-            0 \\ 1
-        \end{pmatrix}, \quad \begin{pmatrix}
-            -1 & 0 \\
-            1 & 1
-        \end{pmatrix} \cdot \begin{pmatrix}
-            -2 \\ 1
-        \end{pmatrix} = \begin{pmatrix}
-            2 \\ -1
-        \end{pmatrix}
-    \end{align*}
     
     \pause
-    Both are not an Eigenvectors of $\stand((132))$
+    So $W$ has to be an Eigenspace of $\stand(a)$ for all $a \in S_3$
+
+    \pause
+    \vspace{1em}
+    Eigenvalues of $\stand((12))$ are $\lambda_1 = 1$ and $\lambda_2 = -1$
+
+    \pause
+    With Eigenspaces $E_{\lambda_1} = \C \cdot \begin{pmatrix}
+        0 & 1
+    \end{pmatrix}^T$ and $E_{\lambda_2} = \C \cdot \begin{pmatrix}
+        -2 & 1
+    \end{pmatrix}^T$
+
+%    Eigenvectors of $\stand((12))$ (candidates for $v$)
+%    \begin{align*}
+%        \begin{pmatrix}
+%            -1 & 0 \\
+%            1 & 1
+%        \end{pmatrix} \cdot \begin{pmatrix}
+%            0 \\ 1
+%        \end{pmatrix} = \begin{pmatrix}
+%            0 \\ 1
+%        \end{pmatrix}, \quad \begin{pmatrix}
+%            -1 & 0 \\
+%            1 & 1
+%        \end{pmatrix} \cdot \begin{pmatrix}
+%            -2 \\ 1
+%        \end{pmatrix} = \begin{pmatrix}
+%            2 \\ -1
+%        \end{pmatrix}
+%    \end{align*}
+%    
+    \pause
+    \vspace{1em}
+    Both are not an Eigenspaces of $\stand((132))$
     \begin{align*}
         \begin{pmatrix}
             0 & 1 \\
