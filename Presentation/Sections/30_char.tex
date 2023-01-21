@@ -5,29 +5,30 @@
 \begin{frame}{Combining Representations}
     \large
     Direct sum of Vector Spaces over the Complex Numbers:
-    \visible<2->{
-        \begin{align*}
-            \C^n \oplus \C^m & = \C^{n + m}
-        \end{align*}
-    }
-    \visible<3->{Direct sum of Complex Matrices ($A \in \C^{m \times n}, B \in \C^{o \times p}$):}
-    \visible<4->{
-        \begin{align*}
-            A \oplus B & = \begin{pmatrix}
-                A & 0 \\
-                0 & B
-            \end{pmatrix} \in \C^{(m + o) \times (n + p)}
-        \end{align*}
-    }
-    \visible<5->{Direct Sum of Representations ($\rho: G \to \GL(\C^n), \rho': G \to \GL(\C^m)$):}
-    \visible<6->{
-        \begin{align*}
-            (\rho \oplus \rho')(a) & = \rho(a) \oplus \rho'(a) = \begin{pmatrix}
-                \rho(a) & 0 \\
-                0 & \rho'(a)
-            \end{pmatrix}
-        \end{align*}
-    }
+    \pause
+    \begin{align*}
+        \C^n \oplus \C^m & = \C^{n + m}
+    \end{align*}
+
+    \pause
+    Direct sum of Complex Matrices ($A \in \C^{m \times n}, B \in \C^{o \times p}$):
+    \pause
+    \begin{align*}
+        A \oplus B & = \begin{pmatrix}
+            A & 0 \\
+            0 & B
+        \end{pmatrix} \in \C^{(m + o) \times (n + p)}
+    \end{align*}
+
+    \pause
+    Direct Sum of Representations ($\rho: G \to \GL(\C^n), \rho': G \to \GL(\C^m)$):
+    \pause
+    \begin{align*}
+        (\rho \oplus \rho')(a) & = \rho(a) \oplus \rho'(a) = \begin{pmatrix}
+            \rho(a) & 0 \\
+            0 & \rho'(a)
+        \end{pmatrix}
+    \end{align*}
 
 \end{frame}
 
@@ -35,66 +36,65 @@
     \large
     $\rho: G \to \GL(V)$ is \textbf{irreducible},
     
-    \visible<2->{
-        if there is no non-trivial subspace $U \subset V$ with
-    }
-    \visible<3->{
-        \begin{align*}
-            \rho(a) \cdot U & \subset U & \forall a \in G
-        \end{align*}
-    }
+    \pause
+    if there is no non-trivial subspace $U \subset V$ with
+    \pause
+    \begin{align*}
+        \rho(a) \cdot U & \subset U & \forall a \in G
+    \end{align*}
 
     \normalsize
-    \visible<3->{
-        {\hspace*{\fill} \cite{hein2013}}
-    }
+    {\hspace*{\fill} \cite{hein2013}}
 
 \end{frame}
 
-\begin{frame}{Shur's Lemma}
-    \large
-    $\rho: G \to \GL(V)$ and $\rho': G \to \GL(V')$ \textbf{irreducible}
+%\begin{frame}{Shur's Lemma}
+%    \large
+%    $\rho: G \to \GL(V)$ and $\rho': G \to \GL(V')$ \textbf{irreducible}
+%
+%    \vspace{1em}
+%    \visible<2->{
+%        $f: V \to V'$ \textbf{intertwiner} of $\rho$ and $\rho'$
+%    }
+%    
+%    \vspace{1em}
+%    \begin{enumerate}
+%        \visible<3->{
+%            \item Either $f$ is an \textbf{isomorphism} (so $\rho \cong \rho'$) or $f = 0_{V'}$
+%        }
+%        \visible<4->{
+%            \item If $V = V'$, then $\exists \lambda \in \C:\ f = \lambda \cdot I$
+%        }
+%    \end{enumerate}    
+%    
+%        \normalsize
+%    \visible<4->{
+%        {\hspace*{\fill} \cite{fulton2013}}
+%    }
+%
+%\end{frame}
+%
+%\begin{frame}{Results of Shur's Lemma}
+%    \large
+%    \begin{itemize}
+%        \item Any \textbf{irreducible} representation of an \textbf{abelian} group is 1-dimensional
+%        \visible<2->{
+%            \item Any representation $\rho$ of a finite group has a \textbf{unique} decomposition
+%            \begin{align*}
+%                \rho & = \rho_1^{\oplus a_1} \oplus \rho_2^{\oplus a_2} \oplus \ldots \oplus \rho_k^{\oplus a_k}
+%            \end{align*}
+%        }
+%    \end{itemize}
+%    
+%    \normalsize
+%    \visible<2->{
+%        {\hspace*{\fill} \cite{fulton2013}}
+%    }
+%
+%\end{frame}
 
-    \vspace{1em}
-    \visible<2->{
-        $f: V \to V'$ \textbf{intertwiner} of $\rho$ and $\rho'$
-    }
-    
-    \vspace{1em}
-    \begin{enumerate}
-        \visible<3->{
-            \item Either $f$ is an \textbf{isomorphism} (so $\rho \cong \rho'$) or $f = 0_{V'}$
-        }
-        \visible<4->{
-            \item If $V = V'$, then $\exists \lambda \in \C:\ f = \lambda \cdot I$
-        }
-    \end{enumerate}    
-    
-        \normalsize
-    \visible<4->{
-        {\hspace*{\fill} \cite{fulton2013}}
-    }
-
-\end{frame}
-
-\begin{frame}{Results of Shur's Lemma}
-    \todo{change to \# conj class = \# irr rep, can this be proven w shurs lemma?}
-    \large
-    \begin{itemize}
-        \item Any \textbf{irreducible} representation of an \textbf{abelian} group is 1-dimensional
-        \visible<2->{
-            \item Any representation $\rho$ of a finite group has a \textbf{unique} decomposition
-            \begin{align*}
-                \rho & = \rho_1^{\oplus a_1} \oplus \rho_2^{\oplus a_2} \oplus \ldots \oplus \rho_k^{\oplus a_k}
-            \end{align*}
-        }
-    \end{itemize}
-    
-    \normalsize
-    \visible<2->{
-        {\hspace*{\fill} \cite{fulton2013}}
-    }
-
+\begin{frame}
+    \todo{num irr rep = num conjugacy classes?}
 \end{frame}
 
 \begin{frame}{Characters}
@@ -102,36 +102,28 @@
     The \textbf{character} of a representation $\rho$ is the map
     \Large
     \begin{align*}
-        \visible<2->{
-            \chi_\rho: \quad & G \to \C
-        }
-        \visible<3->{
-            , \\
-            & a \mapsto \Tr(\rho(a))
-        }
+        \pause
+        \chi_\rho: \quad & G \to \C \pause , \\
+        & a \mapsto \Tr(\rho(a))
     \end{align*}
     
+    \pause
     \large
     \begin{itemize}
-        \visible<4->{
-            \item $\rho$ completely recoverable from $\chi_\rho$ (up to isomorphism)
-        }
-        \visible<5->{
-            \item \textbf{constant} on the conjugacy classes of $G$
+        \item $\rho$ completely recoverable from $\chi_\rho$ (up to isomorphism) \pause
+        \item \textbf{constant} on the conjugacy classes of $G$
                 \todo{why}
-        }
     \end{itemize}
 
     \vspace{1em}
-    \visible<6->{
-        Conjugacy classes:
-        \begin{align*}
-            \Cl(a) & = \{g^{-1} \cdot a \cdot g | g \in G \}
-        \end{align*}
+    \pause
+    Conjugacy classes:
+    \begin{align*}
+        \Cl(a) & = \{g^{-1} \cdot a \cdot g | g \in G \}
+    \end{align*}
 
-        \normalsize
-        {\hspace*{\fill} \cite{fulton2013}}
-    }
+    \normalsize
+    {\hspace*{\fill} \cite{fulton2013}}
     
 \end{frame}
 
@@ -139,25 +131,19 @@
     \large
     The \textbf{character table} of a group lists the characters of all its \textbf{irreducible} representations
     
+    \pause
     \vspace{1em}
     \begin{itemize}
-        \visible<2->{
-            \item One row per representation
-        }
-        \visible<3->{
-            \item One column per conjugacy class
-        }
+        \item One row per representation \pause
+        \item One column per conjugacy class
     \end{itemize}
     
     \vspace{1em}
-    \visible<4->{
-        Same number of irreducible representations as conjugacy classes
-    }
+    \pause
+    Same number of irreducible representations as conjugacy classes
 
     \vspace{1em}
     \normalsize
-    \visible<4->{
-        {\hspace*{\fill} \cite{fulton2013}}
-    }
+    {\hspace*{\fill} \cite{fulton2013}}
 
 \end{frame}
