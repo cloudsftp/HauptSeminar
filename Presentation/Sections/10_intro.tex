@@ -28,12 +28,18 @@
 \begin{frame}{What is a Group?}
     \Large
     A set $G$ with an operation $\cdot: G \times G \to G$ \pause
-
     \large
     \begin{align*}
-        \forall a, b, c \in G: \qquad & a \cdot (b \cdot c) = (a \cdot b) \cdot c \\ \pause
-        \exists e \in G\ \forall a \in G: \qquad & a \cdot e = e \cdot a = a \\ \pause
+        \forall a, b, c \in G: \qquad & a \cdot (b \cdot c) = (a \cdot b) \cdot c \\
+        \exists e \in G\ \forall a \in G: \qquad & a \cdot e = e \cdot a = a \\
         \forall a \in G\ \exists a^{-1} \in G: \qquad & a^{-1} \cdot a = a \cdot a^{-1} = e
+    \end{align*}
+
+    \pause
+    \vspace{1em}
+    Conjugacy classes:
+    \begin{align*}
+        \Cl(a) & = \{g^{-1} \cdot a \cdot g | g \in G \}
     \end{align*}
     
 \end{frame}
@@ -57,6 +63,7 @@
         f: \quad & \C^m \to \C^n
     \end{align*}
     \large
+    \pause
     \begin{align*}
         \forall u, v \in \C^m: \quad & f(u + v) = f(u) + f(v) \\ \pause
         \forall c \in \C,\ v \in \C^m: \quad & c \cdot f(v) = f(c \cdot v)
