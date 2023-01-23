@@ -37,7 +37,7 @@
     \vspace{1em}
     \begin{itemize}
         \item The identity element \hspace*{\fill} $\Cl((1)) = \{(1)\}$ \pause
-        \item The reflections \hspace*{\fill} $\Cl((12)) = \{(13), (23), (12)\}$ \pause
+        \item The inversions \hspace*{\fill} $\Cl((12)) = \{(13), (23), (12)\}$ \pause
         \item The rotations \hspace*{\fill} $\Cl((123)) = \{(123), (132)\}$
     \end{itemize}
 \end{frame}
@@ -47,7 +47,7 @@
     Maps all elements to the identity map
     \pause
     \begin{align*}
-        \triv: \quad & S_3 \to \GL(\C^1) = \C \setminus \{0\} \pause , \\
+        \triv: \quad & S_3 \to \GL(\C^1) = \C \setminus \{0\}, \\
         & a \mapsto I = 1
     \end{align*}
 
@@ -69,7 +69,7 @@
     Maps all \textbf{inversions} to $-1$, all other elements to 1
     \pause
     \begin{align*}
-        \sgn: \quad & S_3 \to \GL(\C^1) = \C \setminus \{0\} \pause , \\
+        \sgn: \quad & S_3 \to \GL(\C^1) = \C \setminus \{0\}, \\
         & a \mapsto \begin{cases}
             -1 & \text{if } a \in \Cl((12)) \\
             1 & \text{else}
@@ -94,7 +94,6 @@
     Let $V' = \{\begin{pmatrix}
         x_1 & x_2 & x_3
     \end{pmatrix}^T \in \C^3 | x_1 + x_2 + x_3 = 0\}$
-    (set of all points on $\Delta^2$)
     
     \pause
     This is a subspace of $\C^3$ that is equivalent to $V = \C^2$
@@ -122,19 +121,19 @@
     \vspace{1em}
     \centering
     \begin{tabular}{c c c}
-        $(1) \mapsto I$ & \pause $(123) \mapsto \begin{pmatrix}
+        $(1) \mapsto I$ & $(123) \mapsto \begin{pmatrix}
             -1 & -1 \\
             1 & 0
-        \end{pmatrix}$ & \pause $(132) \mapsto \begin{pmatrix}
+        \end{pmatrix}$ & $(132) \mapsto \begin{pmatrix}
             0 & 1 \\
             -1 & -1
-        \end{pmatrix}$ \\\\ \pause $(12) \mapsto \begin{pmatrix}
+        \end{pmatrix}$ \\\\ $(12) \mapsto \begin{pmatrix}
             -1 & 0 \\
             1 & 1
-        \end{pmatrix}$ & \pause $(13) \mapsto \begin{pmatrix}
+        \end{pmatrix}$ & $(13) \mapsto \begin{pmatrix}
             0 & -1 \\
             -1 & 0
-        \end{pmatrix}$ & \pause $(23) \mapsto \begin{pmatrix}
+        \end{pmatrix}$ & $(23) \mapsto \begin{pmatrix}
             1 & 1 \\
             0 & -1
         \end{pmatrix}$
@@ -245,6 +244,14 @@
 \end{frame}
 
 \begin{frame}{$S_n$ not good for most Protocols}
-    \todo{general case of standard rep}
-    \todo{has $n!$ elements but faithful rep of dim $n - 1$}
+    \large
+    \begin{itemize}
+        \item Standard representation of $S_3$ very efficient \pause
+        \item True for every $S_n$ ($n!$ elements, dimension of representation is $n - 1$) \pause
+        \item This would make most protocols vulnerable to linear attacks
+        \item e.g. Shpilrain-Ushakov key exchange for group-based protocols
+    \end{itemize}
+
+    \vspace{1em}
+    {\hspace*{\fill} \cite{khovanov2022monoidal}}
 \end{frame}
