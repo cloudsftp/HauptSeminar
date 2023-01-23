@@ -5,60 +5,57 @@
 \begin{frame}{What is Representation Theory?}
     \large
     \begin{itemize}
-        \visible<1->{\item Representing group elements as linear maps}
-        \visible<2->{\item Finding and classifying elementary representations}
-        \visible<3->{\item Leads to a deeper understanding of groups}
-        \visible<4->{\item First used by Frobenius and Burnside $\sim$1900}
-        \visible<5->{\item Groups are everywhere in mathematics and physics}
+        \item Representing group elements as linear maps \pause
+        \item Finding and classifying elementary representations \pause
+        \item Leads to a deeper understanding of groups \pause
+        \item First used by Frobenius and Burnside $\sim$1900 \pause
+        \item Groups are everywhere in mathematics and physics
     \end{itemize}
 \end{frame}
 
 \begin{frame}{Applications of Representation Theory in Cryptography}
     \large
     \begin{itemize}
-        \item Understanding groups used in established protocols
-        \visible<2->{\item Researching new protocols based non-commutative groups and monoids}
-        \visible<3->{\item For example protocols based on $S_n$}
+        \item Understanding groups used in established protocols \pause
+        \item Researching new protocols based non-commutative groups and monoids \pause
+        \item For example protocols based on $S_n$
     \end{itemize}
     
     \normalsize
-    \visible<4->{\hspace*{\fill} \cite{khovanov2022monoidal,doliskani2008cryptosystem}}
+    \hspace*{\fill} \cite{khovanov2022monoidal,doliskani2008cryptosystem}
 \end{frame}
 
 \begin{frame}{What is a Group?}
     \Large
-    A set $G$ with an operation $\cdot: G \times G \to G$
-
+    A set $G$ with an operation $\cdot: G \times G \to G$ \pause
     \large
     \begin{align*}
-        \visible<2->{\forall a, b, c \in G: \qquad & a \cdot (b \cdot c) = (a \cdot b) \cdot c \\}
-        \visible<3->{\exists e \in G\ \forall a \in G: \qquad & a \cdot e = e \cdot a = a \\}
-        \visible<4->{\forall a \in G\ \exists a^{-1} \in G: \qquad & a^{-1} \cdot a = a \cdot a^{-1} = e}
-    \end{align*}
-    
-    \visible<5->{If also $\forall a, b \in G: a \cdot b = b \cdot a$, then $G$ is called abelian.}
-\end{frame}
-
-\begin{frame}{Vector Spaces over the Complex Numbers}
-    \huge
-    \begin{align*}
-        \C^n \large
-        \visible<2->{
-            = \left\{
-                \begin{pmatrix}
-                    v_1 \\ v_2 \\ \vdots \\ v_n
-                \end{pmatrix} | v_i \in \C
-            \right\}
-        }
+        \forall a, b, c \in G: \qquad & a \cdot (b \cdot c) = (a \cdot b) \cdot c \\
+        \exists e \in G\ \forall a \in G: \qquad & a \cdot e = e \cdot a = a \\
+        \forall a \in G\ \exists a^{-1} \in G: \qquad & a^{-1} \cdot a = a \cdot a^{-1} = e
     \end{align*}
 
+    \pause
     \vspace{1em}
-    \large
-    \visible<3->{
-        From now on we call them \textbf{Complex Vector Spaces}
-    }
+    Conjugacy classes:
+    \begin{align*}
+        \Cl(a) & = \{g^{-1} \cdot a \cdot g | g \in G \}
+    \end{align*}
     
 \end{frame}
+
+%\begin{frame}{Complex Vector Spaces}
+%    \huge
+%    \begin{align*}
+%        \C^n \large \pause
+%        = \left\{
+%            \begin{pmatrix}
+%                v_1 \\ v_2 \\ \vdots \\ v_n
+%            \end{pmatrix} | v_i \in \C
+%        \right\}
+%    \end{align*}
+%
+%\end{frame}
 
 \begin{frame}{What are Linear Maps on Complex Vector Spaces?}
     \Large
@@ -66,29 +63,64 @@
         f: \quad & \C^m \to \C^n
     \end{align*}
     \large
+    \pause
     \begin{align*}
-        \visible<2->{
-            \forall u, v \in \C^m: \quad & f(u + v) = f(u) + f(v) \\
-        }
-        \visible<3->{
-            \forall c \in \C,\ v \in \C^m: \quad & c \cdot f(v) = f(c \cdot v)
-        }
+        \forall u, v \in \C^m: \quad & f(u + v) = f(u) + f(v) \\ \pause
+        \forall c \in \C,\ v \in \C^m: \quad & c \cdot f(v) = f(c \cdot v)
     \end{align*}
     
-    \visible<4->{
-        In this presentation we only need
-        \Large
-        \begin{align*}
-            f: \quad \C^n \to \C^n
-        \end{align*}
-    }
+    \pause
+    In this presentation we only need
+    \Large
+    \begin{align*}
+        f: \quad \C^n \to \C^n
+    \end{align*}
 
     \large
-    \visible<5->{
-        Every such map $f$ can be represented by a \textbf{Complex Matrix} $f \in \C^{n \times n}$
-    }
+    \pause
+    Every such map $f$ can be represented by a \textbf{Complex Matrix} $f \in \C^{n \times n}$
+    \vspace{2em}
+\end{frame}
+
+\begin{frame}{Traces of Linear Maps}
+    The \textbf{Trace} of a matrix $A \in \C^{n \times n}$ is defined as
+    \pause
+    \begin{align*}
+        \Tr(A) & = \sum_{i = 1}^n a_{i, i}
+    \end{align*}
     
-    \vspace{1em}
+    \pause
+    For all matrices $A, B \in \C^{n \times n}$, the following is true
+    \begin{align*}
+        \Tr(A \cdot B) & = \Tr(B \cdot A)
+    \end{align*}
+\end{frame}
+
+\begin{frame}{Eigenspaces of Linear Maps}
+    \large
+    The \textbf{Eigenvalues} of a matrix $A \in \C^{n \times n}$ are
+    \pause
+    \begin{align*}
+        \sigma(A) =
+        \left\{
+            \lambda \in \C | \exists v \in \C^n \setminus \{0\}: A \cdot v = \lambda \cdot v
+        \right\}
+    \end{align*}
+    
+    \pause
+    The vectors satisfying the equation for some $\lambda_i$ compose an \textbf{Eigenspace}
+    \pause
+    \begin{align*}
+        E_{\lambda_i} & = \left\{
+            v \in \C^n | A \cdot v = \lambda_i \cdot v
+        \right\}
+    \end{align*}
+    
+    \pause
+    If all Eigenvalues are \textbf{distinct}, the Eigenspaces are 1-dimensional
+
+    \pause
+    So $E_{\lambda_i} = \C \cdot v_i$ for some $v_i \in \C^n$ with $A \cdot v_i = \lambda_i \cdot v_i$ 
 \end{frame}
 
 \begin{frame}{Invertible Linear Maps on Complex Vector Spaces}
@@ -96,13 +128,12 @@
     \begin{align*}
         \GL(\C^n)
     \end{align*}
+    \pause
     \large
-    \visible<2->{
-        \begin{align*}
-            = \left\{
-                f \in \C^{n \times n} | \det(f) \neq 0
-            \right\}
-        \end{align*}
-    }
+    \begin{align*}
+        = \left\{
+            f \in \C^{n \times n} | \det(f) \neq 0
+        \right\}
+    \end{align*}
 
 \end{frame}
