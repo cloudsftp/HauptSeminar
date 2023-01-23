@@ -1,16 +1,257 @@
-\sectionframe{The example of $S_3$}
+\sectionframe{The Example of $S_3$}
 
-\section{The example of $S_3$}
+\section{The Example of $S_3$}
 
-\begin{frame}{The group $S_3$}
-    \todo{Introduce group $S_3$}
+\begin{frame}{The Group $S_3$}
+    \large
+    All actions of permutation on $3$ elements
+
+    \pause
+    \vspace{2em}
+    \centering
+    \begin{tabular}{c c c}
+        (1)  & (123) & (132) \\\\
+        (12) & (13)  & (23)
+    \end{tabular}
 \end{frame}
 
-\begin{frame}{???}
-    \todo{How to find irreducible representations}
+%\begin{frame}{The Group $S_3$}
+%    \todo{remove slide?}
+%    Also thought of as
+%    
+%    \pause
+%    \vspace{1em}
+%    \begin{itemize}
+%        \item Actions of permutation of the coordinates of a 2-simplex $\Delta^2$
+%            \pause
+%        \item Symmetries of a triangle
+%    \end{itemize}
+%    \todo{pictures?}
+%\end{frame}
+
+\begin{frame}{The Group $S_3$}
+    \large
+    Its conjugacy classes are
+
+    \pause
+    \vspace{1em}
+    \begin{itemize}
+        \item The identity element \hspace*{\fill} $\Cl((1)) = \{(1)\}$ \pause
+        \item The inversions \hspace*{\fill} $\Cl((12)) = \{(13), (23), (12)\}$ \pause
+        \item The rotations \hspace*{\fill} $\Cl((123)) = \{(123), (132)\}$
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{The Trivial Representation of $S_3$}
+    \large
+    Maps all elements to the identity map
+    \pause
+    \begin{align*}
+        \triv: \quad & S_3 \to \GL(\C^1) = \C \setminus \{0\}, \\
+        & a \mapsto I = 1
+    \end{align*}
+
+    \pause
+    Irreducible, since 1-dimensional
+
+    \pause
+    Its character is constant
+    \begin{align*}
+        \forall a \in S_3: \quad & \chi_{\triv}(a) = 1
+    \end{align*}
+\end{frame}
+
+\begin{frame}{The Sign Representation of $S_3$}
+    \large
+    %Represent with a single number, whether the action inverts the direction of ascending numbers in a triangle
+    
+    %\vspace{1em}
+    Maps all \textbf{inversions} to $-1$, all other elements to 1
+    \pause
+    \begin{align*}
+        \sgn: \quad & S_3 \to \GL(\C^1) = \C \setminus \{0\}, \\
+        & a \mapsto \begin{cases}
+            -1 & \text{if } a \in \Cl((12)) \\
+            1 & \text{else}
+        \end{cases}
+    \end{align*}
+
+    \pause
+    Irreducible, since 1-dimensional
+    
+    \pause
+    Its character is
+    \begin{align*}
+        \chi_{\sgn}(a) = a \mapsto \begin{cases}
+            -1 & \text{if } a \in \Cl((12)) \\
+            1 & \text{else}
+        \end{cases}
+    \end{align*}
+\end{frame}
+
+\begin{frame}{The Standard Representation of $S_3$}
+    \large
+    Let $V' = \{\begin{pmatrix}
+        x_1 & x_2 & x_3
+    \end{pmatrix}^T \in \C^3 | x_1 + x_2 + x_3 = 0\}$
+    
+    \pause
+    This is a subspace of $\C^3$ that is equivalent to $V = \C^2$
+
+    \pause
+    If $\{e_1, e_2, e_3\}$ is a basis of $V'$,
+    $\{e_1 - e_2, e_2 - e_3\}$ is a basis of $V$
+    
+    \vspace{1em}
+    \pause
+    So the standard representation is 2-dimensional
+    \begin{align*}
+        \stand: \quad & S_3 \to \GL(\C^2)
+    \end{align*}
+    
+    \pause
+    For each element $a \in S_3$, the representation $\stand(a)$ is its action on $V$
+\end{frame}
+
+\begin{frame}{The Standard Representation of $S_3$ is faithful}
+    \large
+    Every group element $a \in S_3$ has different image in $\stand$
+
+    \pause
+    \vspace{1em}
+    \centering
+    \begin{tabular}{c c c}
+        $(1) \mapsto I$ & $(123) \mapsto \begin{pmatrix}
+            -1 & -1 \\
+            1 & 0
+        \end{pmatrix}$ & $(132) \mapsto \begin{pmatrix}
+            0 & 1 \\
+            -1 & -1
+        \end{pmatrix}$ \\\\ $(12) \mapsto \begin{pmatrix}
+            -1 & 0 \\
+            1 & 1
+        \end{pmatrix}$ & $(13) \mapsto \begin{pmatrix}
+            0 & -1 \\
+            -1 & 0
+        \end{pmatrix}$ & $(23) \mapsto \begin{pmatrix}
+            1 & 1 \\
+            0 & -1
+        \end{pmatrix}$
+    \end{tabular}
+\end{frame}
+
+\begin{frame}{The Standard Representation of $S_3$ is irreducible}
+    \large
+    Proof by contradiction:
+
+    There is an $\stand$-\textbf{invariant} subspace $W = \C \cdot v$ for some $v \in \C^2$
+    
+    \pause
+    So $W$ has to be an Eigenspace of $\stand(a)$ for all $a \in S_3$
+
+    \pause
+    \vspace{1em}
+    Eigenvalues of $\stand((12))$ are $\lambda_1 = 1$ and $\lambda_2 = -1$
+
+    \pause
+    With Eigenspaces $E_{\lambda_1} = \C \cdot \begin{pmatrix}
+        0 & 1
+    \end{pmatrix}^T$ and $E_{\lambda_2} = \C \cdot \begin{pmatrix}
+        -2 & 1
+    \end{pmatrix}^T$
+
+%    Eigenvectors of $\stand((12))$ (candidates for $v$)
+%    \begin{align*}
+%        \begin{pmatrix}
+%            -1 & 0 \\
+%            1 & 1
+%        \end{pmatrix} \cdot \begin{pmatrix}
+%            0 \\ 1
+%        \end{pmatrix} = \begin{pmatrix}
+%            0 \\ 1
+%        \end{pmatrix}, \quad \begin{pmatrix}
+%            -1 & 0 \\
+%            1 & 1
+%        \end{pmatrix} \cdot \begin{pmatrix}
+%            -2 \\ 1
+%        \end{pmatrix} = \begin{pmatrix}
+%            2 \\ -1
+%        \end{pmatrix}
+%    \end{align*}
+%    
+    \pause
+    \vspace{1em}
+    Both are not an Eigenspaces of $\stand((132))$
+    \begin{align*}
+        \begin{pmatrix}
+            0 & 1 \\
+            -1 & -1
+        \end{pmatrix} \cdot \begin{pmatrix}
+            0 \\ 1
+        \end{pmatrix} = \begin{pmatrix}
+            1 \\ -1
+        \end{pmatrix}, \quad \begin{pmatrix}
+            0 & 1 \\
+            -1 & -1
+        \end{pmatrix} \cdot \begin{pmatrix}
+            -2 \\ 1
+        \end{pmatrix} = \begin{pmatrix}
+            1 \\ 1
+        \end{pmatrix}
+    \end{align*}
+\end{frame}
+
+\begin{frame}{The Character of the Standard Representation of $S_3$}
+    \large
+   \begin{align*}
+    \forall a \in \Cl((1)): \quad & \chi_{\stand}(a) = \Tr\left(
+        \begin{pmatrix}
+            1 & 0 \\
+            0 & 1
+        \end{pmatrix}
+    \right) = 2 \pause \\\\
+    \forall a \in \Cl((12)): \quad & \chi_{\stand}(a) = \Tr\left(
+        \begin{pmatrix}
+            -1 & 0 \\
+            1 & 1
+        \end{pmatrix}
+    \right) = 0 \pause \\\\
+    \forall a \in \Cl((123)): \quad & \chi_{\stand}(a) = \Tr\left(
+        \begin{pmatrix}
+            -1 & -1 \\
+            1 & 0
+        \end{pmatrix}
+    \right) = -1
+   \end{align*} 
+\end{frame}
+
+\begin{frame}{The Character Table of the Standard Representation of $S_3$}
+    \large
+    \begin{center}
+        \begin{tabular}{r | c  c  c}
+                        & 1 & 3     & 2     \\
+            $S_3$       & 1 & (12)  & (123) \\ \hline \pause
+            $\triv$     & 1 & 1     & 1     \\ \pause
+            $\sgn$      & 1 & -1    & 1     \\ \pause
+            $\stand$    & 2 & 0     & -1
+        \end{tabular}
+    \end{center}
+    
+    \pause
+    \vspace{2em}
+    These are all irreducible representations of $S_3$ since the number of conjugacy classes is the same as the number of irreducible representations
+
 \end{frame}
 
 \begin{frame}{$S_n$ not good for most Protocols}
-    \todo{general case of example}
-    \todo{has $n!$ elements but faithful rep of dim $n - 1$}
+    \large
+    \begin{itemize}
+        \item Standard representation of $S_3$ very efficient \pause
+        \item True for every $S_n$ ($n!$ elements, dimension of representation is $n - 1$) \pause
+        \item This would make most protocols vulnerable to linear attacks
+        \item e.g. Shpilrain-Ushakov key exchange for group-based protocols
+    \end{itemize}
+
+    \vspace{1em}
+    {\hspace*{\fill} \cite{khovanov2022monoidal}}
 \end{frame}

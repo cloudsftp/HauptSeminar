@@ -6,34 +6,31 @@
     \large
     A \textbf{representation} of a group $G$ is a map
     \Large
-    \visible<2->{
-        \begin{align*}
-            \rho: \quad G \to \GL(V)
-        \end{align*}
-    }
+    \pause
+    \begin{align*}
+        \rho: \quad G \to \GL(V)
+    \end{align*}
     
     \normalsize
-    \visible<3->{
-        that is a homomorphism (\textbf{preserves structure})
-    }
+    \pause
+    that is a homomorphism (\textbf{preserves structure})
 
-    \visible<4->{
-        i.e. the following diagram commutes
-        \begin{figure}
-            \centering
-            \begin{tikzcd}[ampersand replacement=\&]
-                G \times G
-                    \arrow[r, "\rho \times \rho"]
-                    \arrow[d, "\cdot"]
-                \& \GL(V) \times \GL(V)
-                    \arrow[d, "\cdot"]
-                \\
-                G   \arrow[r, "\rho"]
-                \& \GL(V)
-            \end{tikzcd}
-        \end{figure}
+    \pause
+    i.e. the following diagram commutes
+    \begin{figure}
+        \centering
+        \begin{tikzcd}[ampersand replacement=\&]
+            G \times G
+                \arrow[r, "\rho \times \rho"]
+                \arrow[d, "\cdot"]
+            \& \GL(V) \times \GL(V)
+                \arrow[d, "\cdot"]
+            \\
+            G   \arrow[r, "\rho"]
+            \& \GL(V)
+        \end{tikzcd}
+    \end{figure}
     {\hspace*{\fill} \cite{hein2013}}
-    }
 
 \end{frame}
 
@@ -41,40 +38,29 @@
     \large
     Maps all elements to the identity map
     \Large
+        \pause
     \begin{align*}
-        \visible<2->{
-            \triv: \quad & G \to \GL(\C^1) = \C \setminus \{0\}
-        }
-        \visible<3->{
-            , \\
-            & a \mapsto I = 1
-        }
+        \triv: \quad & G \to \GL(\C^1) = \C \setminus \{0\} \pause , \\
+        & a \mapsto I = 1
     \end{align*}
     
     \normalsize
-    \visible<3->{
-        {\hspace*{\fill} \cite{hein2013}}
-    }
+    {\hspace*{\fill} \cite{hein2013}}
 \end{frame}
 
 \begin{frame}{Faithful Representations}
     \large
-    Every element has a different image
+    Every group element $a \in G$ has a different image of $\rho: G \to \GL(V)$
 
-    \visible<2->{
-        So $\rho$ is \textbf{injective}
-    }
+    \pause
+    So $\rho$ is \textbf{injective}
     \Large
-    \visible<3->{
-        \begin{align*}
-            \forall a, b \in G: \quad & \rho(a) = \rho(b) \implies a = b
-        \end{align*}
-    }
-
+    \pause
+    \begin{align*}
+        \forall a, b \in G: \quad & \rho(a) = \rho(b) \implies a = b
+    \end{align*}
     \normalsize
-    \visible<3->{
-        {\hspace*{\fill} \cite{hein2013}}
-    }
+    {\hspace*{\fill} \cite{hein2013}}
 \end{frame}
 
 %% begin remove?
@@ -147,32 +133,30 @@
     \large
     $f: V \to V'$ is an \textbf{intertwiner} of $\rho: G \to \GL(V)$ and $\rho': G \to \GL(V')$,
     
-    if the following diagram commutes
+    if the following diagram commutes for each group element $a \in G$
     
-    \visible<2->{
-        \begin{figure}[h]
-            \centering
-            \begin{tikzcd}[ampersand replacement=\&]
-                V
-                    \arrow[r, "f"]
-                    \arrow[d, "\rho(a)"]
-                \& V'
-                    \arrow[d, "\rho'(a)"]
-                \\
-                V   \arrow[r, "f"]
-                \& V'
-            \end{tikzcd}
-        \end{figure}
-    }
+    \pause
+    \begin{figure}[h]
+        \centering
+        \begin{tikzcd}[ampersand replacement=\&]
+            V
+                \arrow[r, "f"]
+                \arrow[d, "\rho(a)"]
+            \& V'
+                \arrow[d, "\rho'(a)"]
+            \\
+            V   \arrow[r, "f"]
+            \& V'
+        \end{tikzcd}
+    \end{figure}
     
     \vspace*{1em}
-    \visible<3->{
-        If $f$ is invertible, it is an \textbf{isomorphism} and $\rho$ and $\rho'$ are \textbf{equivalent}
-        \begin{align*}
-            \rho \cong \rho'
-        \end{align*}
-        
-        \normalsize
-        {\hspace*{\fill} \cite{fuchs2003}}
-    }
+    \pause
+    If $f$ is invertible, it is an \textbf{isomorphism} and $\rho$ and $\rho'$ are \textbf{equivalent}
+    \begin{align*}
+        \rho \cong \rho'
+    \end{align*}
+    
+    \normalsize
+    {\hspace*{\fill} \cite{fuchs2003}}
 \end{frame}
