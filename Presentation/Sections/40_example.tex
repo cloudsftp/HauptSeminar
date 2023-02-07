@@ -15,20 +15,6 @@
     \end{tabular}
 \end{frame}
 
-%\begin{frame}{The Group $S_3$}
-%    \todo{remove slide?}
-%    Also thought of as
-%    
-%    \pause
-%    \vspace{1em}
-%    \begin{itemize}
-%        \item Actions of permutation of the coordinates of a 2-simplex $\Delta^2$
-%            \pause
-%        \item Symmetries of a triangle
-%    \end{itemize}
-%    \todo{pictures?}
-%\end{frame}
-
 \begin{frame}{The Group $S_3$}
     \large
     Its conjugacy classes are
@@ -45,7 +31,6 @@
 \begin{frame}{The Trivial Representation of $S_3$}
     \large
     Maps all elements to the identity map
-    \pause
     \begin{align*}
         \triv: \quad & S_3 \to \GL(\C^1) = \C \setminus \{0\}, \\
         & a \mapsto I = 1
@@ -64,7 +49,6 @@
     
     %\vspace{1em}
     Maps all \textbf{inversions} to $-1$, all other elements to 1
-    \pause
     \begin{align*}
         \sgn: \quad & S_3 \to \GL(\C^1) = \C \setminus \{0\}, \\
         & a \mapsto \begin{cases}
@@ -86,7 +70,7 @@
 \begin{frame}{The Standard Representation of $S_3$}
     \large
     Think about permutating the coordinates of $\C^3$ \pause \\
-    Sum stays constant. \pause WLOG: Sum is 0 \pause
+    Sum stays constant. \pause WLOG: Sum is 0
 
     Let $V' = \{\begin{pmatrix}
         x_1 & x_2 & x_3
@@ -96,8 +80,7 @@
     \vspace{1em}
     This is a subspace of $\C^3$ that is equivalent to $V = \C^2$
 
-    \pause
-    If $\{e_1, e_2, e_3\}$ is a basis of $V'$,
+    If $\{e_1, e_2, e_3\}$ is a basis of $\C^3$,
     $\{e_1 - e_2, e_2 - e_3\}$ is a basis of $V$
     
     \pause
@@ -138,67 +121,6 @@
     \end{tabular}
 \end{frame}
 
-%\begin{frame}{The Standard Representation of $S_3$ is irreducible}
-%    \large
-%    Proof by contradiction:
-%
-%    There is an $\stand$-\textbf{invariant} subspace $W = \C \cdot v$ for some $v \in \C^2$
-%    
-%    \pause
-%    So $W$ has to be an Eigenspace of $\stand(a)$ for all $a \in S_3$
-%
-%    \pause
-%    \vspace{1em}
-%    Eigenvalues of $\stand((12))$ are $\lambda_1 = 1$ and $\lambda_2 = -1$
-%
-%    \pause
-%    With Eigenspaces $E_{\lambda_1} = \C \cdot \begin{pmatrix}
-%        0 & 1
-%    \end{pmatrix}^T$ and $E_{\lambda_2} = \C \cdot \begin{pmatrix}
-%        -2 & 1
-%    \end{pmatrix}^T$
-%
-%%    Eigenvectors of $\stand((12))$ (candidates for $v$)
-%%    \begin{align*}
-%%        \begin{pmatrix}
-%%            -1 & 0 \\
-%%            1 & 1
-%%        \end{pmatrix} \cdot \begin{pmatrix}
-%%            0 \\ 1
-%%        \end{pmatrix} = \begin{pmatrix}
-%%            0 \\ 1
-%%        \end{pmatrix}, \quad \begin{pmatrix}
-%%            -1 & 0 \\
-%%            1 & 1
-%%        \end{pmatrix} \cdot \begin{pmatrix}
-%%            -2 \\ 1
-%%        \end{pmatrix} = \begin{pmatrix}
-%%            2 \\ -1
-%%        \end{pmatrix}
-%%    \end{align*}
-%%    
-%    \pause
-%    \vspace{1em}
-%    Both are not an Eigenspaces of $\stand((132))$
-%    \begin{align*}
-%        \begin{pmatrix}
-%            0 & 1 \\
-%            -1 & -1
-%        \end{pmatrix} \cdot \begin{pmatrix}
-%            0 \\ 1
-%        \end{pmatrix} = \begin{pmatrix}
-%            1 \\ -1
-%        \end{pmatrix}, \quad \begin{pmatrix}
-%            0 & 1 \\
-%            -1 & -1
-%        \end{pmatrix} \cdot \begin{pmatrix}
-%            -2 \\ 1
-%        \end{pmatrix} = \begin{pmatrix}
-%            1 \\ 1
-%        \end{pmatrix}
-%    \end{align*}
-%\end{frame}
-
 \begin{frame}{The Character of the Standard Representation of $S_3$}
     \large
    \begin{align*}
@@ -228,25 +150,25 @@
     \begin{center}
         \begin{tabular}{r | c  c  c}
                         & 1 & 3     & 2     \\
-            $S_3$       & 1 & (12)  & (123) \\ \hline \pause
-            $\triv$     & 1 & 1     & 1     \\ \pause
-            $\sgn$      & 1 & -1    & 1     \\ \pause
+            $S_3$       & 1 & (12)  & (123) \\ \hline
+            $\triv$     & 1 & 1     & 1     \\
+            $\sgn$      & 1 & -1    & 1     \\
             $\stand$    & 2 & 0     & -1
         \end{tabular}
     \end{center}
     
     \pause
     \vspace{2em}
-    These are all irreducible representations of $S_3$ since the number of conjugacy classes is the same as the number of irreducible representations
+    These are \textbf{all} irreducible representations of $S_3$ since the number of \textbf{conjugacy classes} is the same as the number of \textbf{inequivalent irreducible representations}
 
 \end{frame}
 
 \begin{frame}{$S_n$ not good for most Protocols}
     \large
     \begin{itemize}
-        \item Standard representation of $S_3$ very efficient \pause
-        \item True for every $S_n$ ($n!$ elements, dimension of representation is $n - 1$) \pause
-        \item This would make most protocols vulnerable to linear attacks
+        \item Standard representation of $S_3$ very \textbf{efficient} \pause
+        \item True for \textbf{every} $S_n$ ($n!$ elements, dimension of representation is $n - 1$) \pause
+        \item This would make most protocols \textbf{vulnerable} to \textbf{linear attacks}
         \item e.g. Shpilrain-Ushakov key exchange for group-based protocols
     \end{itemize}
 
