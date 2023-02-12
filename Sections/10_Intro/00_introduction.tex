@@ -1,9 +1,9 @@
 \section{Introduction}
 
-Representation theory is a mathematical branch, that investigates the structure of groups.
+Representation theory is a branch of mathematics, that investigates the structure of groups.
 It does so by \textit{representing} group elements as linear maps in vector spaces.
-Since group elements are thought of as actions acting on something, it makes sense to represent them by maps, and not elements of vector spaces.
-The idea is to represent group elements as their actions on some vector space.
+Since group elements are thought of as actions acting on something, it makes sense to represent them by maps acting on elements of vector spaces.
+The idea is to represent group elements as actions on some vector space, such that the composition of these actions reflects the composition of the according group elements.
 The vector space is then also called a $G$-module, and the mapping of the group elements to the linear maps is called the representation.
 
 Linear algebra is a well-studied branch of mathematics.
@@ -12,8 +12,14 @@ Representing groups as linear maps, therefore, makes it easier to study them.
 For example, Burnside's theorem was proven using representation theory in 1904~\cite{burnside1904groups}.
 It took roughly 70 years to find a proof without using representation theory.
 
-\todo[inline]{quantum mechanics}
-
 There are representations of groups using infinite-dimensional vector spaces, as well as finite-dimensional vector spaces.
 In this document, we will focus on the case of finite-dimensional vector spaces since this is easier to understand and most readers are already familiar with finite-dimensional vector spaces.
 The vector spaces used in this document are of the form $\C^n$ for reasons discussed later.
+But we will also encounter an example of an infinite-dimensional representation.
+
+Representation theory finds applications anywhere where there are groups.
+Groups are almost everywhere in mathematics, physics, and chemistry.
+It also finds application in cryptography for studying groups used in established protocols, such as the family of elliptic curve protocols.
+As well as exploring groups to be used in emerging protocols.
+An example of such emerging protocols are non-commutative group-based protocols.
+At the end of this document, we will see why it is unwise to use the symmetric groups $S_n$ with some key-exchange protocols~\cite{khovanov2022monoidal}.
