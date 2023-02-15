@@ -71,13 +71,13 @@ All the vectors, that do form a sub vector space denoted
 \end{align}
 
 %% start needed?
-\todo[inline]{Is scalar product nescessary?}
+%\todo[inline]{Is scalar product nescessary?}
 
-On $\C^n$, the \textbf{scalar product} (also called dot product) $\langle \cdot, \cdot \rangle: \C^n \times \C^n \to \C$ is defined as
-\begin{align}
-    \langle v, w \rangle = \sum_i v_i \cdot w_i
-\end{align}
-It can also be thought of as a matrix multiplication of a row vector and a column vector $\langle v, w \rangle = v^T w$.
+%On $\C^n$, the \textbf{scalar product} (also called dot product) $\langle \cdot, \cdot \rangle: \C^n \times \C^n \to \C$ is defined as
+%\begin{align}
+%    \langle v, w \rangle = \sum_i v_i \cdot w_i
+%\end{align}
+%It can also be thought of as a matrix multiplication of a row vector and a column vector $\langle v, w \rangle = v^T w$.
 %% end needed?
 
 The \textbf{direct sum} of two matrices $\oplus: \C^{a \times b} \times \C^{c \times d} \to \C^{(a + c) \times (b + d)}$ is defined as
@@ -93,33 +93,33 @@ where each zero stands for a matrix that only has zeros.
 
 
 %% start needed?
-\todo[inline]{Is tensor product and symmetric powers necessary?}
-The \textbf{tensor product} of two matrices $\otimes: \C^{a \times b} \times \C^{c \times d} \to \C^{(a \cdot c) \times (b \cdot d)}$ is defined as
-\begin{align}
-    A \otimes B = \begin{pmatrix}
-        a_{1, 1} \cdot B & a_{1, 2} \cdot B & \ldots & a_{1, b} \cdot B \\
-        \vdots & \vdots & \ddots & \vdots \\
-        a_{a, 1} \cdot B & a_{a, 2} \cdot B & \ldots & a_{a, b} \cdot B
-    \end{pmatrix}
-\end{align}
+%\todo[inline]{Is tensor product and symmetric powers necessary?}
+%The \textbf{tensor product} of two matrices $\otimes: \C^{a \times b} \times \C^{c \times d} \to \C^{(a \cdot c) \times (b \cdot d)}$ is defined as
+%\begin{align}
+%    A \otimes B = \begin{pmatrix}
+%        a_{1, 1} \cdot B & a_{1, 2} \cdot B & \ldots & a_{1, b} \cdot B \\
+%        \vdots & \vdots & \ddots & \vdots \\
+%        a_{a, 1} \cdot B & a_{a, 2} \cdot B & \ldots & a_{a, b} \cdot B
+%    \end{pmatrix}
+%\end{align}
 
-\todo[inline]{outer and symmetric powers}
+%\todo[inline]{outer and symmetric powers}
 
-\todo[inline]{Is change of basis necessary?}
+%\todo[inline]{Is change of basis necessary?}
 
-A \textbf{change of basis} from one basis $\{v_i\}_i$ to another one $\{w_j\}_j$ in a vector space $C^n$ can be represented by an invertible matrix.
-We find this matrix by writing each vector of the new basis $w_j$ as a linear combination of the vectors in the old basis $v_i$.
-\begin{align}
-    w_j = \sum_i a_{ij} v_i
-\end{align}
-This gives us the elements of $A = (a_{ij})_{ij}$.
-A vector $x \in \C^n$ is transformed from the old to the new basis via a matrix multiplication $x' = A^{-1} \cdot x$.
-A linear map between $\C^n$ and itself represented as a matrix $M \in \C^{n \times n}$ is transformed via two matrix multiplications $M' = A^{-1} \cdot M \cdot A$.
-\\
-
-\todo[inline]{still necessary? Do I introduce dual representation later?}
-
-A \textbf{dual vector space} $V^*$ of a vector space $V$ over a field $F$ is the set of all linear maps $m: V \to F$.
-In the case of $\C^n = \C^{n \times 1}$ we can think of it as row vectors $(\C^n)^* = \C^{1 \times n}$.
-Multiplying a row vector with a column vector will result in a number, this follows from the definition of matrix multiplication above.
-Since every element in the row vector corresponds to the weight of one element in the column vector, before summing everything up, every linear map $m: \C^n \to \C$ can be represented by exactly one row vector.
+%A \textbf{change of basis} from one basis $\{v_i\}_i$ to another one $\{w_j\}_j$ in a vector space $C^n$ can be represented by an invertible matrix.
+%We find this matrix by writing each vector of the new basis $w_j$ as a linear combination of the vectors in the old basis $v_i$.
+%\begin{align}
+%    w_j = \sum_i a_{ij} v_i
+%\end{align}
+%This gives us the elements of $A = (a_{ij})_{ij}$.
+%A vector $x \in \C^n$ is transformed from the old to the new basis via a matrix multiplication $x' = A^{-1} \cdot x$.
+%A linear map between $\C^n$ and itself represented as a matrix $M \in \C^{n \times n}$ is transformed via two matrix multiplications $M' = A^{-1} \cdot M \cdot A$.
+%\\
+%
+%\todo[inline]{still necessary? Do I introduce dual representation later?}
+%
+%A \textbf{dual vector space} $V^*$ of a vector space $V$ over a field $F$ is the set of all linear maps $m: V \to F$.
+%In the case of $\C^n = \C^{n \times 1}$ we can think of it as row vectors $(\C^n)^* = \C^{1 \times n}$.
+%Multiplying a row vector with a column vector will result in a number, this follows from the definition of matrix multiplication above.
+%Since every element in the row vector corresponds to the weight of one element in the column vector, before summing everything up, every linear map $m: \C^n \to \C$ can be represented by exactly one row vector.
