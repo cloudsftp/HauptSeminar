@@ -51,18 +51,22 @@ The kernel of this map $\ker \pi$ is also a $G$-module because for any $h \in G,
 \end{align}
 \end{subequations}
 Where the step from \Cref{equ:proof.maschke.hg} to \Cref{equ:proof.maschke.gprime} is due to $g' = h^{-1} \cdot g$, whichs inverse is the inverse of each element $h^{-1}$ and $g$ applied in reversed order, so $g'^{-1} = g^{-1} \cdot h$.
-This kernel $\ker \pi$ is still complementary to $U$ and a $G$-module, so we can set $U' = \ker \pi$ and then $V = U \oplus U'$ with both summands being invariant under $\rho$~\cite{fulton2013}.
+This kernel $\ker \pi$ is still complementary to $U$ and a $G$-module.
+So we can set $U' = \ker \pi$ and then $V = U \oplus U'$ with both summands being invariant under $\rho$~\cite{fulton2013}.
 
-\todo[inline]{only existence of the decomposition from above fact}
-From this Lemma, we can conclude that for any representation $\rho: G \to \GL(V)$ of a finite group $G$ there is a \textit{unique} decomposition
+From this observation, we can conclude, what is referred to as \textbf{Maschke's Theorem}.
+If we have a reducible representation, we can successively split it into smaller representations until we only have irreducible representations left.
+Therefore, any representation there exists a \textbf{decomposition}
 \begin{align}
     \rho & = \rho_1^{\oplus a_1} \oplus \rho_2^{\oplus a_2} \oplus \ldots \oplus \rho_k^{\oplus a_k} 
 \end{align}
-where $\rho_i$ are distinct irreducible representations of $G$~\cite{fulton2013}.
+where $\rho_i$ are distinct irreducible representations of $G$.
 This property of representations of finite groups was hinted at earlier in \Cref{sec:basics.rep.faith} and is called \textbf{semisimplicity}.
-\todo[inline]{citation}
+It is only true for vector spaces over a field, that is closed algebraically.
+For this reason, we use the complex numbers $\C$ as the field of our vector spaces in this document~\cite{fulton2013}. 
 
-\textbf{Shur's Lemma} makes statements about irreducible representations.
+Another important theorem in representation theory is \textbf{Shur's Lemma}.
+It makes statements about irreducible representations.
 If there are two irreducible representations $\rho: G \to \GL(V)$ and $\rho': G \to \GL(V')$ of a group $G$ and $f: V \to V'$ is an intertwiner (see \Cref{sec:basics.equ} for the definition) of these representations, then the following statements are true.
 \begin{enumerate}
     \item Either $f$ is an isomorphism (and the representations are equivalent), or $f = 0_{V'}$
