@@ -10,6 +10,7 @@ $U$ is invariant under $\rho$ if for every $a \in G$ and $u \in U$ the following
 \end{align}
 Trivial vector subspaces of $V$ are $V$ itself and the space consisting only of the additive neutral $\{0_V\}$~\cite{hein2013}.
 
+\todo[inline]{look at definition of rho' again (rho'a = rhoa?)}
 Such a vector subspace $U$ would be called \textbf{$G$-invariant}.
 And if it existed, $\rho': G \to \GL(U)$ with $\rho'(a) = \rho(a)$ would be a \textbf{subrepresentation} of $\rho$.
 Both $U$ and $V$ are also called \textbf{$G$-modules}.
@@ -27,14 +28,10 @@ Every $G$-module $V$ induces a representation $\rho: G \to \GL(V)$ where $\rho(a
 $\rho(a)$ is linear for any action $a \in G$ thanks to the properties of the operation $\cdot: G \times V \to V$ defined above.
 If a representations $\rho: G \to \GL(V)$ is irreducible, the $G$-module $V$ is also irreducible~\cite{hein2013}.
 
-\todo[inline]{if U is invariant, complement of U is also invariant}
+If $U$ is a $\rho$-invariant vector subspace of $V$, then there is a complementary vector subspace $U'$ that is also $\rho$-invariant and for which $V = U \oplus U'$.
+~\cite{fulton2013}.
 
-\textbf{Shur's Lemma} makes statements about irreducible representations.
-If there are two irreducible representations $\rho: G \to \GL(V)$ and $\rho': G \to \GL(V')$ of a group $G$ and $f: V \to V'$ is an intertwiner (see \Cref{sec:basics.equ} for the definition) of these representations, then the following statements are true.
-\begin{enumerate}
-    \item Either $f$ is an isomorphism (and the representations are equivalent), or $f = 0_{V'}$
-    \item If $V = V'$, then $\exists \lambda \in \C:\ f = \lambda \cdot I$
-\end{enumerate}
+\todo[inline]{only existance of the decomposition from above fact}
 From this Lemma, we can conclude that for any representation $\rho: G \to \GL(V)$ of a finite group $G$ there is a \textit{unique} decomposition
 \begin{align}
     \rho & = \rho_1^{\oplus a_1} \oplus \rho_2^{\oplus a_2} \oplus \ldots \oplus \rho_k^{\oplus a_k} 
@@ -42,3 +39,16 @@ From this Lemma, we can conclude that for any representation $\rho: G \to \GL(V)
 where $\rho_i$ are distinct irreducible representations of $G$~\cite{fulton2013}.
 This property of representations of finite groups was hinted at earlier in \Cref{sec:basics.rep.faith} and is called \textbf{semisimplicity}.
 \todo[inline]{citation}
+
+\textbf{Shur's Lemma} makes statements about irreducible representations.
+If there are two irreducible representations $\rho: G \to \GL(V)$ and $\rho': G \to \GL(V')$ of a group $G$ and $f: V \to V'$ is an intertwiner (see \Cref{sec:basics.equ} for the definition) of these representations, then the following statements are true.
+\begin{enumerate}
+    \item Either $f$ is an isomorphism (and the representations are equivalent), or $f = 0_{V'}$
+    \item If $V = V'$, then $\exists \lambda \in \C:\ f = \lambda \cdot I$
+\end{enumerate}
+
+\todo[inline]{proof of lemma}
+
+\todo[inline]{decomposition from above is \textit{unique}}
+
+\todo[inline]{proof \# conj = \# inequivalent irr rep}
