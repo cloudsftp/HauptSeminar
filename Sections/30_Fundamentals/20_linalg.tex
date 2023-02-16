@@ -65,7 +65,7 @@ $v$ is called \textbf{Eigenvector} of $A$ and $\lambda$ is called \textbf{Eigenv
 The set of all Eigenvalues of a matrix is denoted $\sigma_A = \left\{ \lambda_i \right\}$.
 If $v_i \in \C^n$ is an Eigenvector with the Eigenvalue $\lambda_i$, then every multiple $\kappa \cdot v_i$ with $\kappa \in \C$ is also Eigenvector of $A$ with the Eigenvalue $\lambda_i$.
 There may be other vectors that also satisfy the condition for the same $\lambda_i$.
-All the vectors, that do form a sub vector space denoted
+All the vectors, that do form a vector subspace denoted
 \begin{align}
     E_{\lambda_i} & = \left\{ v \in \C^n | A \cdot v = \lambda_i \cdot v \right\}
 \end{align}
@@ -90,17 +90,17 @@ The \textbf{direct sum} of two matrices $\oplus: \C^{a \times b} \times \C^{c \t
 where each zero stands for a matrix that only has zeros.
 Matrices, that can be written as the direct sum of two or more matrices are called \textbf{block matrices}.
 
-%% start needed?
-%\todo[inline]{Is tensor product and symmetric powers necessary?}
-%The \textbf{tensor product} of two matrices $\otimes: \C^{a \times b} \times \C^{c \times d} \to \C^{(a \cdot c) \times (b \cdot d)}$ is defined as
-%\begin{align}
-%    A \otimes B = \begin{pmatrix}
-%        a_{1, 1} \cdot B & a_{1, 2} \cdot B & \ldots & a_{1, b} \cdot B \\
-%        \vdots & \vdots & \ddots & \vdots \\
-%        a_{a, 1} \cdot B & a_{a, 2} \cdot B & \ldots & a_{a, b} \cdot B
-%    \end{pmatrix}
-%\end{align}
+\todo[inline]{look at it again}
+The \textbf{tensor product} of two matrices $\otimes: \C^{a \times b} \times \C^{c \times d} \to \C^{(a \cdot c) \times (b \cdot d)}$ is defined as
+\begin{align}
+    A \otimes B = \begin{pmatrix}
+        a_{1, 1} \cdot B & a_{1, 2} \cdot B & \ldots & a_{1, b} \cdot B \\
+        \vdots & \vdots & \ddots & \vdots \\
+        a_{a, 1} \cdot B & a_{a, 2} \cdot B & \ldots & a_{a, b} \cdot B
+    \end{pmatrix}
+\end{align}
 
+%% start needed?
 %\todo[inline]{outer and symmetric powers}
 
 %\todo[inline]{Is change of basis necessary?}

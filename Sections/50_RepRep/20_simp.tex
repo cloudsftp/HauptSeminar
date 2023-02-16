@@ -1,8 +1,13 @@
 \subsection{(Semi-)simple Representations and Shur's Lemma}
 \label{sec:reprep.simp}
 
-To define simple representations, we first need to understand what irreducible representations are.
-A representation $\rho: G \to \GL(V)$ is \textbf{irreducible} (also called \textbf{simple}), if there is no non-trivial vector subspace $U \subset V$ exists with $\rho(a) \cdot U \subset U$ for all actions $a \in G$.
+As mentioned at the beginning of this section, the ``elementary'' representations we want, are representations that can not be created from smaller representations by combining them.
+This property is called \textbf{irreducibility} and is better defined in the following way.
+A representation $\rho: G \to \GL(V)$ is \textbf{irreducible} (also called \textbf{simple}) if there is no non-trivial vector subspace $U \subset V$ that is invariant under $\rho$.
+$U$ is invariant under $\rho$ if for every $a \in G$ and $u \in U$ the following condition is satisfied.
+\begin{align}
+    \rho(a) \cdot u \in U
+\end{align}
 Trivial vector subspaces of $V$ are $V$ itself and the space consisting only of the additive neutral $\{0_V\}$~\cite{hein2013}.
 
 Such a vector subspace $U$ would be called \textbf{$G$-invariant}.
@@ -21,6 +26,8 @@ where $e$ is the identity element of the group $G$.
 Every $G$-module $V$ induces a representation $\rho: G \to \GL(V)$ where $\rho(a) \cdot x = a \cdot x$.
 $\rho(a)$ is linear for any action $a \in G$ thanks to the properties of the operation $\cdot: G \times V \to V$ defined above.
 If a representations $\rho: G \to \GL(V)$ is irreducible, the $G$-module $V$ is also irreducible~\cite{hein2013}.
+
+\todo[inline]{if U is invariant, complement of U is also invariant}
 
 \textbf{Shur's Lemma} makes statements about irreducible representations.
 If there are two irreducible representations $\rho: G \to \GL(V)$ and $\rho': G \to \GL(V')$ of a group $G$ and $f: V \to V'$ is an intertwiner (see \Cref{sec:basics.equ} for the definition) of these representations, then the following statements are true.
