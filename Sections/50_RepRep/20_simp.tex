@@ -29,9 +29,31 @@ $\rho(a)$ is linear for any action $a \in G$ thanks to the properties of the ope
 If a representations $\rho: G \to \GL(V)$ is irreducible, the $G$-module $V$ is also irreducible~\cite{hein2013}.
 
 If $U$ is a $\rho$-invariant vector subspace of $V$, then there is a complementary vector subspace $U'$ that is also $\rho$-invariant and for which $V = U \oplus U'$.
-~\cite{fulton2013}.
+For the proof of the statement, we now think of $U$ and $V$ as $G$-modules.
+We choose some arbitrary vector subspace $W$ that is a complement of $U$.
+Let $\pi_0: V \to U$ be the projection map of $V$ onto $U$.
+That means $\pi_0(u + w) = u$ for any $u \in U, w \in W$.
+If we average that map over $G$, we get
+\begin{subequations}
+\begin{align}
+    \pi: \qquad & V \to U, \\
+    & v \mapsto \sum_{g \in G} g \cdot \pi_0(g^{-1} \cdot v)
+\end{align}
+\end{subequations}
+Where $g^{-1}$ acts on the $G$-module $V$ and $g$ acts on the $G$-module $U$ after the projection with $\pi_0$.
+The kernel of this map $\ker \pi$ is also a $G$-module because for any $h \in G, w \in \ker \pi$
+\begin{subequations}
+\begin{align}
+    \pi(h \cdot w) & = h \cdot h^{-1} \sum_{g \in G} g \cdot \pi_0(g^{-1} \cdot (h \cdot w)) \\
+    & = h \cdot \sum_{g \in G} (h^{-1} \cdot g) \cdot \pi_0((g^{-1} \cdot h) \cdot w) \label{equ:proof.maschke.hg} \\
+    & = h \cdot \sum_{g' \in G} g' \cdot \pi_0(g'^{-1} \cdot w) \label{equ:proof.maschke.gprime} \\
+    & = h \cdot \pi(w) = h \cdot 0 = 0
+\end{align}
+\end{subequations}
+Where the step from \Cref{equ:proof.maschke.hg} to \Cref{equ:proof.maschke.gprime} is due to $g' = h^{-1} \cdot g$, whichs inverse is the inverse of each element $h^{-1}$ and $g$ applied in reversed order, so $g'^{-1} = g^{-1} \cdot h$.
+This kernel $\ker \pi$ is still complementary to $U$ and a $G$-module, so we can set $U' = \ker \pi$ and then $V = U \oplus U'$ with both summands being invariant under $\rho$~\cite{fulton2013}.
 
-\todo[inline]{only existance of the decomposition from above fact}
+\todo[inline]{only existence of the decomposition from above fact}
 From this Lemma, we can conclude that for any representation $\rho: G \to \GL(V)$ of a finite group $G$ there is a \textit{unique} decomposition
 \begin{align}
     \rho & = \rho_1^{\oplus a_1} \oplus \rho_2^{\oplus a_2} \oplus \ldots \oplus \rho_k^{\oplus a_k} 
