@@ -41,17 +41,17 @@ If we average that map over $G$, we get
 \end{align}
 \end{subequations}
 Where $g^{-1}$ acts on the $G$-module $V$ and $g$ acts on the $G$-module $U$ after the projection with $\pi_0$.
-The kernel of this map $\ker \pi$ is also a $G$-module because for any $h \in G, w \in \ker \pi$
+The kernel of this map $\ker \pi$ is also a $G$-module because for any $h \in G, w' \in \ker \pi$
 \begin{subequations}
 \begin{align}
-    \pi(h \cdot w) & = h \cdot h^{-1} \sum_{g \in G} g \cdot \pi_0(g^{-1} \cdot (h \cdot w)) \\
-    & = h \cdot \sum_{g \in G} (h^{-1} \cdot g) \cdot \pi_0((g^{-1} \cdot h) \cdot w) \label{equ:proof.maschke.hg} \\
-    & = h \cdot \sum_{g' \in G} g' \cdot \pi_0(g'^{-1} \cdot w) \label{equ:proof.maschke.gprime} \\
-    & = h \cdot \pi(w) = h \cdot 0 = 0
+    \pi(h \cdot w') & = h \cdot h^{-1} \sum_{g \in G} g \cdot \pi_0(g^{-1} \cdot (h \cdot w')) \\
+    & = h \cdot \sum_{g \in G} (h^{-1} \cdot g) \cdot \pi_0((g^{-1} \cdot h) \cdot w') \label{equ:proof.maschke.hg} \\
+    & = h \cdot \sum_{g' \in G} g' \cdot \pi_0(g'^{-1} \cdot w') \label{equ:proof.maschke.gprime} \\
+    & = h \cdot \pi(w') = h \cdot 0 = 0
 \end{align}
 \end{subequations}
 Where the step from \Cref{equ:proof.maschke.hg} to \Cref{equ:proof.maschke.gprime} is due to $g' = h^{-1} \cdot g$, whichs inverse is the inverse of each element $h^{-1}$ and $g$ applied in reversed order, so $g'^{-1} = g^{-1} \cdot h$.
-This kernel $\ker \pi$ is still complementary to $U$ and a $G$-module.
+This kernel $\ker \pi$ is complementary to $U$ because per definition of $\pi$, $\pi(u) = u$ for any $u \in U$ and $p(p(v)) = p(v)$ for any $v \in V$.
 So we can set $U' = \ker \pi$ and then $V = U \oplus U'$ with both summands being invariant under $\rho$~\cite{fulton2013}.
 
 From this observation, we can conclude, what is referred to as \textbf{Maschke's Theorem}.
@@ -72,8 +72,11 @@ If there are two irreducible representations $\rho: G \to \GL(V)$ and $\rho': G 
     \item Either $f$ is an isomorphism (and the representations are equivalent), or $f = 0_{V'}$
     \item If $V = V'$, then $\exists \lambda \in \C:\ f = \lambda \cdot I$
 \end{enumerate}
-
-\todo[inline]{proof of lemma}
+For the proof of the first statement, we think about the kernel and image of the intertwiner $f$.
+Since $f$ is an intertwiner, both the kernel $\ker f$ and the image $\Im f$ have to be $G$-invariant.
+If the image $\Im f \neq \left\{ 0_{V'} \right\}$, then it must be $\Im f = V'$, since $\rho'$ is irreducible.
+And the kernel must be $\ker f = \left\{ 0_V \right\}$, since $\rho$ is irreducible.
+\todo[inline]{how to proceed?} 
 
 \todo[inline]{decomposition from above is \textit{unique}}
 
