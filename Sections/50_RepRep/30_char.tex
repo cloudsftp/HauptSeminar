@@ -1,6 +1,6 @@
 \subsection{Character Tables}
 
-Character tables are the way, to write down representations, which was promised at the beginning of the section.
+Character tables are the compact way, to write down representations, which was promised at the beginning of the section.
 But first, we have to define what \textbf{characters} are.
 Suppose $\rho: G \to \GL(V)$ is a representation of a finite group $G$.
 The character of $\rho$ is defined as the map
@@ -10,8 +10,11 @@ The character of $\rho$ is defined as the map
         & a \mapsto \Tr(\rho(a))
     \end{align}
 \end{subequations}
+\todo[inline]{character equal for equivalent rep}
 A representation can be recovered completely from its character.
+\todo[inline]{proof?}
 So now we know, we only have to write down one number per element $g \in G$.
+\todo[inline]{diff proof}
 But since the trace of a matrix stays the same after a base change, it is also true that
 \begin{align}
     \forall g, h \in G: \qquad & \chi_\rho(h \cdot g \cdot h^{-1}) = \chi_\rho(g)
@@ -19,6 +22,8 @@ But since the trace of a matrix stays the same after a base change, it is also t
 This tells us that the character $\chi_\rho$ is constant on the conjugacy classes of $G$.
 So we only have to write down one number per conjugacy class of $G$.
 This saves a lot of space and contains all the information needed to recover the representation~\cite{fulton2013}.
+
+\todo[inline]{proof about \# of irred representations}
 
 \textbf{Character tables} are just a way to write down characters of representations of groups.
 All representations in one table are representations of the same group.
