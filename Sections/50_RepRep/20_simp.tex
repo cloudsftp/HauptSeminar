@@ -75,8 +75,16 @@ If there are two irreducible representations $\rho: G \to \GL(V)$ and $\rho': G 
 For the proof of the first statement, we think about the kernel and image of the intertwiner $f$.
 Since $f$ is an intertwiner, both the kernel $\ker f$ and the image $\Im f$ have to be $G$-invariant.
 If the image $\Im f \neq \left\{ 0_{V'} \right\}$, then it must be $\Im f = V'$, since $\rho'$ is irreducible.
-And the kernel must be $\ker f = \left\{ 0_V \right\}$, since $\rho$ is irreducible.
-\todo[inline]{how to proceed?} 
+This means that $f$ is surjective.
+The kernel must be $\ker f = \left\{ 0_V \right\}$ since $\rho$ is irreducible and it can't be $\ker f = V$, since the image is $\Im f = V'$.
+Therefore, $f$ is also injective.
+Combining this with the fact that $f$ is surjective, makes $f$ bijective, so it is invertible and therefore an isomorphism.
+
+The second statement we take advantage of the fact, that $\C$ is algebraically closed.
+$f$ therefore has an Eigenvector $v \neq 0_V$ with a corresponding Eigenvalue $\lambda$.
+$h = f - \lambda \cdot I$ is $G$-linear since it is the sum of $G$-linear maps and $h(v) = 0$.
+This means that $h$ has a non-zero kernel and so by the first statement, $h$ must be $h = 0_{V'}$.
+From this we can conclude, that $f = \lambda \cdot I$.
 
 \todo[inline]{decomposition from above is \textit{unique}}
 
