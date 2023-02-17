@@ -10,8 +10,20 @@ The character of $\rho$ is defined as the map
         & a \mapsto \Tr(\rho(a))
     \end{align}
 \end{subequations}
-\todo[inline]{character equal for equivalent rep}
+This character of a representation is identical to the character of equivalent representations.
+To prove this, assume that we have two equivalent representations, $\rho: G \to V$ and $\rho': G \to V'$ with an intertwiner $f: V \to V'$ that is invertible.
+Then the following holds for any $a \in G$.
+\begin{subequations}
+\begin{align}
+    \chi_{\rho'}(a) & = \Tr(\rho'(a)) = \Tr(f \cdot \rho'(a) \cdot f^{-1}) \\
+    & = \Tr((f \cdot \rho'(a)) \cdot f^{-1}) = \Tr(f^{-1} \cdot (f \cdot \rho'(a))) \\
+    & = \Tr(f^{-1} \cdot f \cdot \rho'(a) )= \Tr(\rho(a)) = \chi_\rho(a)
+\end{align}
+\end{subequations}
+
 A representation can be recovered completely from its character.
+Of course, the representation might not exactly be the original representation, since the character of two equivalent representations is the same.
+But the recovered representation will be equivalent to the original representation.
 \todo[inline]{proof?}
 So now we know, we only have to write down one number per element $g \in G$.
 \todo[inline]{diff proof}
