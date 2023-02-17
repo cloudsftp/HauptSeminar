@@ -26,13 +26,16 @@ Of course, the representation might not exactly be the original representation, 
 But the recovered representation will be equivalent to the original representation.
 \todo[inline]{proof?}
 So now we know, we only have to write down one number per element $g \in G$.
-\todo[inline]{diff proof}
-But since the trace of a matrix stays the same after a base change, it is also true that
+But actually, the character of a representation is constant on the groups conjugacy classes, so we only need to write down one number per conjugacy class.
+This is since for any $a, g \in G$ the following is true.
+\begin{subequations}
 \begin{align}
-    \forall g, h \in G: \qquad & \chi_\rho(h \cdot g \cdot h^{-1}) = \chi_\rho(g)
+    \chi_\rho(g \cdot a \cdot g^{-1}) & = \Tr(\rho(g \cdot a \cdot g^{-1})) = \Tr(\rho(g) \cdot \rho(a) \cdot \rho(g)^{-1}) \\
+    & = \Tr((\rho(g) \cdot \rho(a)) \cdot \rho(g)^{-1}) = \Tr(\rho(g)^{-1} \cdot (\rho(g) \cdot \rho(a))) \\
+    & = \Tr(\rho(g)^{-1} \cdot \rho(g) \cdot \rho(a)) = \Tr(\rho(a)) = \chi_\rho(a) \\
 \end{align}
-This tells us that the character $\chi_\rho$ is constant on the conjugacy classes of $G$.
-So we only have to write down one number per conjugacy class of $G$.
+\end{subequations}
+
 This saves a lot of space and contains all the information needed to recover the representation~\cite{fulton2013}.
 
 \todo[inline]{proof about \# of irred representations}
