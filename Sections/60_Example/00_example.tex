@@ -1,27 +1,30 @@
 \section{The Example of $S_3$}
 
-\begin{table}
-    \centering
+In this section, we will create the character table for the symmetric group $S_3$.
+We start by describing $S_3$.
+Then we will find all inequivalent irreducible representations and list their characters in a character table.
 
-    \begin{tabular}{r | c  c  c}
-                    & 1 & 3     & 2     \\
-        $S_3$       & 1 & (12)  & (123) \\ \hline
-        $\triv$     & 1 & 1     & 1     \\
-        $\sgn$      & 1 & -1    & 1     \\
-        $\stand$    & 2 & 0     & -1
-    \end{tabular}
+\subsection{The Group $S_3$}
 
-    \caption{Character table for the group $S_3$}
-    \label{tab:reprep.char.table}
-\end{table}
+The group $S_3$ consists of all possible permutations of $3$ objects.
+We can think of each element as an action on a triangle as shown in \Cref{fig:reprep.char.triangle}.
+Elements of the group are usually written as numbers ($1-3$) in brackets, such as $(123)$.
+The notation will tell us, which corner is mapped where.
+The corner with the first number will be mapped to the corner with the second number.
+If there is a third number, the corner with the second number will be mapped to the corner with the third number.
+And finally, the corner with the last number will be mapped to the corner with the first number.
+So the group element (12) will just swap corners 1 and 2 and the group element (123) will rotate the triangle clockwise.
 
-\Cref{tab:reprep.char.table} is an example of a character table.
-It shows all simple representations of the group $S_3$.
-$S_3$ is the group of symmetries of a triangle.
-$1$ is the identity element, each representation will map it to the corresponding identity matrix of its vector space.
-This means that the character in that column will tell us the dimension of the vector space, the representation maps to, since $\chi_V(1) = \Tr(I_V) = \dim(V)$.
-The trivial representation, triv, and the sign representation, sgn, both have dimension one, so their character shows the matrices, which the group elements are mapped onto.
-The trivial representation just maps all elements to 1.
+The group has 3 conjugacy classes.
+The identity $(1)$ is its own conjugacy class, since for any $g \in S_3$ the following holds.
+\begin{align}
+    g \cdot (1) \cdot g^{-1} & = g \cdot g^{-1} = (1)
+\end{align}
+It has order 1.
+Another conjugacy class is the transpositions $\{(12), (23), (13)\}$. 
+Each element in this class is its own inverse, so its order is 2.
+And the last conjugacy class is the rotations $\{(123), (132)\}$.
+Since it takes 3 rotations to rotate the triangle by 360\textdegree, their order is 3.
 
 \begin{figure}[!h]
     \centering
@@ -37,15 +40,18 @@ The trivial representation just maps all elements to 1.
     \label{fig:reprep.char.triangle}
 \end{figure}
 
+\subsection{The Trivial Representation and The Sign Representation}
+
+$1$ is the identity element, each representation will map it to the corresponding identity matrix of its vector space.
+This means that the character in that column will tell us the dimension of the vector space, the representation maps to, since $\chi_V(1) = \Tr(I_V) = \dim(V)$.
+The trivial representation, $\triv$, and the sign representation, $\sgn$, both have dimension one, so their character shows the matrices, which the group elements are mapped onto.
+The trivial representation just maps all elements to 1.
+
 For the sign representation, we need to know, what the conjugacy classes are and what the notation means.
-We think of each element as an action on a triangle as shown in \Cref{fig:reprep.char.triangle}.
-The notation will tell us, which corner is mapped where.
-The corner with the first number will be mapped to the corner with the second number.
-If there is a third number, the corner with the second number will be mapped to the corner with the third number.
-And finally, the corner with the last number will be mapped to the corner with the first number.
-So the group element (12) will just swap corners 1 and 2 and the group element (123) will rotate the triangle clockwise.
 Every element in the conjugacy group of (12) will invert the order of numbers from clockwise to counterclockwise and vice versa, hence the sign representation maps its elements to -1.
 The identity and rotations will leave the order intact and therefore the sign representation maps 1 and every element in the conjugacy group of (123) to 1.
+
+\subsection{The Standard Representation}
 
 Assume, that every corner of the triangle in \Cref{fig:reprep.char.triangle} is associated with a value $x_i$ where $x_1 + x_2 + x_3 = 0$.
 This subspace of $\C^3$ can be thought of a 2-dimensional vector space with the basis $\{e_1 - e_2, e_2 - e_3\}$ with
@@ -98,3 +104,27 @@ So $s^{(123)}_{10} = s^{(123)}_{11} = -1$ and  the resulting matrix with trace -
 \todo[inline]{proof faithful}
 \todo[inline]{proof irreducible}
 
+\subsection{The Character Table}
+
+\todo[inline]{full table description etc}
+
+\begin{table}
+    \centering
+
+    \begin{tabular}{r | c  c  c}
+                    & 1 & 3     & 2     \\
+        $S_3$       & 1 & (12)  & (123) \\ \hline
+        $\triv$     & 1 & 1     & 1     \\
+        $\sgn$      & 1 & -1    & 1     \\
+        $\stand$    & 2 & 0     & -1
+    \end{tabular}
+
+    \caption{Character table for the group $S_3$}
+    \label{tab:reprep.char.table}
+\end{table}
+
+\Cref{tab:reprep.char.table} is an example of a character table.
+It shows all simple representations of the group $S_3$.
+$S_3$ is the group of symmetries of a triangle.
+
+\subsection{General Standard Representation and Meaning for Cryptography}
