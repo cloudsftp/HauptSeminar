@@ -1,6 +1,6 @@
 \subsection{Character Tables}
 
-Character tables are the way, to write down representations, which was promised at the beginning of the section.
+Character tables are the compact way, to write down representations, which was promised at the beginning of the section.
 But first, we have to define what \textbf{characters} are.
 Suppose $\rho: G \to \GL(V)$ is a representation of a finite group $G$.
 The character of $\rho$ is defined as the map
@@ -10,15 +10,93 @@ The character of $\rho$ is defined as the map
         & a \mapsto \Tr(\rho(a))
     \end{align}
 \end{subequations}
-A representation can be recovered completely from its character.
-So now we know, we only have to write down one number per element $g \in G$.
-But since the trace of a matrix stays the same after a base change, it is also true that
+This character of a representation is identical to the character of equivalent representations.
+To prove this, assume that we have two equivalent representations, $\rho: G \to V$ and $\rho': G \to V'$ with an intertwiner $f: V \to V'$ that is invertible.
+Then the following holds for any $a \in G$.
+\begin{subequations}
 \begin{align}
-    \forall g, h \in G: \qquad & \chi_\rho(h \cdot g \cdot h^{-1}) = \chi_\rho(g)
+    \chi_{\rho'}(a) & = \Tr(\rho'(a)) = \Tr(f \cdot \rho'(a) \cdot f^{-1}) \\
+    & = \Tr((f \cdot \rho'(a)) \cdot f^{-1}) = \Tr(f^{-1} \cdot (f \cdot \rho'(a))) \\
+    & = \Tr(f^{-1} \cdot f \cdot \rho'(a) )= \Tr(\rho(a)) = \chi_\rho(a)
 \end{align}
-This tells us that the character $\chi_\rho$ is constant on the conjugacy classes of $G$.
-So we only have to write down one number per conjugacy class of $G$.
+\end{subequations}
+
+A representation can be recovered completely from its character.
+Of course, the representation might not exactly be the original representation, since the character of two equivalent representations is the same.
+But the recovered representation will be equivalent to the original representation.
+\todo[inline]{proof?}
+So now we know, we only have to write down one number per element $g \in G$.
+But actually, the character of a representation is constant on the group's conjugacy classes, so we only need to write down one number per conjugacy class.
+This is since for any $a, g \in G$ the following is true.
+\begin{subequations}
+\begin{align}
+    \chi_\rho(g \cdot a \cdot g^{-1}) & = \Tr(\rho(g \cdot a \cdot g^{-1})) = \Tr(\rho(g) \cdot \rho(a) \cdot \rho(g)^{-1}) \\
+    & = \Tr((\rho(g) \cdot \rho(a)) \cdot \rho(g)^{-1}) = \Tr(\rho(g)^{-1} \cdot (\rho(g) \cdot \rho(a))) \\
+    & = \Tr(\rho(g)^{-1} \cdot \rho(g) \cdot \rho(a)) = \Tr(\rho(a)) = \chi_\rho(a) \\
+\end{align}
+\end{subequations}
 This saves a lot of space and contains all the information needed to recover the representation~\cite{fulton2013}.
+
+The character of the direct sum of two representations is the sum of their characters.
+This is due to the property of the trace, that $\Tr(A \oplus B) = \Tr(A) + \Tr(B)$~\cite{fulton2013}.
+\begin{subequations}
+\begin{align}
+    \chi_{\rho \oplus \rho'}(a) & = \Tr((\rho \oplus \rho')(a)) = \Tr(\rho(a) \oplus \rho'(a)) \\
+    & = \Tr(\rho) + \Tr(\rho'(a)) = \chi_\rho(a) + \chi_{\rho'}(a)
+\end{align}
+\end{subequations}
+
+The character of the inverse of some group element $a \in G$ is the complex conjugate of the character of the element $\chi_\rho(a^{-1}) = \overline{\chi_\rho(a)}$.
+For the proof, we remember, that the trace of a matrix is the sum of its eigenvalues.
+\begin{align}
+    \chi_\rho(a) & = \Tr(\rho(a)) = \sum_i \lambda_i
+\end{align}
+We know, $a$ is of finite order, so $\rho(a)$ must also be of finite order.
+Therefore, all eigenvalues $\lambda_i$ of $\rho(a)$ are roots of unity and on the unit circle.
+The eigenvalues of the inverse matrix $\rho(a)^{-1}$ are the element-wise inverses of the eigenvalues $\lambda_i$ of the matrix $\rho(a)$.
+Since all $\lambda_i$ are on the unit cycle, their inverses are their complex conjugate $\lambda_i^{-1} = \overline{\lambda_i}$.
+The complex conjugate is additive and therefore the following holds\todo{citation}.
+\begin{subequations}
+\begin{align}
+    \chi_\rho(a^{-1}) & = \Tr(\rho(a^{-1})) = \Tr(\rho(a)^{-1}) \\
+    & = \sum_i \lambda_i^{-1} = \sum_i \overline{\lambda_i} = \overline{\sum_i \lambda_i} \\
+    & = \overline{\Tr(\rho(a))} = \overline{\chi_\rho(a)}
+\end{align}
+\end{subequations}
+
+We can take the scalar product of two characters.
+It is defined as
+\begin{align}
+    \langle \chi_\rho, \chi_{\rho'} \rangle & = \dfrac{1}{|G|} \sum_{a \in G} \chi_\rho(a) \cdot \overline{\chi_{\rho'}(a)}
+\end{align}
+If for two representations the scalar product is $\langle \chi_\rho, \chi_{\rho'} \rangle = 0$, they are called orthogonal.
+The notion is similar to vectors, two orthogonal characters are linearly independent and so are their representations.
+Therefore all characters of a representation must be orthogonal to each other and there are at most so many characters of irreducible representations as there are conjugacy classes of the group.
+The number of inequivalent irreducible representations is also limited to that number~\cite{fulton2013}.
+
+Now, since we have an upper limit on the number of inequivalent irreducible representations, we need a lower limit.
+Using characters, we can prove that there are at least as many inequivalent irreducible representations of a group $G$, as there are conjugacy classes of $G$.
+For the proof, we introduce a class function $\alpha: G \to \C$, for which $\langle \alpha, \chi_\rho \rangle = 0$ for all irreducible representations $\rho: G \to V$.
+If we can show, that $\alpha$ must be $\alpha = 0$, we showed that there are at least as many orthogonal characters as there are conjugacy classes.
+Because if $\alpha$ is not necessarily $0$, then there exists a non-zero class function, that is orthogonal to all characters, so the number of characters is smaller than the number of conjugacy classes.
+This means that there are at least as many inequivalent irreducible representations as there are conjugacy classes.
+We construct $\phi_{\alpha, \rho} = \sum_{g \in G} \alpha(g) \cdot \rho(g^{-1})$.
+Since this is a $G$-linear map of $V$ onto itself, via Shur's Lemma $\phi_{\alpha, \rho} = \lambda \cdot I$.
+And its trace is
+\begin{subequations}
+\begin{align}
+    \Tr(\phi_{\alpha, \rho}) & = \sum_{g \in G} \alpha(g) \cdot \chi_\rho(g^{-1}) \\
+    & = \dfrac{|G|}{|G|} \cdot \sum_{g \in G} \alpha(g) \cdot \chi_\rho(g^{-1})
+    = \dfrac{|G|}{|G|} \cdot \sum_{g \in G} \alpha(g) \cdot \overline{\chi_\rho(g)} \\
+    & = |G| \cdot \langle \alpha, \chi_\rho \rangle = 0 \label{equ:numirr.numconj.last}
+\end{align}
+\end{subequations}
+Therefore, it must be $\phi_{\alpha, \rho} = 0$ for any irreducible representation.
+The equality in \Cref{equ:numirr.numconj.last} is due to our assumption that $\langle \alpha, \rho \rangle = 0$ for all irreducible representations $\rho$.
+Since all representations are composed of irreducible representations via the direct sum, $\phi_{\alpha, \rho} = 0$ for all representations.
+So this is also true for the regular representation.
+The regular representation maps all elements to linearly independent permutation matrices.
+For $\phi_{\alpha, \rho} = \sum_{g \in G} \alpha(g) \cdot \rho(g^{-1}) = 0$ to be true for the regular representation, $\alpha$ must be $\alpha = 0$~\cite{fulton2013}.
 
 \textbf{Character tables} are just a way to write down characters of representations of groups.
 All representations in one table are representations of the same group.
