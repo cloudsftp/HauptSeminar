@@ -42,14 +42,40 @@ Since it takes 3 rotations to rotate the triangle by 360\textdegree, their order
 
 \subsection{The Trivial Representation and The Sign Representation}
 
-$1$ is the identity element, each representation will map it to the corresponding identity matrix of its vector space.
-This means that the character in that column will tell us the dimension of the vector space, the representation maps to, since $\chi_V(1) = \Tr(I_V) = \dim(V)$.
-The trivial representation, $\triv$, and the sign representation, $\sgn$, both have dimension one, so their character shows the matrices, which the group elements are mapped onto.
-The trivial representation just maps all elements to 1.
+The easiest representation of every finite group is the trivial representation $\triv$.
+We know, that it maps every group element $a \in S_3$ to the identity map of the vector space $\C^1$.
+So $\triv$ is simply $\triv = 1$.
+Its character therefore is $\chi_{\triv} = 1$.
+This representation is irreducible because the only subspaces of a one-dimensional vector space $V$ are $V$ itself and $\{0_V\}$~\cite{fulton2013}.
 
-For the sign representation, we need to know, what the conjugacy classes are and what the notation means.
-Every element in the conjugacy group of (12) will invert the order of numbers from clockwise to counterclockwise and vice versa, hence the sign representation maps its elements to -1.
-The identity and rotations will leave the order intact and therefore the sign representation maps 1 and every element in the conjugacy group of (123) to 1.
+The sign representation $\sgn$ is a little bit more complicated.
+Suppose, we want another one-dimensional representation.
+Since for one-dimensional representations the character is identical to the representation, we can assume that the representation is constant on the conjugacy classes of $S_3$.
+The identity element $(1)$ must always be represented as the identity map of the target vector space.
+So $\sgn((1)) = 1$ for our one-dimensional case.
+Since the elements in the conjugacy class $a \in \Cl((12))$ have order 2, we now choose to map them to $\sgn(a) = -1$ instead of $1$.
+Then for any $a \in \Cl((12))$ the representation of $a \cdot a$ is $\sgn(a \cdot a) = -1 \cdot -1 = 1 = \sgn((1))$.
+This reassures us, that the choice of $\sgn((a)) = -1$ is valid for the elements $a \in \Cl((12))$ because $\sgn$ acts as a homomorphism on these elements and the identity element.
+Now we just need to find the representation of the elements of the conjugacy class $a \in \Cl((123))$.
+We can construct the element $(123)$ from transpositions $(123) = (12) \cdot (23)$.
+Since $\sgn$ is a homomorphism, we now can calculate the representation of $(123)$ and therefore of all elements in its conjugacy class $a \in \Cl((123))$.
+\begin{align}
+    \sgn((123)) & = \sgn((12) \cdot (23)) = \sgn((12)) \cdot \sgn((23))  = -1 \cdot -1 = 1
+\end{align}
+So in summary,
+\begin{align}
+    \sgn(a) & = \begin{cases}
+        -1 & \text{ if } a \in \Cl((12)) \\
+        1 & \text{ else}
+    \end{cases}
+\end{align}
+Similarily the character is
+\begin{align}
+    \chi_{\sgn}(a) & = \begin{cases}
+        -1 & \text{ if } a \in \Cl((12)) \\
+        1 & \text{ else}
+    \end{cases}
+\end{align}
 
 \subsection{The Standard Representation}
 
