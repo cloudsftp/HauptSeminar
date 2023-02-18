@@ -37,7 +37,24 @@ This is since for any $a, g \in G$ the following is true.
 \end{subequations}
 This saves a lot of space and contains all the information needed to recover the representation~\cite{fulton2013}.
 
-\todo[inline]{character of inverse elements}
+The character of the inverse of some group element $a \in G$ is the complex conjugate of the character of the element $\chi_\rho(a^{-1}) = \overline{\chi_\rho(a)}$.
+For the proof, we remember, that the trace of a matrix is the sum of its eigenvalues.
+\begin{align}
+    \chi_\rho(a) & = \Tr(\rho(a)) = \sum_i \lambda_i
+\end{align}
+We know, $a$ is of finite order, so $\rho(a)$ must also be of finite order.
+Therefore, all eigenvalues $\lambda_i$ of $\rho(a)$ are roots of unity and on the unit circle.
+The eigenvalues of the inverse matrix $\rho(a)^{-1}$ are the element-wise inverses of the eigenvalues $\lambda_i$ of the matrix $\rho(a)$.
+Since all $\lambda_i$ are on the unit cycle, their inverses are their complex conjugate $\lambda_i^{-1} = \overline{\lambda_i}$.
+The complex conjugate is additive and therefore the following holds.
+\begin{subequations}
+\begin{align}
+    \chi_\rho(a^{-1}) & = \Tr(\rho(a^{-1})) = \Tr(\rho(a)^{-1}) \\
+    & = \sum_i \lambda_i^{-1} = \sum_i \overline{\lambda_i} = \overline{\sum_i \lambda_i} \\
+    & = \overline{\Tr(\rho(a))} = \overline{\chi_\rho(a)}
+\end{align}
+\end{subequations}
+
 \todo[inline]{<rho, rho'>, all characters orthogonal, it follows that num of characters at most num of conj classes}
 
 Using characters, we can prove another interesting property of representations.
