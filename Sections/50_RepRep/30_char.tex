@@ -26,7 +26,7 @@ Of course, the representation might not exactly be the original representation, 
 But the recovered representation will be equivalent to the original representation.
 \todo[inline]{proof?}
 So now we know, we only have to write down one number per element $g \in G$.
-But actually, the character of a representation is constant on the groups conjugacy classes, so we only need to write down one number per conjugacy class.
+But actually, the character of a representation is constant on the group's conjugacy classes, so we only need to write down one number per conjugacy class.
 This is since for any $a, g \in G$ the following is true.
 \begin{subequations}
 \begin{align}
@@ -35,10 +35,34 @@ This is since for any $a, g \in G$ the following is true.
     & = \Tr(\rho(g)^{-1} \cdot \rho(g) \cdot \rho(a)) = \Tr(\rho(a)) = \chi_\rho(a) \\
 \end{align}
 \end{subequations}
-
 This saves a lot of space and contains all the information needed to recover the representation~\cite{fulton2013}.
 
-\todo[inline]{proof about \# of irred representations}
+\todo[inline]{character of inverse elements}
+\todo[inline]{<rho, rho'>, all characters orthogonal, it follows that num of characters at most num of conj classes}
+
+Using characters, we can prove another interesting property of representations.
+The number of inequivalent irreducible representations of a group $G$ is equal to the number of conjugacy classes of that group.
+For the proof, we introduce a class function $\alpha: G \to \C$, for which $\langle \alpha, \chi_\rho \rangle = 0$ for all irreducible representations $\rho: G \to V$.
+If we can show, that $\alpha$ must be $\alpha = 0$, we showed that there are as many orthogonal characters as there are conjugacy classes.
+Because if $\alpha$ is not necessarily $0$, then there exists a non-zero class function, that is orthogonal to all characters, so the number of characters is smaller than the number of conjugacy classes.
+This means that there are as many inequivalent irreducible representations as there are conjugacy classes.
+We construct $\phi_{\alpha, \rho} = \sum_{g \in G} \alpha(g) \cdot \rho(g^{-1})$.
+Since this is a $G$-linear map of $V$ onto itself, via Shur's Lemma $\phi_{\alpha, \rho} = \lambda \cdot I$.
+And its trace is
+\begin{subequations}
+\begin{align}
+    \Tr(\phi_{\alpha, \rho}) & = \sum_{g \in G} \alpha(g) \cdot \chi_\rho(g^{-1}) \\
+    & = \dfrac{|G|}{|G|} \cdot \sum_{g \in G} \alpha(g) \cdot \chi_\rho(g^{-1})
+    = \dfrac{|G|}{|G|} \cdot \sum_{g \in G} \alpha(g) \cdot \overline{\chi_\rho(g)} \\
+    & = |G| \cdot \langle \alpha, \chi_\rho \rangle = 0 \label{equ:numirr.numconj.last}
+\end{align}
+\end{subequations}
+Therefore, it must be $\phi_{\alpha, \rho} = 0$ for any irreducible representation.
+The equality in \Cref{equ:numirr.numconj.last} is due to our assumption that $\langle \alpha, \rho \rangle = 0$ for all irreducible representations $\rho$.
+Since all representations are composed of irreducible representations via the direct sum, $\phi_{\alpha, \rho} = 0$ for all representations.
+So this is also true for the regular representation.
+The regular representation maps all elements to linearly independent permutation matrices.
+For $\phi_{\alpha, \rho} = \sum_{g \in G} \alpha(g) \cdot \rho(g^{-1}) = 0$ to be true for the regular representation, $\alpha$ must be $\alpha = 0$.
 
 \textbf{Character tables} are just a way to write down characters of representations of groups.
 All representations in one table are representations of the same group.
