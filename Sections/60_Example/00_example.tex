@@ -80,6 +80,7 @@ Similarly the character is
 As for the trivial representation, this representation is also irreducible for the same reason~\cite{fulton2013}.
 
 \subsection{The Standard Representation}
+\label{sec:ex.stand}
 
 The standard representation is our first and only irreducible faithful representation.
 Assume, that every corner of the triangle in \Cref{fig:reprep.char.triangle} is associated with a coordinate of $\C^3$, $x_i$.
@@ -235,9 +236,11 @@ Therefore the character is given by the following equation~\cite{fulton2013}.
 
 \subsection{The Character Table}
 
-\todo[inline]{full table description etc}
+\Cref{tab:reprep.char.table} lists the characters of all the inequivalent irreducible representations we found of the group $S_3$.
+We can see, that it has as many rows as columns, therefore we know that we found all inequivalent irreducible representations.
+We proved this fact in \Cref{sec:reprep.char}.
 
-\begin{table}
+\begin{table}[h]
     \centering
 
     \begin{tabular}{r | c  c  c}
@@ -252,8 +255,10 @@ Therefore the character is given by the following equation~\cite{fulton2013}.
     \label{tab:reprep.char.table}
 \end{table}
 
-\Cref{tab:reprep.char.table} is an example of a character table.
-It shows all simple representations of the group $S_3$.
-$S_3$ is the group of symmetries of a triangle.
-
 \subsection{General Standard Representation and Meaning for Cryptography}
+
+The standard representation, we constructed in \Cref{sec:ex.stand} can be constructed for any symmetric group $S_n$.
+The construction works analogously.
+This representation always has the dimension $n - 1$, but the group $S_n$ has $n!$ elements.
+Since this representation is small compared to the size of the group, the group $S_n$ can't be used as a platform for most key-exchange protocols that work with non-abelian groups.
+Such as the Shpilrain-Ushakov key-exchange~\cite{khovanov2022monoidal}.
