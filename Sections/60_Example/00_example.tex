@@ -207,6 +207,32 @@ Now, we show that both these vector subspaces are not invariant under $\stand((1
 \end{subequations}
 Therefore, there can be no non-trivial vector subspace that is invariant under $\stand$~\cite{fulton2013}.
 
+The character is calculated quickly by choosing one element from each conjugacy class $(1) \in \Cl((1))$, $(12) \in \Cl((12))$, and $(123) \in \Cl((123))$, and then taking the trace of its image in $\stand$.
+\begin{subequations}
+\begin{align}
+    \chi_{\stand}((1)) & = \Tr\left( \begin{pmatrix}
+        1 & 0 \\
+        0 & 1
+    \end{pmatrix} \right) = 2 \\
+    \chi_{\stand}((12)) & = \Tr\left( \begin{pmatrix}
+        -1 & 0 \\
+        1 & 1
+    \end{pmatrix} \right) = 0 \\
+    \chi_{\stand}((123)) & = \Tr\left( \begin{pmatrix}
+        -1 & -1 \\
+        1 & 0
+    \end{pmatrix} \right) = -1
+\end{align}
+\end{subequations}
+Therefore the character is given by the following equation~\cite{fulton2013}.
+\begin{align}
+    \chi_{\stand}(a) = \begin{cases}
+        2 & \text{ if } a \in \Cl((1)) \\
+        0 & \text{ if } a \in \Cl((12)) \\
+        -1 & \text{ if } a \in \Cl((123))
+    \end{cases}
+\end{align}
+
 \subsection{The Character Table}
 
 \todo[inline]{full table description etc}
