@@ -1,27 +1,31 @@
 \section{The Example of $S_3$}
 
-\begin{table}
-    \centering
+In this section, we will create the character table for the symmetric group $S_3$.
+We start by describing $S_3$.
+Then we will find all inequivalent irreducible representations and list their characters in a character table.
 
-    \begin{tabular}{r | c  c  c}
-                    & 1 & 3     & 2     \\
-        $S_3$       & 1 & (12)  & (123) \\ \hline
-        $\triv$     & 1 & 1     & 1     \\
-        $\sgn$      & 1 & -1    & 1     \\
-        $\stand$    & 2 & 0     & -1
-    \end{tabular}
+\subsection{The Group $S_3$}
+\label{sec:ex.group}
 
-    \caption{Character table for the group $S_3$}
-    \label{tab:reprep.char.table}
-\end{table}
+The group $S_3$ consists of all possible permutations of $3$ objects.
+We can think of each element as an action on a triangle as shown in \Cref{fig:reprep.char.triangle}.
+Elements of the group are usually written as numbers ($1-3$) in brackets, such as $(123)$.
+The notation will tell us, which corner is mapped where.
+The corner with the first number will be mapped to the corner with the second number.
+If there is a third number, the corner with the second number will be mapped to the corner with the third number.
+And finally, the corner with the last number will be mapped to the corner with the first number.
+So the group element (12) will just swap corners 1 and 2 and the group element (123) will rotate the triangle clockwise.
 
-\Cref{tab:reprep.char.table} is an example of a character table.
-It shows all simple representations of the group $S_3$.
-$S_3$ is the group of symmetries of a triangle.
-$1$ is the identity element, each representation will map it to the corresponding identity matrix of its vector space.
-This means that the character in that column will tell us the dimension of the vector space, the representation maps to, since $\chi_V(1) = \Tr(I_V) = \dim(V)$.
-The trivial representation, triv, and the sign representation, sgn, both have dimension one, so their character shows the matrices, which the group elements are mapped onto.
-The trivial representation just maps all elements to 1.
+The group has 3 conjugacy classes.
+The identity $(1)$ is its own conjugacy class, since for any $g \in S_3$ the following holds.
+\begin{align}
+    g \cdot (1) \cdot g^{-1} & = g \cdot g^{-1} = (1)
+\end{align}
+It has order 1.
+Another conjugacy class is the transpositions $\{(12), (23), (13)\}$. 
+Each element in this class is its own inverse, so its order is 2.
+And the last conjugacy class is the rotations $\{(123), (132)\}$.
+Since it takes 3 rotations to rotate the triangle by 360\textdegree, their order is 3.
 
 \begin{figure}[!h]
     \centering
@@ -37,64 +41,224 @@ The trivial representation just maps all elements to 1.
     \label{fig:reprep.char.triangle}
 \end{figure}
 
-For the sign representation, we need to know, what the conjugacy classes are and what the notation means.
-We think of each element as an action on a triangle as shown in \Cref{fig:reprep.char.triangle}.
-The notation will tell us, which corner is mapped where.
-The corner with the first number will be mapped to the corner with the second number.
-If there is a third number, the corner with the second number will be mapped to the corner with the third number.
-And finally, the corner with the last number will be mapped to the corner with the first number.
-So the group element (12) will just swap corners 1 and 2 and the group element (123) will rotate the triangle clockwise.
-Every element in the conjugacy group of (12) will invert the order of numbers from clockwise to counterclockwise and vice versa, hence the sign representation maps its elements to -1.
-The identity and rotations will leave the order intact and therefore the sign representation maps 1 and every element in the conjugacy group of (123) to 1.
+\subsection{The Trivial Representation and The Sign Representation}
 
-Assume, that every corner of the triangle in \Cref{fig:reprep.char.triangle} is associated with a value $x_i$ where $x_1 + x_2 + x_3 = 0$.
-This subspace of $\C^3$ can be thought of a 2-dimensional vector space with the basis $\{e_1 - e_2, e_2 - e_3\}$ with
-\begin{align*}
-    x' = \begin{pmatrix}
+The easiest representation of every finite group is the trivial representation $\triv$.
+We know, that it maps every group element $a \in S_3$ to the identity map of the vector space $\C^1$.
+So $\triv$ is simply $\triv = 1$.
+Its character therefore is $\chi_{\triv} = 1$.
+This representation is irreducible because the only subspaces of a one-dimensional vector space $V$ are $V$ itself and $\{0_V\}$~\cite{fulton2013}.
+
+The sign representation $\sgn$ is a little bit more complicated.
+Suppose, we want another one-dimensional representation.
+Since for one-dimensional representations, the character is identical to the representation, we can assume that the representation is constant on the conjugacy classes of $S_3$.
+The identity element $(1)$ must always be represented as the identity map of the target vector space.
+So $\sgn((1)) = 1$ for our one-dimensional case.
+Since the elements in the conjugacy class $a \in \Cl((12))$ have order 2, we now choose to map them to $\sgn(a) = -1$ instead of $1$.
+Then for any $a \in \Cl((12))$ the representation of $a \cdot a$ is $\sgn(a \cdot a) = -1 \cdot -1 = 1 = \sgn((1))$.
+This reassures us, that the choice of $\sgn((a)) = -1$ is valid for the elements $a \in \Cl((12))$ because $\sgn$ acts as a homomorphism on these elements and the identity element.
+Now we just need to find the representation of the elements of the conjugacy class $a \in \Cl((123))$.
+We can construct the element $(123)$ from transpositions $(123) = (12) \cdot (23)$.
+Since $\sgn$ is a homomorphism, we now can calculate the representation of $(123)$ and therefore of all elements in its conjugacy class $a \in \Cl((123))$.
+\begin{align}
+    \sgn((123)) & = \sgn((12) \cdot (23)) = \sgn((12)) \cdot \sgn((23))  = -1 \cdot -1 = 1
+\end{align}
+So in summary,
+\begin{align}
+    \sgn(a) & = \begin{cases}
+        -1 & \text{ if } a \in \Cl((12)) \\
+        1 & \text{ else}
+    \end{cases}
+\end{align}
+Similarly the character is
+\begin{align}
+    \chi_{\sgn}(a) & = \begin{cases}
+        -1 & \text{ if } a \in \Cl((12)) \\
+        1 & \text{ else}
+    \end{cases}
+\end{align}
+As for the trivial representation, this representation is also irreducible for the same reason~\cite{fulton2013}.
+
+\subsection{The Standard Representation}
+\label{sec:ex.stand}
+
+The standard representation is our first and only irreducible faithful representation.
+Assume, that every corner of the triangle in \Cref{fig:reprep.char.triangle} is associated with a coordinate of $\C^3$, $x_i$.
+When permutating these values, the sum stays constant.
+Without loss of generality, we can assume that the sum is $x_1 + x_2 + x_3 = 0$.
+This is a subspace $V' = \{x \in \C^3 | x_1 + x_2 + x_3 = 0\}$ of $\C^3$, which is equivalent to $\C^2$ by the isomorphism
+\begin{align}
+    \pi: \qquad & V' \to \C^2, \quad \begin{pmatrix}
+        x_1 \\ x_2 \\ x_3
+    \end{pmatrix} \mapsto \begin{pmatrix}
         x_1 - x_2 \\
         x_2 - x_3
     \end{pmatrix}
-\end{align*}
-The elements of $S_3$ map the values of $x_i$ between the corners as described above.
-So the standard representation maps 1 to I because all $x_i$s stay the same and therefore also $x'_1 = x_1 - x_2$ and $x_2' = x_2 - x_3$.
-I will write $\stand((12))$ as $s^{(12)}$ in the following for readability.
-The action (12) swaps the values of $x_1$ and $x_2$.
-So $s^{(12)}_{00} = -1$ and $s^{(12)}_{01} = 0$, since $x'_1$ is just negated.
-For $x'_2$ it is a little more complicated, the elements of the matrix must satisfy the equality
-\begin{align*}
-    x_1 - x_3 & = s^{(12)}_{10} \cdot (x_1 - x_2) + s^{(12)}_{11} \cdot (x_2 - x_3) \\
-    & = x_1 \cdot s^{(12)}_{10} + x_2 \cdot (s^{(12)}_{11} - s^{(12)}_{10}) + x_3 \cdot s^{(12)}_{11} \\
-\end{align*}
-So $s^{(12)}_{10} = s^{(12)}_{11} = 1$ and the resulting matrix is
-\begin{align*}
-    s^{(12)} & = \begin{pmatrix}
+\end{align}
+
+The elements of $S_3$ permutate the values $x_i$ as described in \Cref{sec:ex.group}.
+The image if $(1)$ is $I$, like for every representation.
+The image of the other elements has to be computed by its action on the vectors of $\C^2$, which can be derived from its actions on $V'$.
+For example, take the element $(12)$.
+Its action $\rho': S_3 \to \GL(V')$ is
+\begin{align}
+    \begin{pmatrix}
+        x_2 \\ x_1 \\ x_3
+    \end{pmatrix} = \rho'((12)) \cdot \begin{pmatrix}
+        x_1 \\ x_2 \\ x_3
+    \end{pmatrix}
+\end{align}
+Therefore, its action $\stand: G \to \GL(\C^2)$ on $\C^2$ must be
+\begin{align}
+    \begin{pmatrix}
+        x_2 - x_1 \\
+        x_1 - x_3
+    \end{pmatrix} = \stand((12)) \cdot \begin{pmatrix}
+        x_1 - x_2 \\
+        x_2 - x_3
+    \end{pmatrix}
+\end{align}
+We can calculate the matrix $\stand((12))$ via two linear equations.
+First, we calculate the elements in the top row.
+We will write them as $s^{(12)}_{11}$ and $s^{(12)}_{12}$.
+\begin{subequations}
+\begin{align}
+    x_2 - x_1 & = s^{(12)}_{11} \cdot (x_1 - x_2) + s^{(12)}_{12} \cdot (x_2 - x_3) \\
+    & = (-1) \cdot (x_1 - x_2) \\
+    \Longrightarrow \quad & s^{(12)}_{11} = -1 \land s^{(12)}_{12} = 0
+\end{align}
+\end{subequations}
+Similarly, we can get the elements in the bottom row, $s^{(12)}_{21}$ and $s^{(12)}_{22}$.
+\begin{subequations}
+\begin{align}
+    x_1 - x_3 & = s^{(12)}_{21} \cdot (x_1 - x_2) + s^{(12)}_{22} \cdot (x_2 - x_3) \\
+    & = x_1 - x_2 + x_2 - x_3 \\
+    \Longrightarrow \quad & s^{(12)}_{21} = 1 \land s^{(12)}_{22} = 1
+\end{align}
+\end{subequations}
+
+We can do this for every element in $S_3$ and will get the following matrices.
+\begin{table}[h]
+    \centering
+    \begin{tabular}{c c c}
+        $\stand((1)) = I$ & $\stand((123)) = \begin{pmatrix}
+            -1 & -1 \\
+            1 & 0
+        \end{pmatrix}$ & $\stand((132)) = \begin{pmatrix}
+            0 & 1 \\
+            -1 & -1
+        \end{pmatrix}$ \\\\ $\stand((12)) = \begin{pmatrix}
+            -1 & 0 \\
+            1 & 1
+        \end{pmatrix}$ & $\stand((13)) = \begin{pmatrix}
+            0 & -1 \\
+            -1 & 0
+        \end{pmatrix}$ & $\stand((23)) = \begin{pmatrix}
+            1 & 1 \\
+            0 & -1
+        \end{pmatrix}$
+    \end{tabular}
+\end{table}
+As we can see, all matrices are different from each other.
+This means, that $\stand$ is faithful since every element $a \in S_3$ has a different image under $\stand$.
+
+We now want to prove that $\stand$ is irreducible.
+For it to be irreducible, there may be no non-trivial subspace, that is invariant under $\stand$.
+We start by identifying vector subspaces of $\C^2$ that are invariant under $\stand((13))$, they are our candidates.
+These subspaces are the eigenspaces of $\stand((13))$.
+First, we calculate the eigenvalues:
+\begin{subequations}
+\begin{align}
+    \det \left[ \stand((13)) - \lambda \cdot I \right]
+    & = \det \left[ \begin{pmatrix}
+        0 & -1 \\ -1 & 0
+    \end{pmatrix} - \lambda \cdot I \right] = \det \left[ \begin{pmatrix}
+        -\lambda & -1 \\ -1 & -\lambda
+    \end{pmatrix} \right] \\
+    & = \lambda^2 - 1 = 0
+\end{align}
+\end{subequations}
+Therefore the eigenvalues are $\lambda_1 = 1$ and $\lambda_2 = -1$.
+The corresponding eigenvectors are $v_1 = \begin{pmatrix}
+    1 & -1
+\end{pmatrix}^T$ and $v_2 = \begin{pmatrix}
+    1 & 1
+\end{pmatrix}^T$.
+Therefore the eigenspaces are $E_{\lambda_1} = \C \cdot v_1$ and $E_{\lambda_2} = \C \cdot v_2$.
+Now, we show that both these vector subspaces are not invariant under $\stand((123))$:
+\begin{subequations}
+\begin{align}
+    \stand((123)) \cdot v_1 & = \begin{pmatrix}
+        -1 & -1 \\
+        1 & 0
+    \end{pmatrix} \cdot \begin{pmatrix}
+        1 \\ -1
+    \end{pmatrix} = \begin{pmatrix}
+        0 \\ 1
+    \end{pmatrix} \notin E_{\lambda_1} \\
+    \stand((123)) \cdot v_2 & = \begin{pmatrix}
+        -1 & -1 \\
+        1 & 0
+    \end{pmatrix} \cdot \begin{pmatrix}
+        1 \\ 1
+    \end{pmatrix} = \begin{pmatrix}
+        -2 \\ 1
+    \end{pmatrix} \notin E_{\lambda_2}
+\end{align}
+\end{subequations}
+Therefore, there can be no non-trivial vector subspace that is invariant under $\stand$~\cite{fulton2013}.
+
+The character is calculated quickly by choosing one element from each conjugacy class $(1) \in \Cl((1))$, $(12) \in \Cl((12))$, and $(123) \in \Cl((123))$, and then taking the trace of its image in $\stand$.
+\begin{subequations}
+\begin{align}
+    \chi_{\stand}((1)) & = \Tr\left( \begin{pmatrix}
+        1 & 0 \\
+        0 & 1
+    \end{pmatrix} \right) = 2 \\
+    \chi_{\stand}((12)) & = \Tr\left( \begin{pmatrix}
         -1 & 0 \\
         1 & 1
-    \end{pmatrix}
-\end{align*}
-Its trace is 0.
-We don't need to compute the matrices for the other two elements in the same conjugacy class, since the character is constant on the conjugacy classes as mentioned above.
-Now we computed the values of the character of the standard representation of $S_3$ for the conjugacy classes of 1 and (12).
-The value for the conjugacy class (123) is missing.
-I will write $\stand((123))$ as $s^{(123)}$ in the following for readability.
-For to get the correct value in $x'_1$, the elements of the matrix must satisfy the following equality
-\begin{align*}
-    x_2 - x_3 & = s^{(123)}_{00} \cdot (x_1 - x_2) + s^{(123)}_{01} \cdot (x_2 - x_3)
-\end{align*}
-So $s^{(123)}_{00} = 0$ and $s^{(123)}_{01} = 1$.
-For $x'_2$ it is more complicated and the remaining elements of the matrix have to satisfy the equality
-\begin{align*}
-    x_3 - x_1 & = s^{(123)}_{10} \cdot (x_1 - x_2) + s^{(123)}_{11} \cdot (x_2 - x_3) \\
-    & = x_1 \cdot s^{(123)}_{10} + x_2 \cdot (s^{(123)}_{11} - s^{(123)}_{10}) + x_3 \cdot s^{(123)}_{11}
-\end{align*}
-So $s^{(123)}_{10} = s^{(123)}_{11} = -1$ and  the resulting matrix with trace -1 is
-\begin{align*}
-    s^{(123)} & = \begin{pmatrix}
-        0 & 1 \\
-        -1 & -1
-    \end{pmatrix}
-\end{align*}
+    \end{pmatrix} \right) = 0 \\
+    \chi_{\stand}((123)) & = \Tr\left( \begin{pmatrix}
+        -1 & -1 \\
+        1 & 0
+    \end{pmatrix} \right) = -1
+\end{align}
+\end{subequations}
+Therefore the character is given by the following equation~\cite{fulton2013}.
+\begin{align}
+    \chi_{\stand}(a) = \begin{cases}
+        2 & \text{ if } a \in \Cl((1)) \\
+        0 & \text{ if } a \in \Cl((12)) \\
+        -1 & \text{ if } a \in \Cl((123))
+    \end{cases}
+\end{align}
 
-\todo[inline]{proof faithful}
-\todo[inline]{proof irreducible}
+\subsection{The Character Table}
 
+\Cref{tab:reprep.char.table} lists the characters of all the inequivalent irreducible representations we found of the group $S_3$.
+We can see, that it has as many rows as columns, therefore we know that we found all inequivalent irreducible representations.
+We proved this fact in \Cref{sec:reprep.char}.
+
+\begin{table}[h]
+    \centering
+
+    \begin{tabular}{r | c  c  c}
+                    & 1 & 3     & 2     \\
+        $S_3$       & 1 & (12)  & (123) \\ \hline
+        $\triv$     & 1 & 1     & 1     \\
+        $\sgn$      & 1 & -1    & 1     \\
+        $\stand$    & 2 & 0     & -1
+    \end{tabular}
+
+    \caption{Character table for the group $S_3$}
+    \label{tab:reprep.char.table}
+\end{table}
+
+\subsection{General Standard Representation and Meaning for Cryptography}
+
+The standard representation, we constructed in \Cref{sec:ex.stand} can be constructed for any symmetric group $S_n$.
+The construction works analogously.
+This representation always has the dimension $n - 1$, but the group $S_n$ has $n!$ elements.
+Since this representation is small compared to the size of the group, the group $S_n$ can't be used as a platform for most key-exchange protocols that work with non-abelian groups.
+Such as the Shpilrain-Ushakov key-exchange~\cite{khovanov2022monoidal}.
