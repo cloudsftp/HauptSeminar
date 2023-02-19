@@ -1,7 +1,5 @@
 \subsection{Linear Algebra}
 
-\todo[inline]{make sure always start at index 1}
-
 A \textbf{vector space} over a field $F$ is a set $V$ with two operations, addition $+: V \times V \to V$ and scalar multiplication $\cdot: F \times V \to V$, that satisfy the following axioms.
 \begin{subequations}
 \begin{align}
@@ -19,7 +17,7 @@ A \textbf{vector space} over a field $F$ is a set $V$ with two operations, addit
 \footnotetext{with respect to vector addition}
 \footnotetext{with respect to field addition}
 
-A \textbf{linear map} $m$ between vector spaces $V$ and $W$ is a map $m: V \to W$ that satisfies the following two conditions.
+A \textbf{linear map} $m$ between vector spaces $V$ and $W$ is a map $m: V \to W$ that satisfies the following two conditions:
 \begin{subequations}
 \begin{align}
     \forall u, v \in V: \qquad & m(u + v) = m(u) + m(v) & \text{additivity} \\
@@ -27,11 +25,11 @@ A \textbf{linear map} $m$ between vector spaces $V$ and $W$ is a map $m: V \to W
 \end{align}
 \end {subequations}
 In our case both vector spaces $V$ and $W$ always have the same, so $V = W$.
-The subset of all invertible linear maps between $V$ and itself is denoted as $\GL(V)$.
+The subset of all \textbf{invertible} linear maps between $V$ and itself is denoted as $\GL(V)$.
 \\
 
 In most cases, the representations of groups are over finite-dimensional vector spaces.
-If they are finite-dimensional, they will be vector spaces over the field of complex numbers $\C$ in this work.
+If they are finite-dimensional, they will be vector spaces over the field of complex numbers $\C$ in this document.
 A $n$-dimensional complex vector space is denoted as $\C^n$.
 
 If a linear map is between two finite-dimensional vector spaces and both of those have a defined basis, it can be represented by a \textbf{matrix}.
@@ -52,13 +50,39 @@ The identity matrix is defined as $I = (\delta_{kj})_{kj}$ where $\delta_{kj}$ i
     \end{cases}
 \end{align}
 
-\todo[inline]{eigenspaces}
-
-On $\C^n$, the \textbf{scalar product} (also called dot product) $\langle \cdot, \cdot \rangle: \C^n \times \C^n \to \C$ is defined as
+A linear map from a complex vector space to itself is represented as a \textbf{square} matrix.
+The following two concepts only exist for this kind of map.
+The \textbf{trace} of a square matrix $\Tr: \C^{n \times n} \to \C$ is defined as
 \begin{align}
-    \langle v, w \rangle = \sum_i v_i \cdot w_i
+    \Tr(A) = \sum_i a_{ii}
 \end{align}
-It can also be thought of as a matrix multiplication of a row vector and a column vector $\langle v, w \rangle = v^T w$.
+
+\todo[inline]{trace is sum of eigenvalues}
+
+For a linear map $A$ from a complex vector space $\C^n$ to itself, there is at least one vector $v \in \C^n$ and a scalar $\lambda \in \C$ so that
+\begin{align}
+    A \cdot v & = \lambda \cdot v
+\end{align}
+$v$ is called \textbf{eigenvector} of $A$ and $\lambda$ is called \textbf{eigenvalue} of $A$.
+The set of all eigenvalues of a matrix is denoted $\sigma_A = \left\{ \lambda_i \right\}$.
+If $v_i \in \C^n$ is an eigenvector with the eigenvalue $\lambda_i$, then every multiple $\kappa \cdot v_i$ with $\kappa \in \C$ is also an eigenvector of $A$ with the eigenvalue $\lambda_i$.
+There may be other vectors that also satisfy the condition for the same $\lambda_i$.
+All the vectors, that do form a vector subspace denoted
+\begin{align}
+    E_{\lambda_i} & = \left\{ v \in \C^n | A \cdot v = \lambda_i \cdot v \right\}
+\end{align}
+
+\todo[inline]{eigenvalues of matrix of finite order are roots of unity/on the unit circle}
+
+%% start needed?
+%\todo[inline]{Is scalar product nescessary?}
+
+%On $\C^n$, the \textbf{scalar product} (also called dot product) $\langle \cdot, \cdot \rangle: \C^n \times \C^n \to \C$ is defined as
+%\begin{align}
+%    \langle v, w \rangle = \sum_i v_i \cdot w_i
+%\end{align}
+%It can also be thought of as a matrix multiplication of a row vector and a column vector $\langle v, w \rangle = v^T w$.
+%% end needed?
 
 The \textbf{direct sum} of two matrices $\oplus: \C^{a \times b} \times \C^{c \times d} \to \C^{(a + c) \times (b + d)}$ is defined as
 \begin{align}
@@ -68,38 +92,41 @@ The \textbf{direct sum} of two matrices $\oplus: \C^{a \times b} \times \C^{c \t
     \end{pmatrix}
 \end{align}
 where each zero stands for a matrix that only has zeros.
+Matrices, that can be written as the direct sum of two or more matrices are called \textbf{block matrices}.
+\todo[inline]{trace of direct sum}
 
-\todo[inline]{block matrix}
-
+\todo[inline]{look at it again}
 The \textbf{tensor product} of two matrices $\otimes: \C^{a \times b} \times \C^{c \times d} \to \C^{(a \cdot c) \times (b \cdot d)}$ is defined as
 \begin{align}
     A \otimes B = \begin{pmatrix}
-        a_{0, 0} \cdot B & a_{0, 1} \cdot B & \ldots & a_{0, b-1} \cdot B \\
+        a_{1, 1} \cdot B & a_{1, 2} \cdot B & \ldots & a_{1, b} \cdot B \\
         \vdots & \vdots & \ddots & \vdots \\
-        a_{a-1, 0} \cdot B & a_{a-1, 1} \cdot B & \ldots & a_{a-1, b-1} \cdot B
+        a_{a, 1} \cdot B & a_{a, 2} \cdot B & \ldots & a_{a, b} \cdot B
     \end{pmatrix}
 \end{align}
 
-\todo[inline]{outer and symmetric powers}
+\todo[inline]{add complementary vector spaces}
 
-The \textbf{trace} of a square matrix $\Tr: \C^{n \times n} \to \C$ is defined as
-\begin{align}
-    \Tr(A) = \sum_i a_{ii}
-\end{align}
+\todo[inline]{add kernel, image, surjective, injective}
 
-A \textbf{change of basis} from one basis $\{v_i\}_i$ to another one $\{w_j\}_j$ in a vector space $C^n$ can be represented by an invertible matrix.
-We find this matrix by writing each vector of the new basis $w_j$ as a linear combination of the vectors in the old basis $v_i$.
-\begin{align}
-    w_j = \sum_i a_{ij} v_i
-\end{align}
-This gives us the elements of $A = (a_{ij})_{ij}$.
-A vector $x \in \C^n$ is transformed from the old to the new basis via a matrix multiplication $x' = A^{-1} \cdot x$.
-A linear map between $\C^n$ and itself represented as a matrix $M \in \C^{n \times n}$ is transformed via two matrix multiplications $M' = A^{-1} \cdot M \cdot A$.
-\\
+%% start needed?
+%\todo[inline]{outer and symmetric powers}
 
-\todo[inline]{still necessary? Do I introduce dual representation later?}
+%\todo[inline]{Is change of basis necessary?}
 
-A \textbf{dual vector space} $V^*$ of a vector space $V$ over a field $F$ is the set of all linear maps $m: V \to F$.
-In the case of $\C^n = \C^{n \times 1}$ we can think of it as row vectors $(\C^n)^* = \C^{1 \times n}$.
-Multiplying a row vector with a column vector will result in a number, this follows from the definition of matrix multiplication above.
-Since every element in the row vector corresponds to the weight of one element in the column vector, before summing everything up, every linear map $m: \C^n \to \C$ can be represented by exactly one row vector.
+%A \textbf{change of basis} from one basis $\{v_i\}_i$ to another one $\{w_j\}_j$ in a vector space $C^n$ can be represented by an invertible matrix.
+%We find this matrix by writing each vector of the new basis $w_j$ as a linear combination of the vectors in the old basis $v_i$.
+%\begin{align}
+%    w_j = \sum_i a_{ij} v_i
+%\end{align}
+%This gives us the elements of $A = (a_{ij})_{ij}$.
+%A vector $x \in \C^n$ is transformed from the old to the new basis via a matrix multiplication $x' = A^{-1} \cdot x$.
+%A linear map between $\C^n$ and itself represented as a matrix $M \in \C^{n \times n}$ is transformed via two matrix multiplications $M' = A^{-1} \cdot M \cdot A$.
+%\\
+%
+%\todo[inline]{still necessary? Do I introduce dual representation later?}
+%
+%A \textbf{dual vector space} $V^*$ of a vector space $V$ over a field $F$ is the set of all linear maps $m: V \to F$.
+%In the case of $\C^n = \C^{n \times 1}$ we can think of it as row vectors $(\C^n)^* = \C^{1 \times n}$.
+%Multiplying a row vector with a column vector will result in a number, this follows from the definition of matrix multiplication above.
+%Since every element in the row vector corresponds to the weight of one element in the column vector, before summing everything up, every linear map $m: \C^n \to \C$ can be represented by exactly one row vector.

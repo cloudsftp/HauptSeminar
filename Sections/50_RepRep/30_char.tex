@@ -1,6 +1,7 @@
 \subsection{Character Tables}
+\label{sec:reprep.char}
 
-Character tables are the way, to write down representations, which was promised at the beginning of the section.
+Character tables are the compact way, to write down representations, which was promised at the beginning of the section.
 But first, we have to define what \textbf{characters} are.
 Suppose $\rho: G \to \GL(V)$ is a representation of a finite group $G$.
 The character of $\rho$ is defined as the map
@@ -10,15 +11,93 @@ The character of $\rho$ is defined as the map
         & a \mapsto \Tr(\rho(a))
     \end{align}
 \end{subequations}
-A representation can be recovered completely from its character.
-So now we know, we only have to write down one number per element $g \in G$.
-But since the trace of a matrix stays the same after a base change, it is also true that
+This character of a representation is identical to the character of equivalent representations.
+To prove this, assume that we have two equivalent representations, $\rho: G \to V$ and $\rho': G \to V'$ with an intertwiner $f: V \to V'$ that is invertible.
+Then the following holds for any $a \in G$.
+\begin{subequations}
 \begin{align}
-    \forall g, h \in G: \qquad & \chi_\rho(h \cdot g \cdot h^{-1}) = \chi_\rho(g)
+    \chi_{\rho'}(a) & = \Tr(\rho'(a)) = \Tr(f \cdot \rho'(a) \cdot f^{-1}) \\
+    & = \Tr((f \cdot \rho'(a)) \cdot f^{-1}) = \Tr(f^{-1} \cdot (f \cdot \rho'(a))) \\
+    & = \Tr(f^{-1} \cdot f \cdot \rho'(a) )= \Tr(\rho(a)) = \chi_\rho(a)
 \end{align}
-This tells us that the character $\chi_\rho$ is constant on the conjugacy classes of $G$.
-So we only have to write down one number per conjugacy class of $G$.
+\end{subequations}
+
+A representation can be recovered completely from its character.
+Of course, the representation might not exactly be the original representation, since the character of two equivalent representations is the same.
+But the recovered representation will be equivalent to the original representation.
+\todo[inline]{proof?}
+So now we know, we only have to write down one number per element $g \in G$.
+But actually, the character of a representation is constant on the group's conjugacy classes, so we only need to write down one number per conjugacy class.
+This is since for any $a, g \in G$ the following is true.
+\begin{subequations}
+\begin{align}
+    \chi_\rho(g \cdot a \cdot g^{-1}) & = \Tr(\rho(g \cdot a \cdot g^{-1})) = \Tr(\rho(g) \cdot \rho(a) \cdot \rho(g)^{-1}) \\
+    & = \Tr((\rho(g) \cdot \rho(a)) \cdot \rho(g)^{-1}) = \Tr(\rho(g)^{-1} \cdot (\rho(g) \cdot \rho(a))) \\
+    & = \Tr(\rho(g)^{-1} \cdot \rho(g) \cdot \rho(a)) = \Tr(\rho(a)) = \chi_\rho(a) \\
+\end{align}
+\end{subequations}
 This saves a lot of space and contains all the information needed to recover the representation~\cite{fulton2013}.
+
+The character of the direct sum of two representations is the sum of their characters.
+This is due to the property of the trace, that $\Tr(A \oplus B) = \Tr(A) + \Tr(B)$~\cite{fulton2013}.
+\begin{subequations}
+\begin{align}
+    \chi_{\rho \oplus \rho'}(a) & = \Tr((\rho \oplus \rho')(a)) = \Tr(\rho(a) \oplus \rho'(a)) \\
+    & = \Tr(\rho) + \Tr(\rho'(a)) = \chi_\rho(a) + \chi_{\rho'}(a)
+\end{align}
+\end{subequations}
+
+The character of the inverse of some group element $a \in G$ is the complex conjugate of the character of the element $\chi_\rho(a^{-1}) = \overline{\chi_\rho(a)}$.
+For the proof, we remember, that the trace of a matrix is the sum of its eigenvalues.
+\begin{align}
+    \chi_\rho(a) & = \Tr(\rho(a)) = \sum_i \lambda_i
+\end{align}
+We know, $a$ is of finite order, so $\rho(a)$ must also be of finite order.
+Therefore, all eigenvalues $\lambda_i$ of $\rho(a)$ are roots of unity and on the unit circle.
+The eigenvalues of the inverse matrix $\rho(a)^{-1}$ are the element-wise inverses of the eigenvalues $\lambda_i$ of the matrix $\rho(a)$.
+Since all $\lambda_i$ are on the unit cycle, their inverses are their complex conjugate $\lambda_i^{-1} = \overline{\lambda_i}$.
+The complex conjugate is additive and therefore the following holds\todo{citation}.
+\begin{subequations}
+\begin{align}
+    \chi_\rho(a^{-1}) & = \Tr(\rho(a^{-1})) = \Tr(\rho(a)^{-1}) \\
+    & = \sum_i \lambda_i^{-1} = \sum_i \overline{\lambda_i} = \overline{\sum_i \lambda_i} \\
+    & = \overline{\Tr(\rho(a))} = \overline{\chi_\rho(a)}
+\end{align}
+\end{subequations}
+
+We can take the scalar product of two characters.
+It is defined as
+\begin{align}
+    \langle \chi_\rho, \chi_{\rho'} \rangle & = \dfrac{1}{|G|} \sum_{a \in G} \chi_\rho(a) \cdot \overline{\chi_{\rho'}(a)}
+\end{align}
+If for two representations the scalar product is $\langle \chi_\rho, \chi_{\rho'} \rangle = 0$, they are called orthogonal.
+The notion is similar to vectors, two orthogonal characters are linearly independent and so are their representations.
+Therefore all characters of a representation must be orthogonal to each other and there are at most so many characters of irreducible representations as there are conjugacy classes of the group.
+The number of inequivalent irreducible representations is also limited to that number~\cite{fulton2013}.
+
+Now, since we have an upper limit on the number of inequivalent irreducible representations, we need a lower limit.
+Using characters, we can prove that there are at least as many inequivalent irreducible representations of a group $G$, as there are conjugacy classes of $G$.
+For the proof, we introduce a class function $\alpha: G \to \C$, for which $\langle \alpha, \chi_\rho \rangle = 0$ for all irreducible representations $\rho: G \to V$.
+If we can show, that $\alpha$ must be $\alpha = 0$, we showed that there are at least as many orthogonal characters as there are conjugacy classes.
+Because if $\alpha$ is not necessarily $0$, then there exists a non-zero class function, that is orthogonal to all characters, so the number of characters is smaller than the number of conjugacy classes.
+This means that there are at least as many inequivalent irreducible representations as there are conjugacy classes.
+We construct $\phi_{\alpha, \rho} = \sum_{g \in G} \alpha(g) \cdot \rho(g^{-1})$.
+Since this is a $G$-linear map of $V$ onto itself, via Shur's Lemma $\phi_{\alpha, \rho} = \lambda \cdot I$.
+And its trace is
+\begin{subequations}
+\begin{align}
+    \Tr(\phi_{\alpha, \rho}) & = \sum_{g \in G} \alpha(g) \cdot \chi_\rho(g^{-1}) \\
+    & = \dfrac{|G|}{|G|} \cdot \sum_{g \in G} \alpha(g) \cdot \chi_\rho(g^{-1})
+    = \dfrac{|G|}{|G|} \cdot \sum_{g \in G} \alpha(g) \cdot \overline{\chi_\rho(g)} \\
+    & = |G| \cdot \langle \alpha, \chi_\rho \rangle = 0 \label{equ:numirr.numconj.last}
+\end{align}
+\end{subequations}
+Therefore, it must be $\phi_{\alpha, \rho} = 0$ for any irreducible representation.
+The equality in \Cref{equ:numirr.numconj.last} is due to our assumption that $\langle \alpha, \rho \rangle = 0$ for all irreducible representations $\rho$.
+Since all representations are composed of irreducible representations via the direct sum, $\phi_{\alpha, \rho} = 0$ for all representations.
+So this is also true for the regular representation.
+The regular representation maps all elements to linearly independent permutation matrices.
+For $\phi_{\alpha, \rho} = \sum_{g \in G} \alpha(g) \cdot \rho(g^{-1}) = 0$ to be true for the regular representation, $\alpha$ must be $\alpha = 0$~\cite{fulton2013}.
 
 \textbf{Character tables} are just a way to write down characters of representations of groups.
 All representations in one table are representations of the same group.
@@ -28,101 +107,3 @@ Each column corresponds to one conjugacy class of the group.
 The classes are written on top of every column and above that, the number of group elements of that conjugacy class is written.
 The number of conjugacy classes and the number of simple representations is always the same, so the portion of the table showing the characters is always square.
 In the top left corner, the name of the group is written~\cite{fulton2013}.
-
-\begin{table}
-    \centering
-
-    \begin{tabular}{r | c  c  c}
-                    & 1 & 3     & 2     \\
-        $S_3$       & 1 & (12)  & (123) \\ \hline
-        $\triv$     & 1 & 1     & 1     \\
-        $\sgn$      & 1 & -1    & 1     \\
-        $\stand$    & 2 & 0     & -1
-    \end{tabular}
-
-    \caption{Character table for the group $S_3$}
-    \label{tab:reprep.char.table}
-\end{table}
-
-\Cref{tab:reprep.char.table} is an example of a character table.
-It shows all simple representations of the group $S_3$.
-$S_3$ is the group of symmetries of a triangle.
-$1$ is the identity element, each representation will map it to the corresponding identity matrix of its vector space.
-This means that the character in that column will tell us the dimension of the vector space, the representation maps to, since $\chi_V(1) = \Tr(I_V) = \dim(V)$.
-The trivial representation, triv, and the sign representation, sgn, both have dimension one, so their character shows the matrices, which the group elements are mapped onto.
-The trivial representation just maps all elements to 1.
-
-\begin{figure}[!h]
-    \centering
-    
-    \begin{tikzpicture}
-    \draw   (0, 0) node [anchor=north east] {1}
-        --  (60:2) node [anchor=south] {2}
-        --  (2, 0) node [anchor=north west] {3}
-        --  cycle;
-    \end{tikzpicture}
-
-    \caption{Triangle for visualizing $S_3$}
-    \label{fig:reprep.char.triangle}
-\end{figure}
-
-For the sign representation, we need to know, what the conjugacy classes are and what the notation means.
-We think of each element as an action on a triangle as shown in \Cref{fig:reprep.char.triangle}.
-The notation will tell us, which corner is mapped where.
-The corner with the first number will be mapped to the corner with the second number.
-If there is a third number, the corner with the second number will be mapped to the corner with the third number.
-And finally, the corner with the last number will be mapped to the corner with the first number.
-So the group element (12) will just swap corners 1 and 2 and the group element (123) will rotate the triangle clockwise.
-Every element in the conjugacy group of (12) will invert the order of numbers from clockwise to counterclockwise and vice versa, hence the sign representation maps its elements to -1.
-The identity and rotations will leave the order intact and therefore the sign representation maps 1 and every element in the conjugacy group of (123) to 1.
-
-Assume, that every corner of the triangle in \Cref{fig:reprep.char.triangle} is associated with a value $x_i$ where $x_1 + x_2 + x_3 = 0$.
-This subspace of $\C^3$ can be thought of a 2-dimensional vector space with the basis $\{e_1 - e_2, e_2 - e_3\}$ with
-\begin{align*}
-    x' = \begin{pmatrix}
-        x_1 - x_2 \\
-        x_2 - x_3
-    \end{pmatrix}
-\end{align*}
-The elements of $S_3$ map the values of $x_i$ between the corners as described above.
-So the standard representation maps 1 to I because all $x_i$s stay the same and therefore also $x'_1 = x_1 - x_2$ and $x_2' = x_2 - x_3$.
-I will write $\stand((12))$ as $s^{(12)}$ in the following for readability.
-The action (12) swaps the values of $x_1$ and $x_2$.
-So $s^{(12)}_{00} = -1$ and $s^{(12)}_{01} = 0$, since $x'_1$ is just negated.
-For $x'_2$ it is a little more complicated, the elements of the matrix must satisfy the equality
-\begin{align*}
-    x_1 - x_3 & = s^{(12)}_{10} \cdot (x_1 - x_2) + s^{(12)}_{11} \cdot (x_2 - x_3) \\
-    & = x_1 \cdot s^{(12)}_{10} + x_2 \cdot (s^{(12)}_{11} - s^{(12)}_{10}) + x_3 \cdot s^{(12)}_{11} \\
-\end{align*}
-So $s^{(12)}_{10} = s^{(12)}_{11} = 1$ and the resulting matrix is
-\begin{align*}
-    s^{(12)} & = \begin{pmatrix}
-        -1 & 0 \\
-        1 & 1
-    \end{pmatrix}
-\end{align*}
-Its trace is 0.
-We don't need to compute the matrices for the other two elements in the same conjugacy class, since the character is constant on the conjugacy classes as mentioned above.
-Now we computed the values of the character of the standard representation of $S_3$ for the conjugacy classes of 1 and (12).
-The value for the conjugacy class (123) is missing.
-I will write $\stand((123))$ as $s^{(123)}$ in the following for readability.
-For to get the correct value in $x'_1$, the elements of the matrix must satisfy the following equality
-\begin{align*}
-    x_2 - x_3 & = s^{(123)}_{00} \cdot (x_1 - x_2) + s^{(123)}_{01} \cdot (x_2 - x_3)
-\end{align*}
-So $s^{(123)}_{00} = 0$ and $s^{(123)}_{01} = 1$.
-For $x'_2$ it is more complicated and the remaining elements of the matrix have to satisfy the equality
-\begin{align*}
-    x_3 - x_1 & = s^{(123)}_{10} \cdot (x_1 - x_2) + s^{(123)}_{11} \cdot (x_2 - x_3) \\
-    & = x_1 \cdot s^{(123)}_{10} + x_2 \cdot (s^{(123)}_{11} - s^{(123)}_{10}) + x_3 \cdot s^{(123)}_{11}
-\end{align*}
-So $s^{(123)}_{10} = s^{(123)}_{11} = -1$ and  the resulting matrix with trace -1 is
-\begin{align*}
-    s^{(123)} & = \begin{pmatrix}
-        0 & 1 \\
-        -1 & -1
-    \end{pmatrix}
-\end{align*}
-
-\todo[inline]{proof faithful}
-\todo[inline]{proof irreducible}

@@ -1,12 +1,18 @@
 \subsection{(Semi-)simple Representations and Shur's Lemma}
 \label{sec:reprep.simp}
 
-To define simple representations, we first need to understand what irreducible representations are.
-A representation $\rho: G \to \GL(V)$ is \textbf{irreducible} (also called \textbf{simple}), if there is no non-trivial vector subspace $U \subset V$ exists with $\rho(a) \cdot U \subset U$ for all actions $a \in G$.
+As mentioned at the beginning of this section, the ``elementary'' representations we want, are representations that can not be created from smaller representations by combining them.
+This property is called \textbf{irreducibility} and is better defined in the following way.
+A representation $\rho: G \to \GL(V)$ is \textbf{irreducible} (also called \textbf{simple}) if there is no non-trivial vector subspace $U \subset V$ that is invariant under $\rho$.
+$U$ is invariant under $\rho$ if for every $a \in G$ and $u \in U$ the following condition is satisfied.
+\begin{align}
+    \rho(a) \cdot u \in U
+\end{align}
 Trivial vector subspaces of $V$ are $V$ itself and the space consisting only of the additive neutral $\{0_V\}$~\cite{hein2013}.
 
 Such a vector subspace $U$ would be called \textbf{$G$-invariant}.
-And if it existed, $\rho': G \to \GL(U)$ with $\rho'(a) = \rho(a)$ would be a \textbf{subrepresentation} of $\rho$.
+And if it existed, there would be a \textbf{subrepresentation} $\rho': G \to \GL(U)$ of $\rho$.
+The specific images of $\rho'$ can be obtained from the actions of the larger representation $\rho$ on the vector subspace $U$.
 Both $U$ and $V$ are also called \textbf{$G$-modules}.
 The formal definition of a $G$-module is a vector space $V$ over a field $F$ with an operation $\cdot: G \times V \to V$ with the following properties.
 \begin{subequations}
@@ -22,16 +28,68 @@ Every $G$-module $V$ induces a representation $\rho: G \to \GL(V)$ where $\rho(a
 $\rho(a)$ is linear for any action $a \in G$ thanks to the properties of the operation $\cdot: G \times V \to V$ defined above.
 If a representations $\rho: G \to \GL(V)$ is irreducible, the $G$-module $V$ is also irreducible~\cite{hein2013}.
 
-\textbf{Shur's Lemma} makes statements about irreducible representations.
+If $U$ is a $\rho$-invariant vector subspace of $V$, then there is a complementary vector subspace $U'$ that is also $\rho$-invariant and for which $V = U \oplus U'$.
+For the proof of the statement, we now think of $U$ and $V$ as $G$-modules.
+We choose some arbitrary vector subspace $W$ that is a complement of $U$.
+Let $\pi_0: V \to U$ be the projection map of $V$ onto $U$.
+That means $\pi_0(u + w) = u$ for any $u \in U, w \in W$.
+If we average that map over $G$, we get
+\begin{subequations}
+\begin{align}
+    \pi: \qquad & V \to U, \\
+    & v \mapsto \sum_{g \in G} g \cdot \pi_0(g^{-1} \cdot v)
+\end{align}
+\end{subequations}
+Where $g^{-1}$ acts on the $G$-module $V$ and $g$ acts on the $G$-module $U$ after the projection with $\pi_0$.
+The kernel of this map $\ker \pi$ is also a $G$-module because for any $h \in G, w' \in \ker \pi$
+\begin{subequations}
+\begin{align}
+    \pi(h \cdot w') & = h \cdot h^{-1} \sum_{g \in G} g \cdot \pi_0(g^{-1} \cdot (h \cdot w')) \\
+    & = h \cdot \sum_{g \in G} (h^{-1} \cdot g) \cdot \pi_0((g^{-1} \cdot h) \cdot w') \label{equ:proof.maschke.hg} \\
+    & = h \cdot \sum_{g' \in G} g' \cdot \pi_0(g'^{-1} \cdot w') \label{equ:proof.maschke.gprime} \\
+    & = h \cdot \pi(w') = h \cdot 0 = 0
+\end{align}
+\end{subequations}
+Where the step from \Cref{equ:proof.maschke.hg} to \Cref{equ:proof.maschke.gprime} is due to $g' = h^{-1} \cdot g$, whichs inverse is the inverse of each element $h^{-1}$ and $g$ applied in reversed order, so $g'^{-1} = g^{-1} \cdot h$.
+This kernel $\ker \pi$ is complementary to $U$ because per definition of $\pi$, $\pi(u) = u$ for any $u \in U$ and $p(p(v)) = p(v)$ for any $v \in V$.
+So we can set $U' = \ker \pi$ and then $V = U \oplus U'$ with both summands being invariant under $\rho$~\cite{fulton2013}.
+
+From this observation, we can conclude, what is referred to as \textbf{Maschke's Theorem}.
+If we have a reducible representation, we can successively split it into smaller representations until we only have irreducible representations left.
+Therefore, any representation there exists a \textbf{decomposition}
+\begin{align}
+    \rho & = \rho_1^{\oplus a_1} \oplus \rho_2^{\oplus a_2} \oplus \ldots \oplus \rho_k^{\oplus a_k} 
+\end{align}
+where $\rho_i$ are distinct irreducible representations of $G$.
+This property of representations of finite groups was hinted at earlier in \Cref{sec:basics.rep.faith} and is called \textbf{semisimplicity}.
+It is only true for vector spaces over a field, that is closed algebraically.
+For this reason, we use the complex numbers $\C$ as the field of our vector spaces in this document~\cite{fulton2013}. 
+
+Another important theorem in representation theory is \textbf{Shur's Lemma}.
+It makes statements about irreducible representations.
 If there are two irreducible representations $\rho: G \to \GL(V)$ and $\rho': G \to \GL(V')$ of a group $G$ and $f: V \to V'$ is an intertwiner (see \Cref{sec:basics.equ} for the definition) of these representations, then the following statements are true.
 \begin{enumerate}
     \item Either $f$ is an isomorphism (and the representations are equivalent), or $f = 0_{V'}$
     \item If $V = V'$, then $\exists \lambda \in \C:\ f = \lambda \cdot I$
 \end{enumerate}
-From this Lemma, we can conclude that for any representation $\rho: G \to \GL(V)$ of a finite group $G$ there is a \textit{unique} decomposition
-\begin{align}
-    \rho & = \rho_1^{\oplus a_1} \oplus \rho_2^{\oplus a_2} \oplus \ldots \oplus \rho_k^{\oplus a_k} 
-\end{align}
-where $\rho_i$ are distinct irreducible representations of $G$~\cite{fulton2013}.
-This property of representations of finite groups was hinted at earlier in \Cref{sec:basics.rep.faith} and is called \textbf{semisimplicity}.
-\todo[inline]{citation}
+For the proof of the first statement, we think about the kernel and image of the intertwiner $f$.
+Since $f$ is an intertwiner, both the kernel $\ker f$ and the image $\Im f$ have to be $G$-invariant.
+If the image $\Im f \neq \left\{ 0_{V'} \right\}$, then it must be $\Im f = V'$, since $\rho'$ is irreducible.
+This means that $f$ is surjective.
+The kernel must be $\ker f = \left\{ 0_V \right\}$ since $\rho$ is irreducible and it can't be $\ker f = V$, since the image is $\Im f = V'$.
+Therefore, $f$ is also injective.
+Combining this with the fact that $f$ is surjective, makes $f$ bijective, so it is invertible and therefore an isomorphism.
+
+For the second statement, we take advantage of the fact, that $\C$ is algebraically closed and $f$ is a linear map of a finite vector space onto itself.
+$f$ therefore has an eigenvector $v \neq 0_V$ with a corresponding eigenvalue $\lambda$.
+$h = f - \lambda \cdot I$ is $G$-linear since it is the sum of $G$-linear maps and $h(v) = 0$.
+This means that $h$ has a non-zero kernel and so by the first statement, $h$ must be $h = 0_{V'}$.
+From this, we can conclude, that $f = \lambda \cdot I$.
+
+\todo[inline]{necessary?}
+With this theorem, we can prove that the decomposition mentioned above is \textbf{unique}.
+Remember, our decomposition is $\rho = \bigoplus_{i=1}^k \rho^{\oplus a_i}_i$
+Let $\rho' = \bigoplus_{j=1}^k \rho'^{\oplus b_j}_j$ be another decomposition and $f: V \to W$ an intertwiner between $\rho: G \to \GL(V)$ and $\rho': G \to \GL(W)$.
+Since $f$ is $G$-linear, it must map every summand $V_i^{\oplus a_i}$ of $V$ to a summand $W_j^{\oplus b_j}$, for which $V_i^{\oplus a_i} \equiv W_j^{\oplus b_j}$.
+Otherwise $f$ must be $f = 0_W$ by Shur's Lemma.
+Therefore, the decomposition is unique up to the reordering and equivalence of summands.
