@@ -140,27 +140,72 @@ We can do this for every element in $S_3$ and will get the following matrices.
 \begin{table}[h]
     \centering
     \begin{tabular}{c c c}
-        $(1) \mapsto I$ & $(123) \mapsto \begin{pmatrix}
+        $\stand((1)) = I$ & $\stand((123)) = \begin{pmatrix}
             -1 & -1 \\
             1 & 0
-        \end{pmatrix}$ & $(132) \mapsto \begin{pmatrix}
+        \end{pmatrix}$ & $\stand((132)) = \begin{pmatrix}
             0 & 1 \\
             -1 & -1
-        \end{pmatrix}$ \\\\ $(12) \mapsto \begin{pmatrix}
+        \end{pmatrix}$ \\\\ $\stand((12)) = \begin{pmatrix}
             -1 & 0 \\
             1 & 1
-        \end{pmatrix}$ & $(13) \mapsto \begin{pmatrix}
+        \end{pmatrix}$ & $\stand((13)) = \begin{pmatrix}
             0 & -1 \\
             -1 & 0
-        \end{pmatrix}$ & $(23) \mapsto \begin{pmatrix}
+        \end{pmatrix}$ & $\stand((23)) = \begin{pmatrix}
             1 & 1 \\
             0 & -1
         \end{pmatrix}$
     \end{tabular}
 \end{table}
+As we can see, all matrices are different from each other.
+This means, that $\stand$ is faithful since every element $a \in S_3$ has a different image under $\stand$.
 
-\todo[inline]{proof faithful}
-\todo[inline]{proof irreducible}
+We now want to prove that $\stand$ is irreducible.
+For it to be irreducible, there may be no non-trivial subspace, that is invariant under $\stand$.
+We start by identifying vector subspaces of $\C^2$ that are invariant under $\stand((13))$, they are our candidates.
+These subspaces are the eigenspaces of $\stand((13))$.
+First, we calculate the eigenvalues:
+\begin{subequations}
+\begin{align}
+    \det \left[ \stand((13)) - \lambda \cdot I \right]
+    & = \det \left[ \begin{pmatrix}
+        0 & -1 \\ -1 & 0
+    \end{pmatrix} - \lambda \cdot I \right] = \det \left[ \begin{pmatrix}
+        -\lambda & -1 \\ -1 & -\lambda
+    \end{pmatrix} \right] \\
+    & = \lambda^2 - 1 = 0
+\end{align}
+\end{subequations}
+Therefore the eigenvalues are $\lambda_1 = 1$ and $\lambda_2 = -1$.
+The corresponding eigenvectors are $v_1 = \begin{pmatrix}
+    1 & -1
+\end{pmatrix}^T$ and $v_2 = \begin{pmatrix}
+    1 & 1
+\end{pmatrix}^T$.
+Therefore the eigenspaces are $E_{\lambda_1} = \C \cdot v_1$ and $E_{\lambda_2} = \C \cdot v_2$.
+Now, we show that both these vector subspaces are not invariant under $\stand((123))$:
+\begin{subequations}
+\begin{align}
+    \stand((123)) \cdot v_1 & = \begin{pmatrix}
+        -1 & -1 \\
+        1 & 0
+    \end{pmatrix} \cdot \begin{pmatrix}
+        1 \\ -1
+    \end{pmatrix} = \begin{pmatrix}
+        0 \\ 1
+    \end{pmatrix} \notin E_{\lambda_1} \\
+    \stand((123)) \cdot v_2 & = \begin{pmatrix}
+        -1 & -1 \\
+        1 & 0
+    \end{pmatrix} \cdot \begin{pmatrix}
+        1 \\ 1
+    \end{pmatrix} = \begin{pmatrix}
+        -2 \\ 1
+    \end{pmatrix} \notin E_{\lambda_2}
+\end{align}
+\end{subequations}
+Therefore, there can be no non-trivial vector subspace that is invariant under $\stand$~\cite{fulton2013}.
 
 \subsection{The Character Table}
 
