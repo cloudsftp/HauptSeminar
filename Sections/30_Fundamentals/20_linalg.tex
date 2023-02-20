@@ -32,7 +32,14 @@ In most cases, the representations of groups are over finite-dimensional vector 
 If they are finite-dimensional, they will be vector spaces over the field of complex numbers $\C$ in this document.
 A $n$-dimensional complex vector space is denoted as $\C^n$.
 
-\todo[inline]{add kernel, image, surjective, injective}
+The \textbf{kernel} of a linear map $m: \C^n \to \C^n$ is the subset of $\C^n$, in which all elements are mapped to $0$ by $m$.
+So $\ker m = \{v \in \C^n | m(v) = 0\}$.
+Conversely, the \textbf{image} of the same map $m$ is the set of all images of the map.
+So $\Im m = \{m(v) | v \in \C^n\}$.
+The map $m$ is \textbf{injective} if, for all inequivalent vectors, their images under $m$ are also inequivalent.
+In mathematical notation, all vectors $v, w, \in \C^n$ must satisfy the implication $m(v) = m(w) \implies v = w$.
+For linear maps, this is the case exactly when $\ker m = \{0\}$.
+The map $m$ is \textbf{surjective} if its image is the same as the target set of the map, so if $\Im m = \C^n$.
 
 If a linear map is between two finite-dimensional vector spaces and both of those have a defined basis, it can be represented by a \textbf{matrix}.
 In our finite-dimensional cases, both vector spaces are $\C^n$ and we define the standard basis $\{e_i | 0 \leq i < n\}$ where $e_i = \begin{pmatrix} 0 & \ldots & 0 & 1 & 0 & \ldots & 0 \end{pmatrix}^T$ is a vector with all zeros except the $i$-th element.
@@ -51,7 +58,7 @@ The identity matrix is defined as $I = (\delta_{kj})_{kj}$ where $\delta_{kj}$ i
         0 & \text{, else}
     \end{cases}
 \end{align}
-\todo[inline]{bijective}
+Another criteria is that the map represented by the matrix is \textbf{bijective}, which is the case if the map is both injective and surjective.
 
 A linear map from a complex vector space to itself is represented as a \textbf{square} matrix.
 The following two concepts only exist for this kind of map.
