@@ -32,6 +32,8 @@ In most cases, the representations of groups are over finite-dimensional vector 
 If they are finite-dimensional, they will be vector spaces over the field of complex numbers $\C$ in this document.
 A $n$-dimensional complex vector space is denoted as $\C^n$.
 
+\todo[inline]{add kernel, image, surjective, injective}
+
 If a linear map is between two finite-dimensional vector spaces and both of those have a defined basis, it can be represented by a \textbf{matrix}.
 In our finite-dimensional cases, both vector spaces are $\C^n$ and we define the standard basis $\{e_i | 0 \leq i < n\}$ where $e_i = \begin{pmatrix} 0 & \ldots & 0 & 1 & 0 & \ldots & 0 \end{pmatrix}^T$ is a vector with all zeros except the $i$-th element.
 So we can represent the linear maps as matrices in the finite-dimensional cases in this paper.
@@ -49,6 +51,7 @@ The identity matrix is defined as $I = (\delta_{kj})_{kj}$ where $\delta_{kj}$ i
         0 & \text{, else}
     \end{cases}
 \end{align}
+\todo[inline]{bijective}
 
 A linear map from a complex vector space to itself is represented as a \textbf{square} matrix.
 The following two concepts only exist for this kind of map.
@@ -56,8 +59,6 @@ The \textbf{trace} of a square matrix $\Tr: \C^{n \times n} \to \C$ is defined a
 \begin{align}
     \Tr(A) = \sum_i a_{ii}
 \end{align}
-
-\todo[inline]{trace is sum of eigenvalues}
 
 For a linear map $A$ from a complex vector space $\C^n$ to itself, there is at least one vector $v \in \C^n$ and a scalar $\lambda \in \C$ so that
 \begin{align}
@@ -72,17 +73,12 @@ All the vectors, that do form a vector subspace denoted
     E_{\lambda_i} & = \left\{ v \in \C^n | A \cdot v = \lambda_i \cdot v \right\}
 \end{align}
 
-\todo[inline]{eigenvalues of matrix of finite order are roots of unity/on the unit circle}
+Some properties of eigenvalues, we need later, are the following.
+If the matrix $A$ is of finite order $n$, then its eigenvalues must be $n$-th roots of unity $\lambda_i^n = 1$.
+The sum of the eigenvalues of a matrix $\sum_{\lambda_i \in \sigma_A} \lambda_i$ is identical to its trace $Tr(A)$.
 
-%% start needed?
-%\todo[inline]{Is scalar product nescessary?}
-
-%On $\C^n$, the \textbf{scalar product} (also called dot product) $\langle \cdot, \cdot \rangle: \C^n \times \C^n \to \C$ is defined as
-%\begin{align}
-%    \langle v, w \rangle = \sum_i v_i \cdot w_i
-%\end{align}
-%It can also be thought of as a matrix multiplication of a row vector and a column vector $\langle v, w \rangle = v^T w$.
-%% end needed?
+\todo[inline]{direct sum of vector spaces}
+\todo[inline]{add complementary vector spaces}
 
 The \textbf{direct sum} of two matrices $\oplus: \C^{a \times b} \times \C^{c \times d} \to \C^{(a + c) \times (b + d)}$ is defined as
 \begin{align}
@@ -104,29 +100,3 @@ The \textbf{tensor product} of two matrices $\otimes: \C^{a \times b} \times \C^
         a_{a, 1} \cdot B & a_{a, 2} \cdot B & \ldots & a_{a, b} \cdot B
     \end{pmatrix}
 \end{align}
-
-\todo[inline]{add complementary vector spaces}
-
-\todo[inline]{add kernel, image, surjective, injective}
-
-%% start needed?
-%\todo[inline]{outer and symmetric powers}
-
-%\todo[inline]{Is change of basis necessary?}
-
-%A \textbf{change of basis} from one basis $\{v_i\}_i$ to another one $\{w_j\}_j$ in a vector space $C^n$ can be represented by an invertible matrix.
-%We find this matrix by writing each vector of the new basis $w_j$ as a linear combination of the vectors in the old basis $v_i$.
-%\begin{align}
-%    w_j = \sum_i a_{ij} v_i
-%\end{align}
-%This gives us the elements of $A = (a_{ij})_{ij}$.
-%A vector $x \in \C^n$ is transformed from the old to the new basis via a matrix multiplication $x' = A^{-1} \cdot x$.
-%A linear map between $\C^n$ and itself represented as a matrix $M \in \C^{n \times n}$ is transformed via two matrix multiplications $M' = A^{-1} \cdot M \cdot A$.
-%\\
-%
-%\todo[inline]{still necessary? Do I introduce dual representation later?}
-%
-%A \textbf{dual vector space} $V^*$ of a vector space $V$ over a field $F$ is the set of all linear maps $m: V \to F$.
-%In the case of $\C^n = \C^{n \times 1}$ we can think of it as row vectors $(\C^n)^* = \C^{1 \times n}$.
-%Multiplying a row vector with a column vector will result in a number, this follows from the definition of matrix multiplication above.
-%Since every element in the row vector corresponds to the weight of one element in the column vector, before summing everything up, every linear map $m: \C^n \to \C$ can be represented by exactly one row vector.
