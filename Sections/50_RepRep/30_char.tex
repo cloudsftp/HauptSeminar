@@ -25,7 +25,7 @@ Then the following holds for any $a \in G$.
 A representation can be recovered completely from its character.
 Of course, the representation might not exactly be the original representation, since the character of two equivalent representations is the same.
 But the recovered representation will be equivalent to the original representation.
-\todo[inline]{proof?}
+
 So now we know, we only have to write down one number per element $g \in G$.
 But actually, the character of a representation is constant on the group's conjugacy classes, so we only need to write down one number per conjugacy class.
 This is since for any $a, g \in G$ the following is true.
@@ -56,7 +56,7 @@ We know, $a$ is of finite order, so $\rho(a)$ must also be of finite order.
 Therefore, all eigenvalues $\lambda_i$ of $\rho(a)$ are roots of unity and on the unit circle.
 The eigenvalues of the inverse matrix $\rho(a)^{-1}$ are the element-wise inverses of the eigenvalues $\lambda_i$ of the matrix $\rho(a)$.
 Since all $\lambda_i$ are on the unit cycle, their inverses are their complex conjugate $\lambda_i^{-1} = \overline{\lambda_i}$.
-The complex conjugate is additive and therefore the following holds\todo{citation}.
+The complex conjugate is additive and therefore the following holds~\cite{fulton2013}.
 \begin{subequations}
 \begin{align}
     \chi_\rho(a^{-1}) & = \Tr(\rho(a^{-1})) = \Tr(\rho(a)^{-1}) \\

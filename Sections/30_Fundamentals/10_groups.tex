@@ -13,6 +13,9 @@ If a group also satisfies commutativity, it is called an abelian group.
 \end{align}
 \end{subequations}
 
+The \textbf{order} of a group element $a \in G$ is the number $n$, for which $a^n = 1$.
+All elements in a finite group are of finite order.
+
 A group can have multiple \textbf{conjugacy classes}.
 Such a class is the set of all group elements that can be transformed into one another by conjugation.
 The conjugation of $a \in G$ by $g \in G$ is defined as $g \cdot a \cdot g^{-1}$.
@@ -20,12 +23,6 @@ And therefore the conjugacy class of a group element $a \in G$ is
 \begin{align}
     \Cl(a) & = \left\{ g \cdot a \cdot g^{-1} | g \in G \right\}
 \end{align}
-
-%\todo[inline]{remove topological group?}
-
-%A \textbf{topological group} $(G, \cdot)$ is a group where both the operation $\cdot: G \times G \to G: (x, y) \mapsto xy$ and the inverse map $^{-1}: G \to G: x \mapsto x^{-1}$ are continuous.
-%This is the case, if and only if the map $m: G \times G \to G: (x, y) \mapsto xy^{-1}$ is continuous.
-%$m$ is continuous, if and only if for all $x, y \in G$ and any neighbourhood $W$ of $xy^{-1}$ there are neighbourhoods $U$ of $x$ and $V$ of $y$, such that $U \cdot V^{-1} \subseteq W$.
 
 A \textbf{group homomorphism} is a map $\phi: G \to H$ between two groups $(G, \cdot)$ and $(H, *)$, such that
 \begin{align}
@@ -49,8 +46,6 @@ Understanding them will help in later sections.
     \caption{Commuting diagram for group homomorphisms}
     \label{fig:fundamentals.groups.hom-cd}
 \end{figure}
-
-\todo[inline]{all elements of finite groups have finite order}
 
 A \textbf{field} $(F, +, -, 0, 1)$ is a set $F$ with two operations, addition $+: F \times F \to F$ and multiplication $\cdot: F \times F \to F$, such that $(F, +, 0)$ is an abelian group, $(F \setminus \{0\}, \cdot, 1)$ is a group, and the following axioms holds.
 \begin{subequations}

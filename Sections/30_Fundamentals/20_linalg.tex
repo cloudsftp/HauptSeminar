@@ -32,6 +32,15 @@ In most cases, the representations of groups are over finite-dimensional vector 
 If they are finite-dimensional, they will be vector spaces over the field of complex numbers $\C$ in this document.
 A $n$-dimensional complex vector space is denoted as $\C^n$.
 
+The \textbf{kernel} of a linear map $m: \C^n \to \C^n$ is the subset of $\C^n$, in which all elements are mapped to $0$ by $m$.
+So $\ker m = \{v \in \C^n | m(v) = 0\}$.
+Conversely, the \textbf{image} of the same map $m$ is the set of all images of the map.
+So $\Im m = \{m(v) | v \in \C^n\}$.
+The map $m$ is \textbf{injective} if, for all inequivalent vectors, their images under $m$ are also inequivalent.
+In mathematical notation, all vectors $v, w, \in \C^n$ must satisfy the implication $m(v) = m(w) \implies v = w$.
+For linear maps, this is the case exactly when $\ker m = \{0\}$.
+The map $m$ is \textbf{surjective} if its image is the same as the target set of the map, so if $\Im m = \C^n$.
+
 If a linear map is between two finite-dimensional vector spaces and both of those have a defined basis, it can be represented by a \textbf{matrix}.
 In our finite-dimensional cases, both vector spaces are $\C^n$ and we define the standard basis $\{e_i | 0 \leq i < n\}$ where $e_i = \begin{pmatrix} 0 & \ldots & 0 & 1 & 0 & \ldots & 0 \end{pmatrix}^T$ is a vector with all zeros except the $i$-th element.
 So we can represent the linear maps as matrices in the finite-dimensional cases in this paper.
@@ -49,6 +58,7 @@ The identity matrix is defined as $I = (\delta_{kj})_{kj}$ where $\delta_{kj}$ i
         0 & \text{, else}
     \end{cases}
 \end{align}
+Another criteria is that the map represented by the matrix is \textbf{bijective}, which is the case if the map is both injective and surjective.
 
 A linear map from a complex vector space to itself is represented as a \textbf{square} matrix.
 The following two concepts only exist for this kind of map.
@@ -56,8 +66,6 @@ The \textbf{trace} of a square matrix $\Tr: \C^{n \times n} \to \C$ is defined a
 \begin{align}
     \Tr(A) = \sum_i a_{ii}
 \end{align}
-
-\todo[inline]{trace is sum of eigenvalues}
 
 For a linear map $A$ from a complex vector space $\C^n$ to itself, there is at least one vector $v \in \C^n$ and a scalar $\lambda \in \C$ so that
 \begin{align}
@@ -72,17 +80,13 @@ All the vectors, that do form a vector subspace denoted
     E_{\lambda_i} & = \left\{ v \in \C^n | A \cdot v = \lambda_i \cdot v \right\}
 \end{align}
 
-\todo[inline]{eigenvalues of matrix of finite order are roots of unity/on the unit circle}
+Some properties of eigenvalues, we need later, are the following.
+If the matrix $A$ is of finite order $n$, then its eigenvalues must be $n$-th roots of unity $\lambda_i^n = 1$.
+The sum of the eigenvalues of a matrix $\sum_{\lambda_i \in \sigma_A} \lambda_i$ is identical to its trace $Tr(A)$.
 
-%% start needed?
-%\todo[inline]{Is scalar product nescessary?}
-
-%On $\C^n$, the \textbf{scalar product} (also called dot product) $\langle \cdot, \cdot \rangle: \C^n \times \C^n \to \C$ is defined as
-%\begin{align}
-%    \langle v, w \rangle = \sum_i v_i \cdot w_i
-%\end{align}
-%It can also be thought of as a matrix multiplication of a row vector and a column vector $\langle v, w \rangle = v^T w$.
-%% end needed?
+The \textbf{direct sum} of vector spaces $\C^n \oplus \C^m$ is just the combination of both as $\C^{n + m}$.
+In this case, $\C^n$ is called \textbf{complementary} to $\C^m$ in $\C^{n + m}$.
+The complement of some vector subspace $V \subset W$ is a vector subspace $U \subset W$, such that $V \oplus U = W$, it does not have to be as clean cut as above.
 
 The \textbf{direct sum} of two matrices $\oplus: \C^{a \times b} \times \C^{c \times d} \to \C^{(a + c) \times (b + d)}$ is defined as
 \begin{align}
@@ -93,10 +97,16 @@ The \textbf{direct sum} of two matrices $\oplus: \C^{a \times b} \times \C^{c \t
 \end{align}
 where each zero stands for a matrix that only has zeros.
 Matrices, that can be written as the direct sum of two or more matrices are called \textbf{block matrices}.
-\todo[inline]{trace of direct sum}
+From the equation for the direct sum of matrices, we see that the trace of the sum of two matrices is the sum of the traces of the single matrices $\Tr(A \oplus B) = \Tr(A) + \Tr(B)$.
 
-\todo[inline]{look at it again}
-The \textbf{tensor product} of two matrices $\otimes: \C^{a \times b} \times \C^{c \times d} \to \C^{(a \cdot c) \times (b \cdot d)}$ is defined as
+The \textbf{tensor product} of two vector spaces $W = V \otimes U$ is defined as a vector space with the base $\{v \otimes w | v \in B_V, w \in B_U\}$, where $B_V$ and $B_U$ are the bases of $V$ and $U$, respectively.
+The tensor product of vectors, needed for that definition, is the following.
+\begin{align}
+    v \otimes u = \begin{pmatrix}
+        v_1 \cdot w & v_2 \cdot w & \hdots & v_n \cdot w
+    \end{pmatrix}^T
+\end{align}
+Therefore, the tensor product of two matrices $\otimes: \C^{a \times b} \times \C^{c \times d} \to \C^{(a \cdot c) \times (b \cdot d)}$ is defined as
 \begin{align}
     A \otimes B = \begin{pmatrix}
         a_{1, 1} \cdot B & a_{1, 2} \cdot B & \ldots & a_{1, b} \cdot B \\
@@ -104,29 +114,3 @@ The \textbf{tensor product} of two matrices $\otimes: \C^{a \times b} \times \C^
         a_{a, 1} \cdot B & a_{a, 2} \cdot B & \ldots & a_{a, b} \cdot B
     \end{pmatrix}
 \end{align}
-
-\todo[inline]{add complementary vector spaces}
-
-\todo[inline]{add kernel, image, surjective, injective}
-
-%% start needed?
-%\todo[inline]{outer and symmetric powers}
-
-%\todo[inline]{Is change of basis necessary?}
-
-%A \textbf{change of basis} from one basis $\{v_i\}_i$ to another one $\{w_j\}_j$ in a vector space $C^n$ can be represented by an invertible matrix.
-%We find this matrix by writing each vector of the new basis $w_j$ as a linear combination of the vectors in the old basis $v_i$.
-%\begin{align}
-%    w_j = \sum_i a_{ij} v_i
-%\end{align}
-%This gives us the elements of $A = (a_{ij})_{ij}$.
-%A vector $x \in \C^n$ is transformed from the old to the new basis via a matrix multiplication $x' = A^{-1} \cdot x$.
-%A linear map between $\C^n$ and itself represented as a matrix $M \in \C^{n \times n}$ is transformed via two matrix multiplications $M' = A^{-1} \cdot M \cdot A$.
-%\\
-%
-%\todo[inline]{still necessary? Do I introduce dual representation later?}
-%
-%A \textbf{dual vector space} $V^*$ of a vector space $V$ over a field $F$ is the set of all linear maps $m: V \to F$.
-%In the case of $\C^n = \C^{n \times 1}$ we can think of it as row vectors $(\C^n)^* = \C^{1 \times n}$.
-%Multiplying a row vector with a column vector will result in a number, this follows from the definition of matrix multiplication above.
-%Since every element in the row vector corresponds to the weight of one element in the column vector, before summing everything up, every linear map $m: \C^n \to \C$ can be represented by exactly one row vector.
