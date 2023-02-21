@@ -3,9 +3,12 @@
 This subsection is about combining representations to create larger new ones.
 First, we will have a look at the direct sum $\oplus$ and the tensor product $\otimes$.
 Suppose we have two representations $\rho: G \to \GL(V)$ and $\rho': G \to \GL(V')$ of some group $G$, then the combination of these using either operation $\odot \in \{\oplus, \otimes\}$ is defined as
-\begin{align*}
-    (\rho \odot \rho'): \quad & G \to (V \odot V'), \quad a \mapsto \rho(a) \odot \rho'(a)
-\end{align*}
+\begin{subequations}
+\begin{align}
+    (\rho \odot \rho'): \qquad & G \to (V \odot V'), \\
+    & a \mapsto \rho(a) \odot \rho'(a)
+\end{align}
+\end{subequations}
 That means, the operator $\odot$ is applied to the linear maps of both representations of an action $a \in G$.
 This is done for each action $a \in G$.
 Using the operations from above, $\rho \odot \rho'$ will also be a representation of the group $G$.
