@@ -41,7 +41,7 @@ If we average that map over $G$, we get
 \end{align}
 \end{subequations}
 Where $g^{-1}$ acts on the $G$-module $V$ and $g$ acts on the $G$-module $U$ after the projection with $\pi_0$.
-The kernel of this map $\ker \pi$ is also a $G$-module because for any $h \in G, w' \in \ker \pi$
+The kernel of this map $\ker \pi$ is also $G$-invariant because for any $h \in G, w' \in \ker \pi$
 \begin{subequations}
 \begin{align}
     \pi(h \cdot w') & = h \cdot h^{-1} \sum_{g \in G} g \cdot \pi_0(g^{-1} \cdot (h \cdot w')) \\
@@ -51,7 +51,7 @@ The kernel of this map $\ker \pi$ is also a $G$-module because for any $h \in G,
 \end{align}
 \end{subequations}
 Where the step from \Cref{equ:proof.maschke.hg} to \Cref{equ:proof.maschke.gprime} is due to $g' = h^{-1} \cdot g$, whichs inverse is the inverse of each element $h^{-1}$ and $g$ applied in reversed order, so $g'^{-1} = g^{-1} \cdot h$.
-This kernel $\ker \pi$ is complementary to $U$ because per definition of $\pi$, $\pi(u) = u$ for any $u \in U$ and $p(p(v)) = p(v)$ for any $v \in V$.
+This kernel $\ker \pi$ is complementary to $U$ because per construction of $\pi$, $\pi(u) = u$ for any $u \in U$ and $\pi(\pi(v)) = \pi(v)$ for any $v \in V$.
 So we can set $U' = \ker \pi$ and then $V = U \oplus U'$ with both summands being invariant under $\rho$~\cite{fulton2013}.
 
 From this observation, we can conclude, what is referred to as \textbf{Maschke's Theorem}.
@@ -87,7 +87,7 @@ This means that $h$ has a non-zero kernel and so by the first statement, $h$ mus
 From this, we can conclude, that $f = \lambda \cdot I$.
 
 With this theorem, we can prove that the decomposition mentioned above is \textbf{unique}.
-Remember, our decomposition is $\rho = \bigoplus_{i=1}^k \rho^{\oplus a_i}_i$
+Remember, our decomposition is $\rho = \bigoplus_{i=1}^k \rho^{\oplus a_i}_i$.
 Let $\rho' = \bigoplus_{j=1}^k \rho'^{\oplus b_j}_j$ be another decomposition and $f: V \to W$ an intertwiner between $\rho: G \to \GL(V)$ and $\rho': G \to \GL(W)$.
 Since $f$ is $G$-linear, it must map every summand $V_i^{\oplus a_i}$ of $V$ to a summand $W_j^{\oplus b_j}$, for which $V_i^{\oplus a_i} \equiv W_j^{\oplus b_j}$.
 Otherwise $f$ must be $f = 0_W$ by Shur's Lemma.
