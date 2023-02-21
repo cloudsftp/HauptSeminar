@@ -97,10 +97,16 @@ The \textbf{direct sum} of two matrices $\oplus: \C^{a \times b} \times \C^{c \t
 \end{align}
 where each zero stands for a matrix that only has zeros.
 Matrices, that can be written as the direct sum of two or more matrices are called \textbf{block matrices}.
-\todo[inline]{trace of direct sum}
+From the equation for the direct sum of matrices, we see that the trace of the sum of two matrices is the sum of the traces of the single matrices $\Tr(A \oplus B) = \Tr(A) + \Tr(B)$.
 
-\todo[inline]{look at it again}
-The \textbf{tensor product} of two matrices $\otimes: \C^{a \times b} \times \C^{c \times d} \to \C^{(a \cdot c) \times (b \cdot d)}$ is defined as
+The \textbf{tensor product} of two vector spaces $W = V \otimes U$ is defined as a vector space with the base $\{v \otimes w | v \in B_V, w \in B_U\}$, where $B_V$ and $B_U$ are the bases of $V$ and $U$, respectively.
+The tensor product of vectors, needed for that definition, is the following.
+\begin{align}
+    v \otimes u = \begin{pmatrix}
+        v_1 \cdot w & v_2 \cdot w & \hdots & v_n \cdot w
+    \end{pmatrix}^T
+\end{align}
+Therefore, the tensor product of two matrices $\otimes: \C^{a \times b} \times \C^{c \times d} \to \C^{(a \cdot c) \times (b \cdot d)}$ is defined as
 \begin{align}
     A \otimes B = \begin{pmatrix}
         a_{1, 1} \cdot B & a_{1, 2} \cdot B & \ldots & a_{1, b} \cdot B \\
