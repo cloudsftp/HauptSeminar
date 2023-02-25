@@ -41,16 +41,15 @@ In mathematical notation, all vectors $v, w, \in \C^n$ must satisfy the implicat
 For linear maps, this is the case exactly when $\ker m = \{0\}$.
 The map $m$ is \textbf{surjective} if its image is the same as the target set of the map, so if $\Im m = \C^n$.
 
-If a linear map is between two finite-dimensional vector spaces and both of those have a defined basis, it can be represented by a \textbf{matrix}.
+If a linear map maps between two finite-dimensional vector spaces and both of those have a defined basis, it can be represented by a \textbf{matrix}.
 In our finite-dimensional cases, both vector spaces are $\C^n$ and we define the standard basis $\{e_i | 0 \leq i < n\}$ where $e_i = \begin{pmatrix} 0 & \ldots & 0 & 1 & 0 & \ldots & 0 \end{pmatrix}^T$ is a vector with all zeros except the $i$-th element.
 So we can represent the linear maps as matrices in the finite-dimensional cases in this paper.
-\textbf{Matrix multiplication} $\cdot: \C^{a \times b} \times \C^{b \times c} \to \C^{a \times c}$ is equivalent to the composition of the linear maps, they represent.
-It is defined as
+\textbf{Matrix multiplication} $\cdot: \C^{a \times b} \times \C^{b \times c} \to \C^{a \times c}$ is equivalent to the composition of the linear maps they represent, it is defined as
 \begin{align}
     A \cdot B = \left(\sum_k a_{ik} \cdot b_{kj}\right)_{ij}
 \end{align}
 A matrix $A \in \C^{n \times n}$ is \textbf{invertible}, if and only if it represents an invertible linear map.
-This is the case if and only if there exists a matrix $A^{-1} \in C^{n \times n}$, such that $A^{-1} \cdot A = I$, where $I$ is the identity matrix. 
+This is the case exactly when there exists a matrix $A^{-1} \in C^{n \times n}$, such that $A^{-1} \cdot A = I$, where $I$ is the identity matrix. 
 The identity matrix is defined as $I = (\delta_{kj})_{kj}$ where $\delta_{kj}$ is the Kronecker delta defined as
 \begin{align}
     \delta_{kj} = \begin{cases}
@@ -80,7 +79,7 @@ All the vectors, that do form a vector subspace denoted
     E_{\lambda_i} & = \left\{ v \in \C^n | A \cdot v = \lambda_i \cdot v \right\}
 \end{align}
 
-Some properties of eigenvalues, we need later, are the following.
+The following properties of eigenvalues are required later.
 If the matrix $A$ is of finite order $n$, then its eigenvalues must be $n$-th roots of unity $\lambda_i^n = 1$.
 The sum of the eigenvalues of a matrix $\sum_{\lambda_i \in \sigma_A} \lambda_i$ is identical to its trace $Tr(A)$.
 
