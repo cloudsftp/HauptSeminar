@@ -7,18 +7,17 @@ The idea is to represent group elements as actions on some vector space, such th
 The vector space is then also called a $G$-module, and the mapping of the group elements to the linear maps is called the representation.
 
 Linear algebra is a well-studied branch of mathematics.
-And there are a lot of algorithms for tackling problems in this field numerically.
+And there are many algorithms for tackling problems in this field numerically.
 Representing groups as linear maps, therefore, makes it easier to study these groups.
 For example, Burnside's theorem was proven using representation theory in 1904~\cite{burnside1904groups}.
 It took roughly 70 years to find a proof without using representation theory.
 
 There are representations of groups using infinite-dimensional vector spaces, as well as finite-dimensional vector spaces.
-In this document, we will focus on the case of finite-dimensional vector spaces since this is easier to understand and most readers are already familiar with finite-dimensional vector spaces.
+This document will focus on the case of finite-dimensional vector spaces since this is easier to understand and most readers are already familiar with finite-dimensional vector spaces.
 The vector spaces used in this document are of the form $\C^n$ for reasons discussed later.
 
-Representation theory finds applications anywhere where there are groups.
-Groups are almost everywhere in mathematics, physics, and chemistry.
-It also finds application in cryptography for studying groups used in established protocols, such as the family of elliptic curve protocols.
+Representation theory finds applications anywhere groups are ubiquitous, i.e. mathematics, physics, chemistry etc.
+The theory is also applicable in cryptography where it is used to study groups used in established protocols, such as the family of elliptic curve protocols.
 As well as exploring groups to be used in emerging protocols.
 An example of such emerging protocols are non-commutative group-based protocols.
 At the end of this document, we will see why it is unwise to use the symmetric groups $S_n$ with some key-exchange protocols~\cite{khovanov2022monoidal}.

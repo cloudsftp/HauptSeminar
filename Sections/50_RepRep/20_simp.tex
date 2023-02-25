@@ -1,7 +1,7 @@
 \subsection{(Semi-)simple Representations and Shur's Lemma}
 \label{sec:reprep.simp}
 
-As mentioned at the beginning of this section, the ``elementary'' representations we want, are representations that can not be created from smaller representations by combining them.
+As mentioned at the beginning of this section, the ``elementary'' representations we want, are representations that cannot be created from smaller representations by combining them.
 This property is called \textbf{irreducibility} and is better defined in the following way.
 A representation $\rho: G \to \GL(V)$ is \textbf{irreducible} (also called \textbf{simple}) if there is no non-trivial vector subspace $U \subset V$ that is invariant under $\rho$.
 $U$ is invariant under $\rho$ if for every $a \in G$ and $u \in U$ the following condition is satisfied.
@@ -54,7 +54,7 @@ Where the step from \Cref{equ:proof.maschke.hg} to \Cref{equ:proof.maschke.gprim
 This kernel $\ker \pi$ is complementary to $U$ because per construction of $\pi$, $\pi(u) = u$ for any $u \in U$ and $\pi(\pi(v)) = \pi(v)$ for any $v \in V$.
 So we can set $U' = \ker \pi$ and then $V = U \oplus U'$ with both summands being invariant under $\rho$~\cite{fulton2013}.
 
-From this observation, we can conclude, what is referred to as \textbf{Maschke's Theorem}.
+From this observation, we can prove, what is referred to as \textbf{Maschke's Theorem}.
 If we have a reducible representation, we can successively split it into smaller representations until we only have irreducible representations left.
 Therefore, any representation there exists a \textbf{decomposition}
 \begin{align}
@@ -62,8 +62,7 @@ Therefore, any representation there exists a \textbf{decomposition}
 \end{align}
 where $\rho_i$ are distinct irreducible representations of $G$.
 This property of representations of finite groups was hinted at earlier in \Cref{sec:basics.rep.faith} and is called \textbf{semisimplicity}.
-It is only true for vector spaces over a field, that is closed algebraically.
-For this reason, we use the complex numbers $\C$ as the field of our vector spaces in this document~\cite{fulton2013}. 
+It is only true for vector spaces over a field, that is closed algebraically~\cite{fulton2013}.
 
 Another important theorem in representation theory is \textbf{Shur's Lemma}.
 It makes statements about irreducible representations.
